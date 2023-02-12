@@ -16,7 +16,7 @@ export default function Head() {
     {/* <meta name="og:url" content={url} /> */}
     <meta name="og:description" content={description} />
     {/* <meta name="og:image" content={image} /> */}
-    <link rel="icon" href="/favicon.png" sizes="32x32" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
     </>
   )
 }
