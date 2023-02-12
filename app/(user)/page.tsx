@@ -16,7 +16,7 @@ const HomePage = () => {
           </p>
         </div>
       )}>
-        
+
       </PreviewSuspense>
       )
   }
@@ -25,6 +25,7 @@ const HomePage = () => {
   <div>
       <h1>Not in Preview Mode</h1>
   </div>
+  
   ) 
 }
 
