@@ -3,23 +3,33 @@
 import {useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { footerVariants } from "../utils/motion";
-import { MdOutlineRequestQuote } from 'react-icons/md'
 import styles from '@/styles';
-// import { client, urlFor } from '../app/client'
 import Image from 'next/image';
-import Link from 'next/link';
+import { groq } from 'next-sanity';
+import { client } from '@/lib/sanity.client';
+import { Social } from '@/typings';
+import { SocialIcon } from 'react-social-icons';
 
-const Footer = () => {
-  const [socials, setSocials] = useState([])
+type Props = {
+  socials: Social[]
+}
 
-  // useEffect(() => {
-  //   const query = '*[_type == "social"]'
-  //   client.fetch(query).then((data) => {
-  //     setSocials(data)
-  //     console.log({data})
-  //   })
+const Footer = ({ socials } : Props) => {
+  const [socialz, setSocialz] = useState([])
+
+
+  const query = groq`
+  *[_type=='social']
+`
+
+  useEffect(() => {
+    const query = '*[_type == "social"]'
+    client.fetch(query).then((data) => {
+      setSocialz(data)
+      console.log({data})
+    })
   
-  // }, [])
+  }, [])
   
 
   return (
@@ -46,23 +56,17 @@ const Footer = () => {
             <p className="font-normal text-[14px] text-white opacity-50">
             Copyright © {new Date().getFullYear()} Vass Real Estate Solutions. All Rights Reserved
             </p>
-{/*             
+          
             <div className="flex gap-4">
-            {socials.map((social, index) => (
-              <div key={social._id}>
-              <Link href={social.url}>
-              <Image
-                key={social.name}
-                src={`${urlFor(social.imgUrl)}`}
-                alt={social.name}
-                width={50}
-                height={50}
-                className="w-[24px] h-[24px] object-contain cursor-pointer relative z-[50]"
-              />
-              </Link>
-              </div>
-            ))}
-            </div> */}
+            {socialz.map((social) => (
+        <SocialIcon
+          key={social._id}
+          url={social.url}
+          fgColor="gray"
+          bgColor="transparent"
+        />
+        ))} 
+            </div> 
           </div>
         </div>
     </motion.footer>
