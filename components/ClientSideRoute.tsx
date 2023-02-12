@@ -9,7 +9,7 @@ const ClientSideRoute = ({
     route: string
   }) => {
   return (
-    <Link>{children}</Link>
+    <Link href=''>{children}</Link>
   )
 }
 

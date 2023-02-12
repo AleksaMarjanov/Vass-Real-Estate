@@ -4,6 +4,7 @@
 import {urlFor} from '../lib/urlFor'
 import Image from "next/image";
 import {ArrowUpRightIcon } from '@heroicons/react/24/solid'
+import styles from '@/styles';
 
 type Props = {
    listings : Listing[];
@@ -12,10 +13,11 @@ type Props = {
 const ListingsList = ({ listings } : Props) => {
   
   return (
-    <div>
+    <div className={`${styles.paddings}`}>
+      <h1 className='text-bold text-2xl flex items-left justify-left px-12 py-6'>Available listings</h1>
       <hr className="border-[#F7AB0A] mb-10" />
 
-    <div className="grid grid-cols-1 md:gtid-cols-2 px-10 gap-10 gap-y-16 pb-24 max-w-7xl">
+    <div className="grid grid-cols-1 md:grid-cols-3 px-10 gap-10 gap-y-16 pb-24">
       {listings.map(listing => (
         <div key={listing._id} className="group flex flex-col cursor-pointer">
             <div className="relative w-full h-80 drop-shadow-xl group-hover:scale-105 transition-transform duration-200 ease-out">
