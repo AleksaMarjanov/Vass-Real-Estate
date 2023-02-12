@@ -46,8 +46,8 @@ const ListingsList = ({ listings } : Props) => {
               />
               <div className='absolute bottom-0 w-full bg-opacity-20 bg-black backdrop-blur-lg rounded drop-shadow-lg text-white p-5 flex justify-between'>
                   <div>
-                    <p className='font-bold'>{listing.title}</p>
-                    <p>{new Date(listing._createdAt).toLocaleDateString("en-US", {
+                    <p className='font-bold max-[768px]:text-[14px]'>{listing.title}</p>
+                    <p className='max-[768px]:text-[12px]'>{new Date(listing._createdAt).toLocaleDateString("en-US", {
                       day: "numeric",
                       month: "long",
                       year: "numeric",
@@ -58,7 +58,7 @@ const ListingsList = ({ listings } : Props) => {
                   <div className="flex flex-col md:flex-row gap-y-2 md:gap-x-2 items-center">
                     {listing.categories.map(category => (
                       <div key={category._id}>
-                        <p className="text-bold">{category.title}</p>
+                        <p className="text-bold max-[425px]:text-[12px]">{category.title}</p>
                       </div>
                     ))}
                 </div>
