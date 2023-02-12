@@ -5,6 +5,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/utils/motion";
 import { cache, use } from "react";
+import { PortableText } from "@portabletext/react";
+import { RichTextComponents } from "@/components/RichTextComponents";
 
 type Props = {
   params: {
@@ -31,7 +33,6 @@ const Listing = ({ params: { slug } }: Props) => {
   // console.log(listing);
 
   return (
-    <div>
       <article className="px-10 pb-28 mt-5">
         <section className="space-y-2 border-[#F7AB0A] text-white">
           <div className="relative min-h-56 flex flex-col md:flex-row justify-between">
@@ -72,7 +73,7 @@ const Listing = ({ params: { slug } }: Props) => {
               </div>
 
               <div>
-                <h2 className="italic pt-10">{data.description}</h2>
+                <h2 className="italic pt-10 text-primary-black">{data.description}</h2>
                 <div className="flex items-center justify-end mt-auto space-x-2">
 
                 <div>
@@ -98,9 +99,11 @@ const Listing = ({ params: { slug } }: Props) => {
             height={1000}
             priority
           />
-        </div>
+        </div>     
+        <div className="text-left mt-16 flex items-center justify-center flex-col">
+        <PortableText value={data.body} components={RichTextComponents}/>
+        </div>        
       </article>
-    </div>
   );
 };
 
