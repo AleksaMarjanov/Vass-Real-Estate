@@ -3,6 +3,7 @@
 import "../../styles/globals.css";
 import { Montserrat } from "@next/font/google";
 import { Navbar, Footer } from "@/components";
+import { Social } from "@/typings";
 
 const montserrat = Montserrat({
   weight: ["400", "700"],
@@ -10,10 +11,15 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
 });
 
+
+// type Props = {
+//     socials: Social[]
+// }
+
 export default function RootLayout({
-  children,
+  children
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html lang="en">

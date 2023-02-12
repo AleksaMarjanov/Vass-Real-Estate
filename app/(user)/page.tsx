@@ -1,5 +1,6 @@
 import { previewData } from "next/headers";
 import { groq } from "next-sanity";
+import PreviewSuspense from '../../components/PreviewSuspense'
 
 const query = groq`
   *[_type=='social']
@@ -7,7 +8,17 @@ const query = groq`
 
 const HomePage = () => {
   if(previewData()) {
-    return <div>Preview Mode</div>
+    return (
+      <PreviewSuspense fallback={(
+        <div role="status">
+          <p className="text-center text-lg animate-pulse text-white">
+            Loading Preview Data...
+          </p>
+        </div>
+      )}>
+        
+      </PreviewSuspense>
+      )
   }
 
   return(
