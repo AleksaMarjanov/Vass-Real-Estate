@@ -28,6 +28,7 @@ const Listings = async () => {
         )
     }
     const listings = await client.fetch(query)
+    console.log(listings.description)
     return(
             <ListingsList listings={listings} />
     ) 
