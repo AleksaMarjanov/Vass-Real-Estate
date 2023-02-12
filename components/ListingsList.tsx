@@ -6,8 +6,7 @@ import Image from "next/image";
 import {ArrowUpRightIcon } from '@heroicons/react/24/solid'
 import styles from '@/styles';
 import { motion } from 'framer-motion'
-import { staggerContainer } from '@/utils/motion';
-import { fadeIn } from './../utils/motion';
+import { staggerContainer, fadeIn, slideIn } from '@/utils/motion';
 
 type Props = {
    listings : Listing[];
@@ -22,7 +21,9 @@ const ListingsList = ({ listings } : Props) => {
     whileInView="show"
     viewport={{ once: false, amount: 0.25}}
     className={`${styles.paddings}`}>
-      <motion.h1 className='text-bold text-2xl flex items-left justify-left px-12 py-6'>Available listings</motion.h1>
+      <motion.div 
+      variants={slideIn('left', 'tween', 0.3, 1 )}
+      className='text-bold text-2xl flex items-left justify-left px-12 py-6'>Available listings</motion.div>
       <hr className="border-[#F7AB0A] mb-10" />
 
     <div className="grid grid-cols-1 md:grid-cols-3 px-10 gap-10 gap-y-16 pb-24">
