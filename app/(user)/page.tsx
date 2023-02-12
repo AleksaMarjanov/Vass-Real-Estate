@@ -6,11 +6,7 @@ import PreviewSuspense from '../../components/PreviewSuspense'
 // import fetchPageInfo from "@/utils/fetchPageInfo";
 
 
-type Props = {
-  query: string;
-}
-
-const HomePage = ({ query }: Props) => {
+const HomePage = () => {
   if(previewData()) {
     return (
       <PreviewSuspense fallback={(
