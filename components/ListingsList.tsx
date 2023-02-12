@@ -7,6 +7,8 @@ import {ArrowUpRightIcon } from '@heroicons/react/24/solid'
 import styles from '@/styles';
 import { motion } from 'framer-motion'
 import { staggerContainer, fadeIn, slideIn } from '@/utils/motion';
+import ClientSideRoute from './ClientSideRoute';
+
 
 type Props = {
    listings : Listing[];
@@ -28,12 +30,13 @@ const ListingsList = ({ listings } : Props) => {
 
     <div className="grid grid-cols-1 md:grid-cols-3 px-10 gap-10 gap-y-16 pb-24">
       {listings.map(listing => (
+        <ClientSideRoute route={`/listing/${listing.slug.current}`} key={listing._id}>
         <motion.div 
         variants={fadeIn("up", "tween", 0.5, 1)}
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.25}}
-        key={listing._id} className="group flex flex-col cursor-pointer">
+         className="group flex flex-col cursor-pointer">
             <div className="relative w-full h-80 drop-shadow-xl group-hover:scale-105 transition-transform duration-200 ease-out">
               <Image 
               className="object-cover object-left lg:object-center"
@@ -74,6 +77,7 @@ const ListingsList = ({ listings } : Props) => {
               <ArrowUpRightIcon className="ml-2 h-4 w-4" />
             </p>
         </motion.div>
+        </ClientSideRoute>
       ))}
       </div>
     </motion.div>

@@ -1,5 +1,6 @@
+"use client";
+
 import Link from 'next/link';
-import React from 'react'
 
 const ClientSideRoute = ({
     children,
@@ -9,7 +10,7 @@ const ClientSideRoute = ({
     route: string
   }) => {
   return (
-    <Link href=''>{children}</Link>
+    <Link href={route}>{children}</Link>
   )
 }
 
