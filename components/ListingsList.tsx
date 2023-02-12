@@ -5,6 +5,9 @@ import {urlFor} from '../lib/urlFor'
 import Image from "next/image";
 import {ArrowUpRightIcon } from '@heroicons/react/24/solid'
 import styles from '@/styles';
+import { motion } from 'framer-motion'
+import { staggerContainer } from '@/utils/motion';
+import { fadeIn } from './../utils/motion';
 
 type Props = {
    listings : Listing[];
@@ -13,13 +16,23 @@ type Props = {
 const ListingsList = ({ listings } : Props) => {
   
   return (
-    <div className={`${styles.paddings}`}>
-      <h1 className='text-bold text-2xl flex items-left justify-left px-12 py-6'>Available listings</h1>
+    <motion.div 
+    variants={staggerContainer}
+    initial="hidden"
+    whileInView="show"
+    viewport={{ once: false, amount: 0.25}}
+    className={`${styles.paddings}`}>
+      <motion.h1 className='text-bold text-2xl flex items-left justify-left px-12 py-6'>Available listings</motion.h1>
       <hr className="border-[#F7AB0A] mb-10" />
 
     <div className="grid grid-cols-1 md:grid-cols-3 px-10 gap-10 gap-y-16 pb-24">
       {listings.map(listing => (
-        <div key={listing._id} className="group flex flex-col cursor-pointer">
+        <motion.div 
+        variants={fadeIn("up", "tween", 0.5, 1)}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.25}}
+        key={listing._id} className="group flex flex-col cursor-pointer">
             <div className="relative w-full h-80 drop-shadow-xl group-hover:scale-105 transition-transform duration-200 ease-out">
               <Image 
               className="object-cover object-left lg:object-center"
@@ -59,10 +72,10 @@ const ListingsList = ({ listings } : Props) => {
               Find Out More
               <ArrowUpRightIcon className="ml-2 h-4 w-4" />
             </p>
-        </div>
+        </motion.div>
       ))}
       </div>
-    </div>
+    </motion.div>
   )
 }
 
