@@ -74,3 +74,15 @@ const Footer = ({ socials } : Props) => {
 }
 
 export default Footer
+
+// export const getStaticProps: GetStaticProps<Props> = async () => {
+//   const socials: Social[] = await fetchSocial();
+
+
+//   return {
+//     props: {
+//       socials
+//     },
+    
+//   }
+// }  
