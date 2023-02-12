@@ -1,12 +1,16 @@
 import { previewData } from "next/headers";
 import { groq } from "next-sanity";
 import PreviewSuspense from '../../components/PreviewSuspense'
+// import About from '../../components/About'
+// import { PageInfo } from "@/typings";
+// import fetchPageInfo from "@/utils/fetchPageInfo";
 
-const query = groq`
-  *[_type=='social']
-`
 
-const HomePage = () => {
+type Props = {
+  query: string;
+}
+
+const HomePage = ({ query }: Props) => {
   if(previewData()) {
     return (
       <PreviewSuspense fallback={(
@@ -23,11 +27,11 @@ const HomePage = () => {
 
   return(
   <div>
-      <h1>Not in Preview Mode</h1>
+    Welcome to our Home Page
   </div>
   
   ) 
 }
 
-
 export default HomePage;
+

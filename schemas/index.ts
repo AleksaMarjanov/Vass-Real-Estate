@@ -3,7 +3,8 @@ import category from './category'
 import post from './post'
 import author from './author'
 import social from './social'
-import about from './about'
+import pageInfo from './pageInfo'
 import transactions from './transactions'
+import listing from './listing'
 
-export const schemaTypes = [about, social, post, author, category, blockContent]
+export const schemaTypes = [listing, pageInfo, social, post, author, category, blockContent]
