@@ -67,7 +67,7 @@ const ListingsList = ({ listings } : Props) => {
 
             <div className='mt-5 flex-1'>
                       <p className='underline text-lg font-bold'>{listing.title}</p>
-                      <p className='text-whiteline-clamp-3 b-black'>
+                      <p className='text-whiteline-clamp-3'>
                         {listing.description}
                       </p>
             </div>
