@@ -1,23 +1,22 @@
-"use client";
-
-import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion';
 import { slideIn, staggerContainer } from '@/utils/motion';
-import { urlFor } from '@/lib/sanity.client';
 import Image from 'next/image';
 import { PageInfo } from '../../typings'
+import { groq } from 'next-sanity';
+import { client } from '@/lib/sanity.client';
+import AboutList from '@/components/AboutList';
 
-
-type Props = {  
-    pageInfo: PageInfo;
-  }
-
-const About = ({ pageInfo } : Props) => {
-
+  const query = groq`
+  *[_type=='pageInfo'][0]
+  `;
+const About =  async () => {
+ const pageInfo = await client.fetch(query)
+//  console.log(pageInfo)
     return(
-<div>
-<p>{pageInfo?.backgroundInformation}</p> 
-</div>
+        <div>
+            {/* <About /> */}
+         <AboutList pageInfo={pageInfo} />
+        </div>
     )
 }
 

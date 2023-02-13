@@ -16,6 +16,19 @@ interface Listing extends Base {
     description: string;
 }
 
+export interface PageInfo extends Base {
+    _type: "pageInfo";
+    address: string,
+    backgroundInformation: string;
+    email: string;
+    role: string;
+    heroImage: Image;
+    name: string;
+    phoneNumber: string;
+    profilePic: Image;
+}
+
+
 interface Author extends Base {
     bio: Block[];
     image: Image;

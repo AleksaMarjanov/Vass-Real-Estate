@@ -16,25 +16,17 @@ export default defineType({
         type: "string",
       }),
       defineField({
-        name: "heroImage",
-        title: "Image",
-        type: "image",
+        name: 'mainImage',
+        title: 'Main image',
+        type: 'image',
         options: {
-          hotspot: true
-        }
+          hotspot: true,
+        },
       }),
       defineField({
         name: "backgroundInformation",
         title: "BackgroundInformation",
         type: "string",
-      }),
-      defineField({
-        name: "profilePic",
-        title: "ProfilePic",
-        type: "image",
-        options: {
-          hotspot: true,
-        }
       }),
       defineField({
         name: "phoneNumber",

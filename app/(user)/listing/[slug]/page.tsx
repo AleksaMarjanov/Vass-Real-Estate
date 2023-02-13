@@ -7,6 +7,7 @@ import { fadeIn, staggerContainer } from "@/utils/motion";
 import { cache, use } from "react";
 import { PortableText } from "@portabletext/react";
 import { RichTextComponents } from "@/components/RichTextComponents";
+import { Listing } from "@/typings";
 
 type Props = {
   params: {
