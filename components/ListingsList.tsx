@@ -8,6 +8,7 @@ import styles from '@/styles';
 import { motion } from 'framer-motion'
 import { staggerContainer, fadeIn, slideIn } from '@/utils/motion';
 import ClientSideRoute from './ClientSideRoute';
+import { Listing } from '@/typings';
 
 
 type Props = {
