@@ -5,14 +5,17 @@ import { motion } from "framer-motion";
 import { fadeIn, slideIn, staggerContainer } from "@/utils/motion";
 import { urlFor } from "@/lib/urlFor";
 import Image from "next/image";
-import { PageInfo } from "../typings";
+import { PageInfo, Social } from "../typings";
 import styles from "@/styles";
+import { SocialIcon } from "react-social-icons";
+import { groq } from "next-sanity";
 
 type Props = {
   pageInfo: PageInfo;
+  socials: Social[];
 };
 
-const AboutList = ({ pageInfo }: Props) => {
+const AboutList = ({ pageInfo, socials }: Props) => {
   console.log(pageInfo);
 
   return (
@@ -36,11 +39,18 @@ const AboutList = ({ pageInfo }: Props) => {
           height={300}
           priority
         />
-
+        {socials.map(social => (
+            <SocialIcon
+            key={social._id}
+            url={social.url}
+            fgColor="gray"
+            bgColor="transparent"
+          />
+         ))} 
       </motion.div>
         <motion.div
           variants={fadeIn("left", "tween", 0.6, 1)}
-          className="flex-[1.5]  lg:max-w-[840px] flex justify-end flex-col gradient-05 sm:p-8 p-4 rounded-[32px] border-[1px] border-[#6a6a6a] "
+          className="flex-[1.5]  lg:max-w-[840px] flex justify-end flex-col gradient-05 sm:p-8 p-4 m-4 rounded-[32px] border-[1px] border-[#6a6a6a] "
         >
           <h4 className="font-bold sm:text-[32px] text-[26px] sm:leading-[40px] leading-[36px] text-white">
             Deano Vass

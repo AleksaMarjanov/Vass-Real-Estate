@@ -24,6 +24,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "utils/motion.js", "utils/motion.js", "utils/motion.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "utils/motion.ts", "utils/motion.ts", "utils/motion.ts"],
   "exclude": ["node_modules"]
 }
