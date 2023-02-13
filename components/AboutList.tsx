@@ -22,14 +22,14 @@ const AboutList = ({ pageInfo }: Props) => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
-        className={`${styles.innerWidth}items-center justify-center mx-auto flex lg:flex-row flex-col gap-6`}
+        className={`${styles.innerWidth} items-center justify-center mx-auto flex flex-col  gap-6 mt-6`}
       > 
       <motion.div
        variants={fadeIn('right', 'tween', 0.2, 1)}
-       className="relative flex flex-[1] justify-center items-center"
+       className="relative flex max-[425px]:px-6 flex-[1] justify-center items-center"
       >
         <Image
-          className="object-cover object-center rounded-[10px] w-full h-auto min-h-[210px]"
+          className="object-cover object-center rounded-[10px] w-full h-auto min-h-[210px] max-h-[540px]"
           src={urlFor(pageInfo.profilePic).url()}
           alt={pageInfo.name}
           width={300}
@@ -40,7 +40,7 @@ const AboutList = ({ pageInfo }: Props) => {
       </motion.div>
         <motion.div
           variants={fadeIn("left", "tween", 0.2, 1)}
-          className="flex-[1.5] max-w-[360px] flex justify-end flex-col gradient-05 sm:p-8 p-4 rounded-[32px] border-[1px] border-[#6a6a6a] relative"
+          className="flex-[1.5]  lg:max-w-[840px] flex justify-end flex-col gradient-05 sm:p-8 p-4 rounded-[32px] border-[1px] border-[#6a6a6a] "
         >
           <h4 className="font-bold sm:text-[32px] text-[26px] sm:leading-[40px] leading-[36px] text-white">
             Deano Vass
@@ -49,7 +49,7 @@ const AboutList = ({ pageInfo }: Props) => {
             Founder
           </p>
 
-          <p className="mt-[24px] font-normal sm:text-[24px] text-[18px] sm:leading-[45px] leading-[20px] text-white">
+          <p className="mt-[24px] font-normal sm:text-[18px] text-[18px] sm:leading-[45px] leading-[20px] text-white">
             {pageInfo.backgroundInformation}
               </p>
         </motion.div>
