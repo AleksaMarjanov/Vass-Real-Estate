@@ -10,6 +10,7 @@ import { client } from '@/lib/sanity.client';
 import { Social } from '@/typings';
 import { SocialIcon } from 'react-social-icons';
 
+
 type Props = {
   socials: Social[]
 }
@@ -17,20 +18,17 @@ type Props = {
 const Footer = ({ socials } : Props) => {
   const [socialz, setSocialz] = useState([])
 
-
-  const query = groq`
-  *[_type=='social']
-`
-
   useEffect(() => {
-    const query = '*[_type == "social"]'
-    client.fetch(query).then((data) => {
+    const query = groq`
+    *[_type == 'social']`
+    const fetchSocials = async () => {
+      const data = await client.fetch(query)
       setSocialz(data)
-      console.log({data})
-    })
-  
+    }
+
+    fetchSocials()
   }, [])
-  
+
 
   return (
     <motion.footer
@@ -62,7 +60,7 @@ const Footer = ({ socials } : Props) => {
         <SocialIcon
           key={social._id}
           url={social.url}
-          fgColor="gray"
+          fgColor="white"
           bgColor="transparent"
         />
         ))} 

@@ -16,7 +16,6 @@ type Props = {
 };
 
 const AboutList = ({ pageInfo, socials }: Props) => {
-  console.log(pageInfo);
 
   return (
     <section>
@@ -29,7 +28,7 @@ const AboutList = ({ pageInfo, socials }: Props) => {
       > 
       <motion.div
        variants={fadeIn('right', 'tween', 0.5, 1)}
-       className="relative flex max-[425px]:px-6 flex-[1] justify-center items-center"
+       className="relative flex flex-col max-[425px]:px-6 flex-[1] justify-center items-center"
       >
         <Image
           className="object-cover object-center rounded-[10px] w-full h-auto min-h-[210px] max-h-[540px]"
@@ -39,14 +38,21 @@ const AboutList = ({ pageInfo, socials }: Props) => {
           height={300}
           priority
         />
+        <div className="flex items-center justify-center space-x-3 mt-3 flex-row ">
         {socials.map(social => (
-            <SocialIcon
+          <div
+          className="group"
             key={social._id}
-            url={social.url}
-            fgColor="gray"
-            bgColor="transparent"
-          />
+          >
+            <SocialIcon
+              url={social.url}
+              fgColor="white"
+              className="group-hover:bg-slate-700 rounded-full transition-all ease-in-out duration-700"
+              bgColor="transparent"
+            />
+          </div>
          ))} 
+        </div>
       </motion.div>
         <motion.div
           variants={fadeIn("left", "tween", 0.6, 1)}
