@@ -60,7 +60,7 @@ const Listing = ({ params: { slug } }: Props) => {
                   </p>
                 </div>
                 <div className="flex items-center space-x-2 cursor-pointer">
-                    <Link href="/about">
+                    <Link href="/about" className="cursor-pointer relative z-[20]">
                   <Image
                     className="rounded-full"
                     src={urlFor(data.author.image).url()}
