@@ -3,6 +3,8 @@
 import "../../styles/globals.css";
 import { Montserrat } from "@next/font/google";
 import { Navbar, Footer } from "@/components";
+import { groq } from "next-sanity";
+import { client } from "@/lib/sanity.client";
 
 const montserrat = Montserrat({
   weight: ["400", "700"],
@@ -10,13 +12,13 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
 });
 
-
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
+
     <html lang="en">
       {/*
         <head /> will contain the components returned by the nearest parent
@@ -25,7 +27,7 @@ export default function RootLayout({
       <body className={`${montserrat.className}  bg-secondary-blue text-white mx-auto`}>
         <Navbar />
         {children}
-        <Footer socials={socials}/>
+        <Footer />
       </body>
     </html>
   );
