@@ -28,6 +28,12 @@ export interface PageInfo extends Base {
     profilePic: Image;
 }
 
+export interface Social extends Base {
+    _type: "social";
+    title: string;
+    url: string;
+}
+
 
 interface Author extends Base {
     bio: Block[];

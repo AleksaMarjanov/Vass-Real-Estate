@@ -10,6 +10,7 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
 });
 
+
 export default function RootLayout({
   children,
 }: {
@@ -24,7 +25,7 @@ export default function RootLayout({
       <body className={`${montserrat.className}  bg-secondary-blue text-white mx-auto`}>
         <Navbar />
         {children}
-        <Footer />
+        <Footer socials={socials}/>
       </body>
     </html>
   );
