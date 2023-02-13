@@ -13,7 +13,7 @@ const About =  async () => {
  const pageInfo = await client.fetch(query)
 //  console.log(pageInfo)
     return(
-        <div>
+        <div className="flex flex-col items-center justify-center">
             {/* <About /> */}
          <AboutList pageInfo={pageInfo} />
         </div>

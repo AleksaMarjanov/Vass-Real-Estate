@@ -8,6 +8,7 @@ import { cache, use } from "react";
 import { PortableText } from "@portabletext/react";
 import { RichTextComponents } from "@/components/RichTextComponents";
 import { Listing } from "@/typings";
+import Link from "next/link";
 
 type Props = {
   params: {
@@ -58,7 +59,8 @@ const Listing = ({ params: { slug } }: Props) => {
                     })}
                   </p>
                 </div>
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center space-x-2 cursor-pointer">
+                    <Link href="/about">
                   <Image
                     className="rounded-full"
                     src={urlFor(data.author.image).url()}
@@ -66,6 +68,7 @@ const Listing = ({ params: { slug } }: Props) => {
                     height={40}
                     width={40}
                   />
+                    </Link>
 
                   <div className="w-64">
                     <h3 className="text-lg font-bold">{data.author.name}</h3>
