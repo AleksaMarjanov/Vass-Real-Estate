@@ -25,7 +25,7 @@ const AboutList = ({ pageInfo }: Props) => {
         className={`${styles.innerWidth} items-center justify-center mx-auto flex flex-col  gap-6 mt-6`}
       > 
       <motion.div
-       variants={fadeIn('right', 'tween', 0.2, 1)}
+       variants={fadeIn('right', 'tween', 0.5, 1)}
        className="relative flex max-[425px]:px-6 flex-[1] justify-center items-center"
       >
         <Image
@@ -39,7 +39,7 @@ const AboutList = ({ pageInfo }: Props) => {
 
       </motion.div>
         <motion.div
-          variants={fadeIn("left", "tween", 0.2, 1)}
+          variants={fadeIn("left", "tween", 0.6, 1)}
           className="flex-[1.5]  lg:max-w-[840px] flex justify-end flex-col gradient-05 sm:p-8 p-4 rounded-[32px] border-[1px] border-[#6a6a6a] "
         >
           <h4 className="font-bold sm:text-[32px] text-[26px] sm:leading-[40px] leading-[36px] text-white">
