@@ -24,7 +24,7 @@ export default function RootLayout({
         <head /> will contain the components returned by the nearest parent
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
-      <body className={`${montserrat.className}  bg-secondary-blue text-white mx-auto`}>
+      <body className={`${montserrat.className}  bg-[#121a34] text-white mx-auto`}>
         <Navbar />
         {children}
         <Footer />

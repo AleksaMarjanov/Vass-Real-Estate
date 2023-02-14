@@ -60,7 +60,7 @@ const AboutList = ({ pageInfo, socials }: Props) => {
           className="flex-[1.5]  lg:max-w-[840px] flex justify-end flex-col gradient-05 sm:p-8 p-4 m-4 rounded-[32px] border-[1px] border-[#6a6a6a] relative z-[5]"
         >
       <div
-    className={`absolute rounded-lg w-full h-full gradient-02 z-[0]`}
+    className={`absolute rounded-lg w-full h-full gradient-03 z-[0]`}
   />    
   <div className="relative">
           <h4 className="font-bold sm:text-[32px] text-[26px] sm:leading-[40px] leading-[36px] text-white">
