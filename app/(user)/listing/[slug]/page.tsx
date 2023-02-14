@@ -15,7 +15,7 @@ type Props = {
     slug: string;
   };
 };
-const Listing = ({ params: { slug } }: Props) => {
+const Listing = async ({ params: { slug } }: Props) => {
   const query = groq`
     *[_type == 'listing' && slug.current == $slug][0]
     {
@@ -25,14 +25,7 @@ const Listing = ({ params: { slug } }: Props) => {
     }
     `;
 
-  const getData = cache(async () => {
     const listing: Listing = await client.fetch(query, { slug });
-    return listing;
-  });
-
-  const data = use(getData());
-  // const listing: Listing = await client.fetch(query, { slug })
-  // console.log(listing);
 
   return (
       <article className="px-10 pb-28 mt-5">
@@ -41,8 +34,8 @@ const Listing = ({ params: { slug } }: Props) => {
             <div className="absolute top-0 w-full h-full opacity-30 blur-sm p-10">
               <Image
                 className="object-cover object-left lg:object-center"
-                src={urlFor(data.mainImage).url()}
-                alt={data.author.name}
+                src={urlFor(listing.mainImage).url()}
+                alt={listing.author.name}
                 fill
               />
             </div>
@@ -50,9 +43,9 @@ const Listing = ({ params: { slug } }: Props) => {
             <section className="p-5 bg-darker-white text-primary-black w-full">
               <div className="flex flex-col md:flex-row justify-between gap-y-5 ">
                 <div>
-                  <h1 className="text-4xl font-extrabold">{data.title}</h1>
+                  <h1 className="text-4xl font-extrabold">{listing.title}</h1>
                   <p className="">
-                    {new Date(data._createdAt).toLocaleDateString("en-US", {
+                    {new Date(listing._createdAt).toLocaleDateString("en-US", {
                       day: "numeric",
                       month: "long",
                       year: "numeric",
@@ -63,25 +56,25 @@ const Listing = ({ params: { slug } }: Props) => {
                     <Link href="/about" className="cursor-pointer relative z-[20]">
                   <Image
                     className="rounded-full"
-                    src={urlFor(data.author.image).url()}
-                    alt={data.author.name}
+                    src={urlFor(listing.author.image).url()}
+                    alt={listing.author.name}
                     height={40}
                     width={40}
                   />
                     </Link>
 
                   <div className="w-64">
-                    <h3 className="text-lg font-bold">{data.author.name}</h3>
+                    <h3 className="text-lg font-bold">{listing.author.name}</h3>
                   </div>
                 </div>
               </div>
 
               <div>
-                <h2 className="italic pt-10 text-primary-black">{data.description}</h2>
+                <h2 className="italic pt-10 text-primary-black">{listing.description}</h2>
                 <div className="flex items-center justify-end mt-auto space-x-2">
 
                 <div>
-                    {data.categories.map(( category) => (
+                    {listing.categories.map(( category) => (
                         <div key={category._id} > 
                             <p>
                                 {category.title}
@@ -97,15 +90,15 @@ const Listing = ({ params: { slug } }: Props) => {
         <div className="w-full flex items-center justify-center mt-6">
           <Image
             className="object-cover object-left lg:object-center rounded-[10px] "
-            src={urlFor(data.mainImage).url()}
-            alt={data.author.name}
+            src={urlFor(listing.mainImage).url()}
+            alt={listing.author.name}
             width={1000}
             height={1000}
             priority
           />
         </div>     
         <div className="text-left mt-16 flex items-center justify-center flex-col">
-        <PortableText value={data.body} components={RichTextComponents}/>
+        <PortableText value={listing.body} components={RichTextComponents}/>
         </div>        
       </article>
   );
