@@ -3,8 +3,6 @@ import { urlFor } from "@/lib/urlFor";
 import { groq } from "next-sanity";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { fadeIn, staggerContainer } from "@/utils/motion";
-import { cache, use } from "react";
 import { PortableText } from "@portabletext/react";
 import { RichTextComponents } from "@/components/RichTextComponents";
 import { Listing } from "@/typings";
@@ -26,8 +24,8 @@ const Listing = async ({ params: { slug } }: Props) => {
     `;
 
     const listing: Listing = await client.fetch(query, { slug });
-
-  return (
+    
+    return (
       <article className="px-10 pb-28 mt-5">
         <section className="space-y-2 border-[#F7AB0A] text-white">
           <div className="relative min-h-56 flex flex-col md:flex-row justify-between">
@@ -37,7 +35,7 @@ const Listing = async ({ params: { slug } }: Props) => {
                 src={urlFor(listing.mainImage).url()}
                 alt={listing.author.name}
                 fill
-              />
+                />
             </div>
 
             <section className="p-5 bg-darker-white text-primary-black w-full">
@@ -70,7 +68,7 @@ const Listing = async ({ params: { slug } }: Props) => {
               </div>
 
               <div>
-                <h2 className="italic pt-10 text-primary-black">{listing.description}</h2>
+                {/* <h2 className="italic pt-10 text-primary-black">{listing.description}</h2> */}
                 <div className="flex items-center justify-end mt-auto space-x-2">
 
                 <div>

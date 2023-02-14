@@ -23,8 +23,8 @@ const HomePage = () => {
   // }
 
   return(
-  <div className="object-cover w-full relative">
-    <Image src="/public/vassHero.webp" alt="hero" width={1000} height={1000} priority />
+  <div className="object-cover w-full">
+    <Image src="/public/vassHero.webp" alt="hero" width={1200} height={2000} priority />
   </div>
   
   ) 
