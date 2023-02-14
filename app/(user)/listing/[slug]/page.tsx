@@ -5,25 +5,45 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { PortableText } from "@portabletext/react";
 import { RichTextComponents } from "@/components/RichTextComponents";
-import { Listing } from "@/typings";
 import Link from "next/link";
+import { Listing } from "@/typings";
 
 type Props = {
   params: {
     slug: string;
   };
 };
-const Listing = async ({ params: { slug } }: Props) => {
-  const query = groq`
-    *[_type == 'listing' && slug.current == $slug][0]
-    {
-        ...,
-        author->,
-        categories[]->
-    }
-    `;
 
-    const listing: Listing = await client.fetch(query, { slug });
+export const revalidate = 60;
+
+export async function generateStaticParams() {
+  const query = groq`
+		*[_type == "listing"]
+		{
+			slug
+		}
+		`;
+
+  const slugs: Listing[] = await client.fetch(query);
+  const slugRoutes = slugs.map((slug) => slug.slug.current);
+
+  return slugRoutes.map((slug) => ({
+    slug,
+  }));
+}
+
+async function Listing({ params: { slug } }: Props) {
+  const query = groq`
+		*[_type == "listing" && slug.current == $slug][0] {
+			...,
+			author->,
+			categories[]->,
+		}
+	`;
+
+  const listing: Listing = await client.fetch(query, { slug });
+
+
     
     return (
       <article className="px-10 pb-28 mt-5">
