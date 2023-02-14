@@ -15,7 +15,7 @@ type Props = {
   socials: Social[]
 }
 
-const Footer = ({ socials } : Props) => {
+const Footer = () => {
   const [socialz, setSocialz] = useState([])
 
   useEffect(() => {
@@ -55,7 +55,7 @@ const Footer = ({ socials } : Props) => {
             Copyright © {new Date().getFullYear()} Vass Real Estate Solutions. All Rights Reserved
             </p>
           
-            <div className="flex gap-4">
+            {/* <div className="flex gap-4">
             {socialz.map((social) => (
         <SocialIcon
           key={social._id}
@@ -64,7 +64,7 @@ const Footer = ({ socials } : Props) => {
           bgColor="transparent"
         />
         ))} 
-            </div> 
+            </div>  */}
           </div>
         </div>
     </motion.footer>
