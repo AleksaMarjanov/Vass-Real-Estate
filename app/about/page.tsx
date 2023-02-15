@@ -13,15 +13,15 @@ import AboutList from '@/components/AboutList';
   *[_type=='social']
   `;
 
+export const revalidate = 60;
 
 const About =  async () => {
  const pageInfo = await client.fetch(query)
  const socials = await client.fetch(socialQuery)
 //  console.log(pageInfo)
     return(
-        <div className="flex flex-col items-center justify-center">
-            {/* <About /> */}
-         <AboutList pageInfo={pageInfo} socials={socials} />
+        <div className="relative z-0">
+            <AboutList pageInfo={pageInfo} socials={socials} />
         </div>
     )
 }
