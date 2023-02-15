@@ -27,7 +27,11 @@ const ListingsList = ({ listings } : Props) => {
       <motion.div 
       variants={slideIn('left', 'tween', 0.3, 1 )}
       className='text-bold text-2xl flex items-left justify-left px-12 py-6'>Available listings</motion.div>
+      <motion.div
+      variants={slideIn('left','spring', 0.5, 1.2 )}
+      >
       <hr className="border-[#F7AB0A] mb-10" />
+      </motion.div>
 
     <div className="grid grid-cols-1 md:grid-cols-3 px-10 gap-10 gap-y-16 pb-24">
       {listings.map(listing => (
@@ -36,11 +40,11 @@ const ListingsList = ({ listings } : Props) => {
         variants={fadeIn("up", "tween", 0.5, 1)}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: false, amount: 0.25}}
+        viewport={{ once: true }}
          className="group flex flex-col cursor-pointer">
             <div className="relative w-full h-80 drop-shadow-xl group-hover:scale-105 transition-transform duration-200 ease-out">
               <Image 
-              className="object-cover object-left lg:object-center"
+              className="object-cover object-left lg:object-center rounded-lg"
               src={urlFor(listing.mainImage).url()}
               alt={listing.author.name}
              fill 
