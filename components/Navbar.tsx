@@ -7,6 +7,7 @@ import Link from 'next/link'
 import Image from 'next/image';
 
 const Navbar = () => {
+  const [toggle, setToggle] = useState(false)
   const [navbar, setNavbar] = useState()
 
 
@@ -65,6 +66,64 @@ const Navbar = () => {
       </a>
         </ul>
       </div>
+<div className='md:hidden flex flex-row items-center justify-between cursor-pinter relative'
+        >
+            <div className=' w-[35px] h-[35px] relative cursor-pointer'
+        onClick={() => setToggle(true)}
+            >
+            <Image
+                src="/hamburger.png"
+                alt="hamburger"
+                fill
+                className='object-contain'
+            />
+
+             </div>
+            </div>
+
+        { toggle && (
+            <motion.div
+            variants={mobileVariants}
+            initial="hidden"
+    whileInView="show"
+            className="fixed top-0 right-0 bottom-0 p-4 w-full h-screen flex flex-col items-end justify-end backdrop-sepia-0 bg-white bg-cover bg-repeat"
+            >
+        {/* <div className="absolute w-[50%] inset-0 gradient-01" /> */}
+        <div className='mt-[62px]'>
+            <HiX
+              onClick={() => setToggle(false)}
+              className="w-[35px] h-[35px] text-primary-black cursor-pointer ease-out transition-all duration-300"
+            />
+        </div>
+             <ul className="list-none p-0 m-0 h-full w-full flex items-center justify-start flex-col relative z-[50]">
+              <div>
+                <a href="/" className="w-[200px] h-[200px] flex items-center justify-center relative">
+                 <Image 
+                    src="/LogoSmaller.svg"
+                    alt="logo"
+                    fill
+                    className='object-contain'
+                 />
+                </a>
+                {[ "listings", "projects", "transaction", "about" ].map(
+                  (item, index) => (
+                    <div key={item + index}>
+                    <li  className="m-4 group flex items-center justify-center"
+                    key={`link-${item}`}
+                    >
+                      <a
+                        href={`/${item}`}
+                        className="text-primary-black xl:text-2xl sm:text-xl
+                    uppercase bg-left-bottom bg-gradient-to-r from-nice-blue to-nice-blue bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out no-underline font-bold"
+                        onClick={() => setToggle(false)}
+                      >
+                        {item}
+                      </a>
+                    </li>
+                    </div>
+                  )
+                )}
+              </div>
       </motion.nav>
     )
 }
