@@ -18,6 +18,27 @@ export const navVariants = {
       },
     },
   };
+
+  export const mobileVariants= {
+    hidden: {
+      opacity: 0,
+      x: 300,
+      transition: {
+        type: 'spring',
+        stiffness: 300,
+        damping: 140,
+      },
+    },
+    show: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        type: 'tween',
+        stiffness: 80,
+        delay: 0.2,
+      },
+    },
+  }
   
   export const slideIn = (direction : any, type : any, delay: any, duration: any) => ({
     hidden: {
