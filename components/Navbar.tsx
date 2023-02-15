@@ -95,7 +95,7 @@ const Navbar = () => {
             variants={mobileVariants}
             initial="hidden"
     whileInView="show"
-            className="fixed z-[50] top-0 right-0 bottom-0 p-4 w-full h-screen flex flex-col items-end justify-end backdrop-sepia-0 bg-[#121a34] bg-cover bg-repeat"
+            className="fixed z-[50] overflow-hidden top-0 right-0 bottom-0 p-4 w-full h-screen flex flex-col items-end justify-end backdrop-sepia-0 bg-[#121a34] bg-cover bg-repeat"
             >
         {/* <div className="absolute w-[50%] inset-0 gradient-01" /> */}
         <div className='mt-[62px]'>
