@@ -35,7 +35,7 @@ const Hero = () => {
         
       </section>   
       
-        <div className="w-[1024px] h-[480px] max-[768px]:w-[480px] max-[768px]:h-[380px] max-[425px]:w-[280px] relative right-0">
+        <div className="w-[1024px] h-[480px] max-[768px]:w-[480px] max-[768px]:h-[260px] max-[425px]:w-[280px] relative right-0">
       <Image 
       src="/bestPlace.svg"
       alt="heroImage"
