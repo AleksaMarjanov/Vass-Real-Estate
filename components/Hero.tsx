@@ -54,7 +54,7 @@ className={`${styles.xPaddings} flex items-center justify-center flex-row max-[7
       </motion.div>
       
         <motion.div 
-        variants={slideIn('right','tween', 0.3, 0.85)}
+        variants={slideIn('right','tween', 1, 1)}
         className="w-[1024px] h-[480px] max-[768px]:w-[480px] max-[768px]:h-[260px] max-[425px]:w-[280px] relative right-0">
       <Image 
       src="/bestPlace.svg"
