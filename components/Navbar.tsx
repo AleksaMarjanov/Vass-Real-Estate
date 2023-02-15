@@ -66,57 +66,51 @@ const Navbar = () => {
         ></span>
       </a>
         </ul>
+          
 
-        <div className='md:hidden flex flex-row items-center justify-between cursor-pinter relative'
-        >
-          {/* <a href="/" className="w-[80px] h-[80px] flex items-center justify-center relative">
-                 <Image 
-                    src="/LogoSmaller.svg"
-                    alt="logo"
-                    fill
-                    className='object-contain'
-                 />
-          </a> */}
-            <div className=' w-[35px] h-[35px] relative cursor-pointer'
-        onClick={() => setToggle(true)}
+           <div
+          className="md:hidden block"
+          onClick={() => setToggle(true)}
             >
-            <Image
-                src="/menu.svg"
-                alt="hamburger"
-                fill
-                className='object-contain'
-            />
+          <img
+            src="/menu.svg"
+            alt="menu"
+            className="w-[35] h-[35] flex object-contain items-center justify-center cursor-pointer"
+          />
+        </div>
 
-             </div>
-            </div>
-
-            { toggle && (
-            <motion.div
-            variants={mobileVariants}
-            initial="hidden"
-    whileInView="show"
-            className="fixed z-[50] overflow-hidden top-0 right-0 bottom-0 p-4 w-full h-screen flex flex-col items-end justify-end backdrop-sepia-0 bg-[#121a34] bg-cover bg-repeat"
-            >
-        {/* <div className="absolute w-[50%] inset-0 gradient-01" /> */}
-        <div className='mt-[62px]'>
+        {toggle && (
+          <motion.div
+            whileInView={{ x: [300, 0] }}
+            transition={{ duration: 0.85, ease: "easeOut" }}
+            className="fixed top-0 bottom-0 right-0 p-4 w-full
+             h-screen flex flex-col items-end justify-end bg-primary-black bg-cover bg-repeat shadow-xl"
+          >
+            <div className="absolute w-[15%] inset-0 gradient-01" />
+            <div className="mt-[58px]"/>
             <HiX
               onClick={() => setToggle(false)}
-              className="w-[35px] h-[35px] text-white cursor-pointer ease-out transition-all duration-300"
+              className="w-[35px] h-[35px] text-white cursor-pointer ease-out transition-all duration-200"
             />
-        </div>
-             <ul className="list-none p-0 m-0 h-full w-full flex items-center justify-start flex-col relative z-[50]">
+            <ul className="list-none p-0 m-0 h-full w-full flex items-center justify-start flex-col relative">
               <div>
-              
+                <a href="/" className="flex items-center justify-center">
+                  <img
+                    src="https://i.ibb.co/stZgMjV/logo-NEW-removebg-preview.png"
+                    alt="logo"
+                    className="w-[200px] h-[200px] object-contain "
+                  />
+                </a>
                 {[ "listings", "projects", "transactions", "about" ].map(
                   (item, index) => (
                     <div key={item + index}>
-                    <li  className="m-4 group flex items-center justify-center"
+                    <li  className="m-4"
                     key={`link-${item}`}
                     >
                       <a
-                        href={`/${item}`}
-                        className="text-white xl:text-2xl sm:text-xl
-                    uppercase bg-left-bottom bg-gradient-to-r from-nice-blue to-nice-blue bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out no-underline font-bold"
+                        href={`#${item}`}
+                        className="text-white no-underline xl:text-2xl sm:text-xl
+                    uppercase font-semibold transition-all ease-in-out duration-500 hover:text-primary-black flex items-center justify-center relative z-[50]"
                         onClick={() => setToggle(false)}
                       >
                         {item}
@@ -125,10 +119,10 @@ const Navbar = () => {
                     </div>
                   )
                 )}
-                     </div>
+              </div>
             </ul>
-            </motion.div>
-        )}
+          </motion.div>
+        )} 
       </div>
       </motion.nav>
     )
