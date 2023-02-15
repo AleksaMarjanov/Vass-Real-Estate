@@ -44,7 +44,7 @@ const Footer = () => {
           <div className="flex items-center justify-between flex-wrap gap-4">
             <div className='flex items-center justify-center'>
           <Image
-            src='/LogoSvg.svg'
+            src='/logoSvg.svg'
             alt="Vass Real Estate Logo"
             width={500}
             height={500}
