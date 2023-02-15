@@ -26,7 +26,8 @@ const ListingsList = ({ listings } : Props) => {
     className={`${styles.paddings}`}>
       <motion.div 
       variants={slideIn('left', 'tween', 0.3, 1 )}
-      className='text-bold text-2xl flex items-left justify-left px-12 py-6'>Available listings</motion.div>
+      viewport={{ once: true }}
+      className='text-bold text-2xl flex items-left justify-left px-12 max-[425px]:px-6 max-[425px]:py-3 py-6'>Available listings</motion.div>
       <motion.div
       variants={slideIn('left','spring', 0.5, 1.2 )}
       >
