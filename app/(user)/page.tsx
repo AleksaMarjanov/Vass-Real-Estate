@@ -3,7 +3,7 @@ import { groq } from "next-sanity";
 import PreviewSuspense from '../../components/PreviewSuspense'
 import Image from "next/image";
 import styles from "@/styles";
-import { Hero } from '@/components'
+import { Hero, BulletSection } from '@/components'
 
 
 const HomePage = () => {
@@ -22,8 +22,13 @@ const HomePage = () => {
   // }
 
   return(
-    <main>
+    <main className="items-center justify-center py-12">
+      <section>
       <Hero />
+      </section>
+      <section>
+        <BulletSection />
+      </section>      
     </main>
   ) 
 }
