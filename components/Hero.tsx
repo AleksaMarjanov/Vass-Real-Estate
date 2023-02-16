@@ -71,12 +71,12 @@ className={`${styles.xPaddings} items-center flex justify-center flex-row max-[7
         variants={staggerContainer}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: false, amount: 0.25}}
+        viewport={{ once: true }}
         >
         <motion.div
         variants={fadeIn('up', 'tween', 0.6, 1.2)}
         >
-            <div className="w-full absolute z-0 top-[25%] bg-[#0086bb]/20 left-0 h-[300px] max-[768px]:h-[300px] -skew-y-12" /> 
+            <div className="w-full absolute z-0 top-[25%] bg-[#0086bb]/20 left-0 h-[400px] max-[768px]:h-[300px] -skew-y-12" /> 
          </motion.div> 
          </motion.div>
          </>
