@@ -13,7 +13,7 @@ variants={staggerContainer}
 initial="hidden"
 whileInView="show"
 viewport={{ once: true }}
-className={`${styles.xPaddings} items-center flex justify-center flex-row max-[768px]:flex-col relative z-[50]`}
+className={`${styles.xPaddings} items-center flex justify-center flex-row max-[768px]:flex-col relative z-[30]`}
 >      
     <motion.div
     variants={slideIn('left','tween', 0.3, 0.85)}
@@ -23,7 +23,7 @@ className={`${styles.xPaddings} items-center flex justify-center flex-row max-[7
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.25}}
-        className="flex flex-col relative items-left justify-left mt-0 max-[425px]:px-2"
+        className="flex flex-col relative z-10 items-left justify-left mt-0 max-[425px]:px-2"
         >
         <motion.h1 variants={textVariant(1.1)}  className="text-5xl max-[768px]:text-3xl text-bold py-12 max-[425px]:py-2">Discover Your Perfect <span className="underline decoration-[#F7AB0A] text-extrabold">Property</span></motion.h1>
         <motion.div
@@ -58,7 +58,7 @@ className={`${styles.xPaddings} items-center flex justify-center flex-row max-[7
       
         <motion.div 
         variants={slideIn('right','tween', 1, 1)}
-        className="w-[1024px] h-[480px] max-[768px]:w-[480px] max-[768px]:h-[260px] max-[425px]:w-[280px] relative right-0">
+        className="w-[1024px] h-[480px] max-[768px]:w-[480px] max-[768px]:h-[260px] max-[425px]:w-[280px] relative z-10 right-0">
       <Image 
       src="/bestPlace.svg"
       alt="heroImage"
@@ -74,9 +74,9 @@ className={`${styles.xPaddings} items-center flex justify-center flex-row max-[7
         viewport={{ once: false, amount: 0.25}}
         >
         <motion.div
-        variants={fadeIn('up', 'tween', 1.3, 0.85)}
+        variants={fadeIn('up', 'tween', 0.6, 1.2)}
         >
-            <div className="w-full absolute z-0 top-[30%] bg-[#0086bb]/10 left-0 h-[500px] max-[768px]:h-[300px] -skew-y-12" /> 
+            <div className="w-full absolute z-0 top-[25%] bg-[#0086bb]/20 left-0 h-[300px] max-[768px]:h-[300px] -skew-y-12" /> 
          </motion.div> 
          </motion.div>
          </>
