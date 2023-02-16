@@ -5,6 +5,7 @@ import styles from "@/styles";
 import { motion } from "framer-motion";
 import { fadeIn, slideIn, staggerContainer, textVariant } from "@/utils/motion";
 
+
 const Hero = () => {
   return (
     <motion.div
@@ -12,6 +13,7 @@ const Hero = () => {
     initial="hidden"
     whileInView="show"
     viewport={{ once: true }}
+    className={`${styles.innerWidth} min-h-[60vh]`}
     >
            <motion.div
       variants={slideIn('left', 'tween', 0.3, 0.85)}
