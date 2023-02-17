@@ -21,7 +21,7 @@ const Hero = () => {
       className="relative w-full"
       >
           {/* <div className="w-full absolute z-0 top-[25%] bg-[#0086bb]/20 left-0 h-[400px] max-[768px]:h-[300px] -skew-y-12" />  */}
-          <div className="w-full absolute z-0 -top-[100px] max-[768px]:-top-[30px] bg-[#0086bb]/20 h-[600px] max-[768px]:h-[600px] max-[768px]:rounded-br-[180px] rounded-br-[360px]" />
+          <div className="w-full absolute z-0 -top-[100px] max-[768px]:top-[20px] max-[1440px]:top-[10px] min-[1440px]:top-[10px] bg-[#0086bb]/20 h-[600px] max-[768px]:h-[600px] max-[768px] :rounded-br-[160px] rounded-br-[360px]" />
 
        </motion.div>  
       <motion.div

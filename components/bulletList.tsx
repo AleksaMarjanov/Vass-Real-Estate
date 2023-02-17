@@ -5,6 +5,7 @@ import styles from "@/styles";
 import Image from "next/image";
 import { BulletSection } from "../typings";
 import { urlFor } from "@/lib/urlFor";
+import { fadeIn, slideIn, staggerContainer, textVariant } from "@/utils/motion";
 
 type Props = {
   bullets: BulletSection[];
@@ -13,15 +14,22 @@ type Props = {
 const BulletList = ({ bullets }: Props) => {
   return (
     <section
-      className={`${styles.xPaddings} w-full px-36 max-[425px]:px-3 max-[768px]:px-24 flex flex-row space-x-6 max-[425px]:mt-64  mt-36 max-[768px]:gap-12
-        max-[768px]:flex-col items-center justify-center h-[300px] text-white min-h-[80%]`}
+      className={`${styles.xPaddings} flex md:flex-row w-full mt-48 max-[425px]:mt-64 
+        flex-col items-left justify-left max-[425px]:px-4 px-24 md:px-36 gap-12 text-white min-h-[80%] mb-32`}
     >
       {bullets.map((bullet) => (
-        <div
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.25 }}
           key={bullet._id}
           className="flex items-left justify-left flex-col space-y-4"
         >
-          <div className="flex flex-row items-left justify-left gap-3 ">
+          <motion.div 
+           variants={slideIn('up', 'tween', 0.3, 0.85)}
+          className="flex flex-row items-left justify-left gap-3 ">
+            <motion.div variants={textVariant(1.1)}>
             <Image
               src={urlFor(bullet.mainImage).url()}
               alt={bullet.title}
@@ -29,12 +37,21 @@ const BulletList = ({ bullets }: Props) => {
               height={50}
               priority
             />
+            </motion.div>
+            <motion.div
+            variants={textVariant(1.1)}
+            >
             <h2>{bullet.title}</h2>
-          </div>
-          <p className="text-[14px] max-[768px]:text-[18px] flex items-left justify-center">
+            </motion.div>
+          </motion.div>
+          <motion.div
+          variants={textVariant(1.2)}
+          >
+          <p className="text-[16px] max-[768px]:text-[18px] flex items-left justify-center">
             {bullet.description}
           </p>
-        </div>
+          </motion.div>
+        </motion.div>
       ))}
     </section>
   );
