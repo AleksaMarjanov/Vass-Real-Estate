@@ -96,10 +96,12 @@ const Navbar = () => {
              h-screen flex flex-col flex-shrink-0 items-end justify-end bg-[#121a34] bg-cover bg-repeat shadow-xl"
           >
             <div className="mt-[16px]" />
+            <div onClick={() => setRotate(prevState => !prevState )}>
             <HiX
               onClick={() => setToggle(false)}
               className="w-[35px] h-[35px] text-white cursor-pointer ease-out transition-all duration-200"
             />
+            </div>
             <ul className="list-none p-0 m-0 h-full w-full flex items-center justify-start flex-col relative">
               <div>
                 <a href="/" className="flex items-center justify-center">
