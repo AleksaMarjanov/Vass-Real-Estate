@@ -13,7 +13,7 @@ type Props = {
 const BulletList = ({ bullets }: Props) => {
   return (
     <section
-      className={`w-full px-36 max-[425px]:px-3 max-[768px]:px-24 flex flex-row space-x-6 max-[425px]:mt-64  mt-36 max-[768px]:gap-12
+      className={`${styles.xPaddings} w-full px-36 max-[425px]:px-3 max-[768px]:px-24 flex flex-row space-x-6 max-[425px]:mt-64  mt-36 max-[768px]:gap-12
         max-[768px]:flex-col items-center justify-center h-[300px] text-white min-h-[80%]`}
     >
       {bullets.map((bullet) => (
