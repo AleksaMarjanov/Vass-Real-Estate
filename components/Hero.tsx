@@ -13,13 +13,15 @@ const Hero = () => {
     initial="hidden"
     whileInView="show"
     viewport={{ once: true }}
-    className="min-h-[60vh]"
+    className={`${styles.innerWidth} min-h-[60vh]`}
     >
            <motion.div
       variants={slideIn('left', 'tween', 0.3, 0.85)}
       className="relative w-full"
       >
-          <div className="w-full absolute z-0 top-[25%] bg-[#0086bb]/20 left-0 h-[400px] max-[768px]:h-[300px] -skew-y-12" /> 
+          {/* <div className="w-full absolute z-0 top-[25%] bg-[#0086bb]/20 left-0 h-[400px] max-[768px]:h-[300px] -skew-y-12" />  */}
+          <div className="w-full absolute z-0 -top-[100px] max-[768px]:-top-[30px] bg-[#0086bb]/20 h-[600px] max-[768px]:h-[600px] max-[768px]:rounded-br-[180px] rounded-br-[360px]" />
+
        </motion.div>  
       <motion.div
         className={`${styles.xPaddings} items-center flex justify-center flex-row max-[768px]:flex-col relative z-[30]`}
