@@ -12,7 +12,11 @@ const Navbar = () => {
   const [navbar, setNavbar] = useState()
   const [ rotate, setRotate ] = useState<boolean>(false)
 
-  rotate ? document.body.style.overflow = "hidden" : document.body.style.overflow = "auto";
+  // 1.solution for document being undefined, 2. useEffect, 3. import it like dynamic
+ if ( typeof window !== "undefined" ) {
+   rotate ? document.body.style.overflow = "hidden" : document.body.style.overflow = "auto";
+ }
+
 
   return (
     <motion.nav
