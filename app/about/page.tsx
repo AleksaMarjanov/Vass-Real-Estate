@@ -18,7 +18,6 @@ export const revalidate = 60;
 const About =  async () => {
  const pageInfo = await client.fetch(query)
  const socials = await client.fetch(socialQuery)
-//  console.log(pageInfo)
     return(
         <div className="relative z-0">
             <AboutList pageInfo={pageInfo} socials={socials} />
