@@ -22,7 +22,7 @@ export const navVariants = {
   export const mobileVariants= {
     hidden: {
       opacity: 0,
-      x: 300,
+      y: 300,
       transition: {
         type: 'spring',
         stiffness: 300,
@@ -31,7 +31,7 @@ export const navVariants = {
     },
     show: {
       opacity: 1,
-      x: 0,
+      y: 0,
       transition: {
         type: 'tween',
         stiffness: 80,
