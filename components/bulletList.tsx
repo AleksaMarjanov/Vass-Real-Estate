@@ -5,7 +5,7 @@ import styles from "@/styles";
 import Image from "next/image";
 import { BulletSection } from "../typings";
 import { urlFor } from "@/lib/urlFor";
-import { fadeIn, slideIn, staggerContainer, textVariant } from "@/utils/motion";
+import { slideIn, staggerContainer, textVariant } from "@/utils/motion";
 
 type Props = {
   bullets: BulletSection[];
@@ -41,7 +41,7 @@ const BulletList = ({ bullets }: Props) => {
             <motion.div
             variants={textVariant(1.1)}
             >
-            <h2>{bullet.title}</h2>
+            <h2 className="font-extrabold tracking-[1px]">{bullet.title}</h2>
             </motion.div>
           </motion.div>
           <motion.div
