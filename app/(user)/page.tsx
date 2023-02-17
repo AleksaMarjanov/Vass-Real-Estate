@@ -6,7 +6,7 @@ import { Hero, BulletSection } from '@/components'
 const HomePage = () => {
 
   return(
-    <main className="items-center justify-center py-12">
+    <main className="">
       <section id="hero">
       <Hero />
  
