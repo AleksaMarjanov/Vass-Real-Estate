@@ -8,6 +8,8 @@ const query = groq`
 *[_type == 'bulletSection']
 `
 
+export const revalidate = 60;
+
 const BulletSection = async () => {
 
   const bullets = await client.fetch(query)
