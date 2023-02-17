@@ -21,8 +21,10 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
-    }
+      "@/*": ["./*"],
+      "react": [ "./node_modules/@types/react" ]
+    },
+    
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "utils/motion.ts", "utils/motion.ts", "utils/motion.ts"],
   "exclude": ["node_modules"]

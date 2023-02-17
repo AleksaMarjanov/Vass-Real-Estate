@@ -27,6 +27,12 @@ export interface PageInfo extends Base {
     phoneNumber: string;
     profilePic: Image;
 }
+export interface BulletSection extends Base {
+    _type: "bulletSection";
+    description: string;
+    mainImage: Image;
+    title: string;
+}
 
 export interface Social extends Base {
     _type: "social";

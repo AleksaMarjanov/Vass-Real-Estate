@@ -1,7 +1,7 @@
-"use client";
+// "use client";
 
 import { previewData } from "next/headers";
-import { groq } from "next-sanity";
+
 import PreviewSuspense from '../../components/PreviewSuspense'
 import Image from "next/image";
 import styles from "@/styles";
@@ -12,25 +12,12 @@ import { fadeIn, staggerContainer } from "@/utils/motion";
 
 
 const HomePage = () => {
-  // if(previewData()) {
-  //   return (     
-  //     <PreviewSuspense fallback={(
-  //       <div role="status">
-  //         <p className="text-center text-lg animate-pulse text-white">
-  //           Loading Preview Data...
-  //         </p>
-  //       </div>
-  //     )}>
-
-  //     </PreviewSuspense>
-  //     )
-  // }
 
   return(
     <main className="items-center justify-center py-12">
       <section id="hero">
       <Hero />
-      <motion.div
+       {/* <motion.div
       variants={staggerContainer}
       initial="hidden"
       whileInView="show"
@@ -47,10 +34,12 @@ const HomePage = () => {
           </motion.img>
       </a>
 
-      </motion.div>
+      </motion.div>  */}
       </section>
       <section id="bulletsection">
-        <BulletSection />
+        {/* Work around TypeScript Error Type 'Promise<Element>' is missing the following properties from type 'ReactElement<any, any>': type, props, key `ts(2786)`*/}
+        {/* @ts-expect-error Server Component */}
+        <BulletSection/>
       </section>      
     </main>
   ) 

@@ -16,7 +16,6 @@ type Props = {
 };
 
 
-
 const AboutList = ({ pageInfo, socials }: Props) => {
 
   return (
