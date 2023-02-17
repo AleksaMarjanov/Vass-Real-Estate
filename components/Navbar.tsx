@@ -10,7 +10,9 @@ import { HiX } from "react-icons/hi"
 const Navbar = () => {
   const [toggle, setToggle] = useState(false)
   const [navbar, setNavbar] = useState()
+  const [ rotate, setRotate ] = useState<boolean>(false)
 
+  rotate ? document.body.style.overflow = "hidden" : document.body.style.overflow = "auto";
 
   return (
     <motion.nav
@@ -18,7 +20,7 @@ const Navbar = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
-      className={`sm:px-16 px-3 py-2 `}
+      className={`sm:px-16 px-3 py-2 overflow-x-hidden`}
     >
       <div className='w-full mx-auto flex items-center justify-between gap-8 py-5 left-0 top-0 '>
         <Link href='/' className='cursor-pointer'>
@@ -69,9 +71,9 @@ const Navbar = () => {
 
         <div
           className="md:hidden block relative"
-          onClick={() => setToggle(true)}
+                    onClick={() => setRotate(prevState => !prevState)}
         >
-          <div className="w-[30px] h-[30px] relative cursor-pointer">
+          <div className="w-[30px] h-[30px] relative cursor-pointer"  onClick={() => setToggle(true)}>
           <Image
             src="/menu.svg"
             alt="menu"
@@ -87,7 +89,7 @@ const Navbar = () => {
             initial="hidden"
             whileInView="show"
             className="fixed z-[50] top-0 bottom-0 right-0 p-4 w-full
-             h-screen flex flex-col items-end justify-end bg-[#121a34] bg-cover bg-repeat shadow-xl"
+             h-screen flex flex-col flex-shrink-0 items-end justify-end bg-[#121a34] bg-cover bg-repeat shadow-xl"
           >
             <div className="mt-[16px]" />
             <HiX
