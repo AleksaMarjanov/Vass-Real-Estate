@@ -8,6 +8,7 @@ import { fadeIn, slideIn, staggerContainer, textVariant } from "@/utils/motion";
 
 const Hero = () => {
   return (
+    <>
     <motion.div
     variants={staggerContainer}
     initial="hidden"
@@ -82,6 +83,25 @@ const Hero = () => {
        </motion.div> 
       </motion.div>
     </motion.div>
+           <motion.div
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.25}}
+      >
+
+      <a href="#bulletsection" rel="norefferer" className="flex items-center justify-center mt-[64px] cursor-pointer">
+      <motion.img
+          variants={fadeIn('up', 'tween', 0.3,1)}
+          src="/arrow-down.svg"
+          alt="arrow down"
+          className="w-[38px] h-[38px] drop-shadow-xl hover:scale-105 transition-transform duration-200 ease-out object-contain  flex items-center justify-center rounded-full bg-[#F7AB0A] px-1 py-1"
+          >
+          </motion.img>
+      </a>
+
+      </motion.div>  
+      </>
   );
 };
 
