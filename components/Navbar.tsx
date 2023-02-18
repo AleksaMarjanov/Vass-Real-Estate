@@ -27,7 +27,7 @@ const Navbar = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
-      className={`sm:px-16 px-3 py-2 overflow-x-hidden`}
+      className={`sm:px-16 px-3 py-2`}
     >
       <div className='w-full mx-auto flex items-center justify-between gap-8 py-5 left-0 top-0 '>
         <Link href='/' className='cursor-pointer'>
