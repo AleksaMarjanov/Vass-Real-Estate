@@ -7,7 +7,6 @@ import { FooterList } from '.'
 const query = groq`
 *[_type == 'social']`
 
-
 export const revalidate = 60;
 
 const Footer = async () => {
