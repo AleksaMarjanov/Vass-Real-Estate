@@ -17,13 +17,11 @@ const MapParams = ({ listing } : Props) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if(listing.path.length > 0) {
+    if(listing != null) {
       setLoading(false);
     } 
 
-  }, [listing.path.length, loading])
-
-console.log("PATH",listing.path);
+  }, [listing, loading])
 
 
   return (

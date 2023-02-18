@@ -148,7 +148,7 @@ async function Listing({ params: { slug } }: Props) {
         <div className="text-left mt-16 flex items-center justify-center flex-col">
         <PortableText value={listing.body} components={RichTextComponents}/>
         </div>  
-        <div className="flex items-center justify-center mt-64 ">
+        <div className="flex items-center justify-center mt-64 max-[768px]:mt-32">
            {/* @ts-expect-error Server Component */}
           <Map listing={listing}/>
         </div> 
