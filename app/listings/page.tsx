@@ -9,7 +9,6 @@ const query = groq`
     ...,
     author->,
     categories[]->,
-    path->
 } | order(_createdAt desc)
 `;
 

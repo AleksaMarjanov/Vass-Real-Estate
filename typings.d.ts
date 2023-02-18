@@ -14,7 +14,7 @@ interface Listing extends Base {
     slug: Slug;
     title: string;
     description: string;
-    path: geopoint[];
+    path: Geopoint[] ;
 }
 
 export interface PageInfo extends Base {
@@ -78,6 +78,13 @@ interface Span {
     marks: string[];
     text: string;
 
+}
+
+interface Geopoint extends Base {
+    _type: geopoint;
+    lat: number;
+    lng: number;
+    alt: number;
 }
 
 interface Category extends Base {
