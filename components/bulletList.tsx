@@ -15,7 +15,7 @@ const BulletList = ({ bullets }: Props) => {
   return (
     <section
       className={`${styles.xPaddings} flex md:flex-row w-full mt-48 max-[425px]:mt-64 
-        flex-col items-left justify-left max-[425px]:px-4 px-24 md:px-36 gap-12 max-[768px]:gap-6 text-white min-h-[80%] mb-32`}
+        flex-col items-left justify-left max-[425px]:px-4 px-18 md:px-36 gap-12 max-[768px]:gap-6 text-white min-h-[80%] mb-32`}
     >
       {bullets.map((bullet) => (
         <motion.div
@@ -29,9 +29,11 @@ const BulletList = ({ bullets }: Props) => {
           <motion.div 
            variants={slideIn('up', 'tween', 0.3, 0.85)}
           className="flex flex-row items-left justify-left gap-3 ">
-            <motion.div variants={textVariant(1.1)}>
+            <motion.div variants={textVariant(1.1)}
+            >
             <Image
-              src={urlFor(bullet.mainImage).url()}
+             className="rounded-full"
+             src={urlFor(bullet.mainImage).url()}
               alt={bullet.title}
               width={50}
               height={50}
