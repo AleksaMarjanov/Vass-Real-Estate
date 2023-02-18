@@ -14,6 +14,7 @@ interface Listing extends Base {
     slug: Slug;
     title: string;
     description: string;
+    path: geopoint[];
 }
 
 export interface PageInfo extends Base {

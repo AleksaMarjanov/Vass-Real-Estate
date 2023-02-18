@@ -9,6 +9,12 @@ export default defineType({
       name: 'title',
       title: 'Title',
       type: 'string',
+    }), 
+    defineField({
+      name: 'path',
+      title: 'Path',
+      type: 'array',
+      of: [{ type: 'geopoint'}]
     }),
     defineField({
       name: 'slug',

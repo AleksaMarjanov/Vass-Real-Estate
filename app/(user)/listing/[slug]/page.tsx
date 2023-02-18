@@ -1,12 +1,14 @@
+
 import { client } from "@/lib/sanity.client";
 import { urlFor } from "@/lib/urlFor";
 import { groq } from "next-sanity";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { PortableText } from "@portabletext/react";
 import { RichTextComponents } from "@/components/RichTextComponents";
 import Link from "next/link";
 import { Listing } from "@/typings";
+import Map from './../../../../components/Map';
+
 
 type Props = {
   params: {
@@ -20,7 +22,7 @@ export async function generateStaticParams() {
   const query = groq`
 		*[_type == "listing"]
 		{
-			slug
+			slug,
 		}
 		`;
 
@@ -37,6 +39,7 @@ async function Listing({ params: { slug } }: Props) {
 		*[_type == "listing" && slug.current == $slug][0] {
 			...,
 			author->,
+      path->,
 			categories[]->,
 		}
 	`;
@@ -132,19 +135,26 @@ async function Listing({ params: { slug } }: Props) {
             </section>
           </div>
         </section>
-        <div className="w-full flex items-center justify-center mt-6">
+        <div className="w-full flex max-[768px]:flex-col flex-row items-center justify-center mt-32 gap-6 bg-[#121a34]">
+          <div className="w-1/2 max-[425px]:w-full max-[768px]:w-[560px]">
           <Image
-            className="object-cover object-left lg:object-center rounded-[10px] "
+            className="object-cover w-full"
             src={urlFor(listing.mainImage).url()}
             alt={listing.author.name}
             width={1000}
             height={1000}
             priority
           />
+          </div>
+            <div className="w-1/2 relative z-[0] h-[430px] max-[425px]:h-[300px] max-[325px]:w-[250px] max-[425px]:w-[360px] max-[768px]:w-[540px]">
+           {/* @ts-expect-error Server Component */}
+          <Map />
+        </div>  
         </div>     
         <div className="text-left mt-16 flex items-center justify-center flex-col">
         <PortableText value={listing.body} components={RichTextComponents}/>
-        </div>        
+        </div>  
+          
       </article>
       </>
   );

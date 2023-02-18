@@ -8,7 +8,8 @@ const query = groq`
 *[_type=='listing'] {
     ...,
     author->,
-    categories[]->
+    categories[]->,
+    path->
 } | order(_createdAt desc)
 `;
 
