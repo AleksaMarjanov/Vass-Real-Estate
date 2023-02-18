@@ -21,7 +21,7 @@ const MapParams = ({ listing } : Props) => {
       setLoading(false);
     } 
 
-  }, [listing.path.length])
+  }, [listing.path.length, loading])
 
 console.log("PATH",listing.path);
 
