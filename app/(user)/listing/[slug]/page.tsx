@@ -39,14 +39,13 @@ async function Listing({ params: { slug } }: Props) {
 		*[_type == "listing" && slug.current == $slug][0] {
 			...,
 			author->,
-      path->,
 			categories[]->,
 		}
 	`;
 
   const listing: Listing = await client.fetch(query, { slug });
 
-
+    // console.log("ceo listing", listing);
     
     return (
       <>
@@ -136,7 +135,7 @@ async function Listing({ params: { slug } }: Props) {
           </div>
         </section>
           <Image
-            className="object-cover w-full mt-24"
+            className="object-contain w-full mt-24 "
             src={urlFor(listing.mainImage).url()}
             alt={listing.author.name}
             width={1000}
@@ -149,7 +148,7 @@ async function Listing({ params: { slug } }: Props) {
           <div className="flex items-center justify-center">
             {/* <div className="w-1/2 relative z-[0] h-[430px] max-[425px]:h-[300px] max-[325px]:w-[250px] max-[425px]:w-[360px] max-[768px]:w-[540px]"> */}
            {/* @ts-expect-error Server Component */}
-          <Map />
+          <Map listing={listing}/>
         </div>  
           
       </article>
