@@ -135,24 +135,21 @@ async function Listing({ params: { slug } }: Props) {
             </section>
           </div>
         </section>
-        <div className="w-full flex max-[768px]:flex-col flex-row items-center justify-center mt-32 gap-6 bg-[#121a34]">
-          <div className="w-1/2 max-[425px]:w-full max-[768px]:w-[560px]">
           <Image
-            className="object-cover w-full"
+            className="object-cover w-full mt-24"
             src={urlFor(listing.mainImage).url()}
             alt={listing.author.name}
             width={1000}
             height={1000}
             priority
           />
-          </div>
-            <div className="w-1/2 relative z-[0] h-[430px] max-[425px]:h-[300px] max-[325px]:w-[250px] max-[425px]:w-[360px] max-[768px]:w-[540px]">
-           {/* @ts-expect-error Server Component */}
-          <Map />
-        </div>  
-        </div>     
         <div className="text-left mt-16 flex items-center justify-center flex-col">
         <PortableText value={listing.body} components={RichTextComponents}/>
+        </div>  
+          <div className="flex items-center justify-center">
+            {/* <div className="w-1/2 relative z-[0] h-[430px] max-[425px]:h-[300px] max-[325px]:w-[250px] max-[425px]:w-[360px] max-[768px]:w-[540px]"> */}
+           {/* @ts-expect-error Server Component */}
+          <Map />
         </div>  
           
       </article>

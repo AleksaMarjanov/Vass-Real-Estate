@@ -21,8 +21,9 @@ const query = groq`
 
 const listings  = await client.fetch(query)
   return (
-    
+    <div className="relative z-[0] h-[60vh] w-[80%] md:w-[75%] sm:w-[80%] overflow-hidden no-repeat">
       <MapWithNOSSR listings={listings} />
+    </div>
   )
 }
 
