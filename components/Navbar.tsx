@@ -22,6 +22,7 @@ const Navbar = () => {
 
   return (
     <motion.nav
+      id="nav"
       variants={navVariants}
       initial="hidden"
       whileInView="show"
