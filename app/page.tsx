@@ -1,6 +1,6 @@
 
 import styles from "@/styles";
-import { Hero, BulletSection, Services } from '@/components'
+import { Hero, BulletSection } from '@/components'
 
 
 const HomePage = () => {
@@ -16,9 +16,9 @@ const HomePage = () => {
         {/* @ts-expect-error Server Component */}
         <BulletSection/>
       </section>
-      <section id="services">
+      {/* <section id="services">
         <Services />
-      </section>      
+      </section>       */}
     </main>
   ) 
 }
