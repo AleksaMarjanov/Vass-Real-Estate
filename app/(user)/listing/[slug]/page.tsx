@@ -145,10 +145,35 @@ async function Listing({ params: { slug } }: Props) {
             priority
           />
         </div>     
-        <div className="text-left mt-16 flex items-center justify-center flex-col">
+        <div className="md:flex-row flex flex-col w-full px-6 max-[425px]:px-0">
+        <div className="text-left mt-16 flex items-left justify-left flex-col">
+          <h3 className="flex items-left justify-left font-thin text-xl">Overview:</h3>
         <PortableText value={listing.body} components={RichTextComponents}/>
         </div>  
-        <div className="flex items-center justify-center mt-64 max-[768px]:mt-32">
+        {/* <div className="flex items-left justify-left mt-16 flex-col">
+            <div className=" flex-1">
+            <h3 className="flex items-left justify-left font-thin text-xl">Property Details:</h3>
+            <div className="flex md:flex-row flex-col">
+          <h2>Property Name</h2> 
+          <p>±11,200 SF Shop & Office on ±4 Acre Yard</p>
+            </div>
+<h2>Property Type:</h2>	<span>Industrial </span>
+<p>Deal Status Label</p> <span>For Sale</span>
+<p>Price Summary</p>	$995,000
+<p>Price / SF</p>	$88.84
+<p>Address</p>	4421 41st J Street
+<p>City</p>	Alexander
+<p>State</p>	ND
+<p>Size Summary</p>	11,200 SF
+<p>Total Lot Size	</p>4 Acres
+            </div>
+        </div> */}
+        </div>
+        <div className="flex flex-col items-center justify-center mt-64 max-[768px]:mt-32">
+          <div>
+          <p className="text-lg items-left justify-left ">Map</p>
+          <hr className="border-[#F7AB0A] mb-10 w-[40px]" />
+          </div>
            {/* @ts-expect-error Server Component */}
           <Map listing={listing}/>
         </div> 

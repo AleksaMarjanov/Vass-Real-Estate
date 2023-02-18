@@ -43,7 +43,7 @@ const MapParams = ({ listing } : Props) => {
         position={new LatLng(listing.path[0].lat, listing.path[0].lng)} 
          // @ts-ignore
         dragabble={true} >
-          <Popup>Property</Popup>
+          <Popup>{listing.title}</Popup>
         </Marker>
       </MapContainer>
     </>
