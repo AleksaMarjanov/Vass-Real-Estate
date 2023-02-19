@@ -1,6 +1,9 @@
+"use client";
+
 import { client } from "@/lib/sanity.client";
 import { urlFor } from "@/lib/urlFor";
 import { groq } from "next-sanity";
+import { useEffect, useState } from "react";
 import BulletList from "./bulletList";
 
 
@@ -10,9 +13,20 @@ const query = groq`
 
 export const revalidate = 60;
 
-const BulletSection = async () => {
+const BulletSection = () => {
+  const [bullets, setBullets] = useState([])
 
-  const bullets = await client.fetch(query)
+  useEffect(() => {
+    try  {
+      const fetchBullets = async () => {
+        let data = await client.fetch(query)
+        setBullets(data)
+      }
+      fetchBullets()
+    } catch(err) {
+      console.log(err)
+    }
+  }, [])
 
   return (
     <BulletList bullets={bullets}/>
