@@ -29,15 +29,17 @@ const Navbar = () => {
       viewport={{ once: false, amount: 0.25 }}
       className={`sm:px-16 px-3 py-2`}
     >
-      <div className='w-full mx-auto flex items-center justify-between gap-8 py-5 left-0 top-0 '>
+      <div className='w-full mx-auto flex items-center justify-between gap-8 max-[425px]:gap-4 py-5 left-0 top-0 '>
         <Link href='/' className='cursor-pointer'>
+          <div className="relative w-[150px] h-[150px] flex items-center justify-center">
           <Image
             src="/logoSvg.svg"
             alt="logo"
-            width={150}
-            height={150}
+            width={500}
+            height={500}
             priority
           />
+          </div>
         </Link>
         <ul className='hidden md:flex flex-1 relative items-center justify-center list-none space-x-6'>
           {['listings', 'projects', 'transactions', 'about'].map((item, index) => (
