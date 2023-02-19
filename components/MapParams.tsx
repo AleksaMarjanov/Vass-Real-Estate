@@ -39,7 +39,6 @@ const MapParams = ({ listing } : Props) => {
       attribution="Map data &copy; <a href=&quot;https://www.openstreetmap.org/&quot;>OpenStreetMap</a> contributors, <a href=&quot;https://creativecommons.org/licenses/by-sa/2.0/&quot;>CC-BY-SA</a>, Imagery &copy; <a href=&quot;https://www.mapbox.com/&quot;>Mapbox</a>"
     />
         <Marker 
-        // @ts-ignore
         position={new LatLng(listing.path[0].lat, listing.path[0].lng)} 
          // @ts-ignore
         dragabble={true} >
