@@ -1,7 +1,6 @@
 
 import styles from "@/styles";
-import { Hero, BulletSection } from '@/components'
-import Services from "@/components/Services";
+import { Hero, BulletSection, Services } from '@/components'
 
 
 const HomePage = () => {
@@ -18,7 +17,7 @@ const HomePage = () => {
       </section>
       <section id="services">
         <Services />
-      </section>      
+      </section>
     </main>
   ) 
 }
