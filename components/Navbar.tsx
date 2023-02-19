@@ -6,14 +6,11 @@ import { mobileVariants, navVariants } from '@/utils/motion';
 import Link from 'next/link'
 import Image from 'next/image';
 import { HiX } from "react-icons/hi"
-import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
-
+import { AiOutlineMenu } from 'react-icons/ai'
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false)
-  const [color, setColor] = useState('transparent')
-  const [ textColor, setTextColor] = useState('white')
-  const [navbar, setNavbar] = useState(false)
+  const [navbar, setNavbar] = useState()
   const [ rotate, setRotate ] = useState<boolean>(false)
 
   // 1.solution for document being undefined, 2. useEffect, 3. import it like dynamic
@@ -23,40 +20,26 @@ const Navbar = () => {
     }
   }, [rotate])
 
-  useEffect(() => {
-    const changeColor = () => {
-      if(window.scrollY >= 30 ) {
-        setNavbar(true)
-      }
-      else {
-        setNavbar(false)
-      }
-    }
-    window.addEventListener('scroll', changeColor)
-  }, [])
 
   return (
     <motion.nav
-      id="nav"
       variants={navVariants}
       initial="hidden"
       whileInView="show"
       viewport={{ once: true }}
-      className={`fixed z-[50] w-full top-0`}
+      className={`sm:px-16 px-3 py-2`}
     >
-      <div className={`w-full mx-auto px-6 md:px-2 lg:px-12 max-[768px]:px-2 flex items-center justify-between gap-8 max-[425px]:gap-0 left-0 top-0 ${navbar ? "bg-[#121a34] backdrop-blur  text-white"  : "bg-transparent'  'text-white"}`}>
+      <div className='w-full mx-auto flex items-center justify-between gap-8 max-[425px]:py-4 left-0 top-0 '>
         <Link href='/' className='cursor-pointer'>
-          <div className="relative w-[150px] h-[150px] flex items-center justify-center">
           <Image
             src="/logoSvg.svg"
             alt="logo"
-            width={200}
-            height={200}
+            width={150}
+            height={150}
             priority
           />
-          </div>
         </Link>
-        <ul className='hidden sm:flex flex-1 relative items-center justify-center list-none space-x-6'>
+        <ul className='hidden md:flex flex-1 relative items-center justify-center list-none space-x-6'>
           {['listings', 'projects', 'transactions', 'about'].map((item, index) => (
             <div
               key={item + index}
@@ -68,8 +51,8 @@ const Navbar = () => {
                 <a
                   href={`/${item}`}
                   className={`${navbar
-                      ? "opacity-70 bg-left-bottom bg-gradient-to-r from-[#F7AB0A] to-[#F7AB0A] bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out"
-                      : "opacity-70 bg-left-bottom bg-gradient-to-r from-[#F7AB0A] to-[#F7AB0A] bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out"
+                      ? "text-white group-hover:text-coffee-yellow"
+                      : "text-darker-white opacity-70 bg-left-bottom bg-gradient-to-r from-[#F7AB0A] to-[#F7AB0A] bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out"
                     } uppercase no-underline font-bold`}
                 >
                   {item}
@@ -104,7 +87,8 @@ const Navbar = () => {
             fill
             className="object-contain"
           /> */}
-          <AiOutlineMenu size={35}/>
+          <AiOutlineMenu size={35} />
+        
           </div>
         </div>
 
@@ -120,8 +104,7 @@ const Navbar = () => {
             <div onClick={() => setRotate(prevState => !prevState )}>
             <HiX
               onClick={() => setToggle(false)}
-              size={35}
-              className="w-[35px] h-[35px] text-white cursor-pointer ease-out transition-all duration-200 mt-6"
+              className="w-[35px] h-[35px] text-white cursor-pointer ease-out transition-all duration-200"
             />
             </div>
             <ul className="list-none p-0 m-0 h-full w-full flex items-center justify-start flex-col relative">

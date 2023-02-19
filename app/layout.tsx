@@ -54,7 +54,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${montserrat.className} bg-[#121a34] text-white `}>
         <Navbar />
-        <div className="mt-48 max-[768px]:mt-32"/> 
+        <div className="mt-6"/> 
         {children}
         <Footer />
       </body>
