@@ -31,14 +31,16 @@ const BulletList = ({ bullets }: Props) => {
           className="flex flex-row items-left justify-left gap-3 ">
             <motion.div variants={textVariant(1.1)}
             >
+              <div className="relative w-[50px] h-[50px]">
             <Image
              className="rounded-full"
              src={urlFor(bullet.mainImage).url()}
               alt={bullet.title}
-              width={50}
-              height={50}
+              width={300}
+              height={300}
               priority
             />
+              </div>
             </motion.div>
             <motion.div
             variants={textVariant(1.1)}

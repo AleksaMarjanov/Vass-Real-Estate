@@ -7,7 +7,6 @@ import { usePathname } from 'next/navigation';
 
 const MapWithNOSSR = dynamic(() => import("./MapParams"), {
   ssr: false,
-
 });
 
 type Props = {

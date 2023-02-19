@@ -1,6 +1,6 @@
 
 import styles from "@/styles";
-import { Hero, BulletSection } from '@/components'
+import { Hero, BulletSection, Services } from '@/components'
 
 
 const HomePage = () => {
@@ -15,9 +15,9 @@ const HomePage = () => {
         {/* Work around TypeScript Error Type 'Promise<Element>' is missing the following properties from type 'ReactElement<any, any>': type, props, key `ts(2786)`, workaround that is to use @ts-expect-error Server Component */}
         <BulletSection/>
       </section>
-      {/* <section id="services">
+      <section id="services">
         <Services />
-      </section>       */}
+      </section>      
     </main>
   ) 
 }
