@@ -43,7 +43,7 @@ const Navbar = () => {
       viewport={{ once: true }}
       className={`top-0 fixed z-[50] flex items-center justify-between w-full`}
     >
-      <div className={`w-full mx-auto flex px-12 max-[320px]:px-6 items-center justify-between gap-8 py-6 left-0 top-0 ${navbar ? "bg-darker-white backdrop-blur  text-primary-black/80"  : "bg-transparent'  'text-white"}`}>
+      <div className={`w-full mx-auto flex px-6 items-center justify-between gap-8 py-6 left-0 top-0 ${navbar ? "bg-darker-white backdrop-blur  text-primary-black/80"  : "bg-transparent'  'text-white"}`}>
         <Link href='/' className='cursor-pointer'>
           <Image
             src="/logoSvg.svg"
