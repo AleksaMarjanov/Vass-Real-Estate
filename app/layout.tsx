@@ -21,15 +21,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
 
+{/* Solution 1. Fixing error of not scrolling to the top of the page, [slug]/page.tsx top div has id of scroll-top */}
+
   // const pathname = usePathname();
-  // {/* Fixing error of not scrolling to the top of the page, [slug]/page.tsx top div has id of scroll-top */}
   // useEffect(() => {
   //   document
   //     .getElementById("scroll-top")
   //     ?.scrollIntoView({ behavior: "smooth" });
   // }, [pathname]);
 
-
+{/* Solution 2.  Fixing error of not scrolling to the top of the page, [slug]/page.tsx top div has id of scroll-top */}
   const pathname = usePathname()
     
   useEffect(() => {
