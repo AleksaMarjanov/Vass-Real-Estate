@@ -15,7 +15,7 @@ type Props = {
   socials: Social[];
 };
 
-const Footer = ({ socials }: Props) => {
+const Socials = ({ socials }: Props) => {
   return (
     <motion.footer
       variants={footerVariants}
@@ -70,4 +70,4 @@ const Footer = ({ socials }: Props) => {
   );
 };
 
-export default Footer;
+export default Socials;
