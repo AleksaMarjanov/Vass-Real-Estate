@@ -14,8 +14,8 @@ type Props = {
 const BulletList = ({ bullets }: Props) => {
   return (
     <section
-      className={`${styles.xPaddings} flex md:flex-row w-full mt-48 max-[425px]:mt-64 
-        flex-col items-left justify-left max-[425px]:px-4 px-18 md:px-36 gap-12 max-[768px]:gap-6 text-white min-h-[80%] mb-32`}
+      className={` flex md:flex-row w-full mt-64
+        flex-col items-left justify-left max-[425px]:px-4 px-12 md:px-36 gap-12 max-[768px]:gap-6 text-white min-h-[40vh]`}
     >
       {bullets.map((bullet) => (
         <motion.div
@@ -24,7 +24,7 @@ const BulletList = ({ bullets }: Props) => {
           whileInView="show"
           viewport={{ once: false, amount: 0.25 }}
           key={bullet._id}
-          className="flex items-left justify-left flex-col space-y-4"
+          className="flex items-left justify-left flex-col space-y-4 space-x-0"
         >
           <motion.div 
            variants={slideIn('up', 'tween', 0.3, 0.85)}
