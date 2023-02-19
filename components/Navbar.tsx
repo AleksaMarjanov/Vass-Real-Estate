@@ -10,7 +10,7 @@ import { AiOutlineMenu } from 'react-icons/ai'
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false)
-  const [navbar, setNavbar] = useState()
+  const [navbar, setNavbar] = useState(false)
   const [ rotate, setRotate ] = useState<boolean>(false)
 
   // 1.solution for document being undefined, 2. useEffect, 3. import it like dynamic
@@ -21,15 +21,29 @@ const Navbar = () => {
   }, [rotate])
 
 
+  useEffect(() => {
+    const changeColor = () => {
+      if(window.scrollY >= 30 ) {
+        setNavbar(true)
+      }
+      else {
+        setNavbar(false)
+      }
+    }
+    window.addEventListener('scroll', changeColor)
+  }, [])
+
+
+
   return (
     <motion.nav
       variants={navVariants}
       initial="hidden"
       whileInView="show"
       viewport={{ once: true }}
-      className={`sm:px-16 px-3 py-2`}
+      className={`top-0 fixed z-[50] flex items-center justify-between w-full`}
     >
-      <div className='w-full mx-auto flex items-center justify-between gap-8 max-[425px]:py-4 left-0 top-0 '>
+      <div className={`w-full mx-auto flex px-12 max-[320px]:px-6 items-center justify-between gap-8 py-6 left-0 top-0 ${navbar ? "bg-darker-white backdrop-blur  text-primary-black/80"  : "bg-transparent'  'text-white"}`}>
         <Link href='/' className='cursor-pointer'>
           <Image
             src="/logoSvg.svg"
@@ -51,8 +65,8 @@ const Navbar = () => {
                 <a
                   href={`/${item}`}
                   className={`${navbar
-                      ? "text-white group-hover:text-coffee-yellow"
-                      : "text-darker-white opacity-70 bg-left-bottom bg-gradient-to-r from-[#F7AB0A] to-[#F7AB0A] bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out"
+                      ? " bg-left-bottom bg-gradient-to-r from-[#F7AB0A] to-[#F7AB0A] bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out"
+                      : "opacity-70 bg-left-bottom bg-gradient-to-r from-[#F7AB0A] to-[#F7AB0A] bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out"
                     } uppercase no-underline font-bold`}
                 >
                   {item}
