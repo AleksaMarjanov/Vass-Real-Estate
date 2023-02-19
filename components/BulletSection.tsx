@@ -19,12 +19,12 @@ const BulletSection = () => {
   useEffect(() => {
     try  {
       const fetchBullets = async () => {
-        let data = await client.fetch(query)
+        const data = await client.fetch(query)
         setBullets(data)
       }
       fetchBullets()
     } catch(err) {
-      console.log(err)
+      (console.error)
     }
   }, [])
 

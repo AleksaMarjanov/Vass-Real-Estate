@@ -16,15 +16,16 @@ const Footer = () => {
   
   
   useEffect(() => {
-    
+    try {
       const fetchData = async () => {
         let socials = await client.fetch(query);
         setSocials(socials)
       }
       // call the function
       fetchData()
-        // // make sure to catch any error
-        // .catch(console.error);
+    } catch (err) {
+      (console.error)
+    }
   }, [])
   
   return (
