@@ -9,6 +9,7 @@ import { motion } from 'framer-motion'
 import { staggerContainer, fadeIn, slideIn } from '@/utils/motion';
 import ClientSideRoute from './ClientSideRoute';
 import { Listing } from '@/typings';
+import { textVariant } from './../utils/motion';
 
 
 type Props = {
@@ -23,22 +24,16 @@ const ListingsList = ({ listings } : Props) => {
     initial="hidden"
     whileInView="show"
     viewport={{ once: false, amount: 0.25}}
-    className={`${styles.paddings}`}>
-      {/* <motion.div 
-      variants={slideIn('left', 'tween', 0.3, 1 )}
+    // className={`${styles.paddings}`}
+    >
+      <motion.div 
+      variants={textVariant(1.1)}
+      // variants={slideIn('left', 'tween', 0.3, 1 )}
       viewport={{ once: true }}
-      className='text-bold text-2xl flex items-left justify-left px-12 max-[425px]:px-6 max-[425px]:py-3 py-6'> */}
-        {/* <h2>Available listings</h2> */}
-        {/* </motion.div> */}
-      <motion.div
-      variants={slideIn('left','spring', 0.5, 1.2 )}
-      >
-      <hr className="border-[#F7AB0A] mb-10" />
-      </motion.div>
-      <div className='text-bold text-2xl flex items-left justify-left px-12 max-[425px]:px-6 max-[425px]:py-3 py-6'> 
-           <h2>Available listings</h2>
-            </div>
-    <div className="grid grid-cols-1 md:grid-cols-3 px-10 gap-10 gap-y-16 pb-24">
+      className='w-full relative z-25 text-bold text-2xl flex items-left justify-left px-12 max-[425px]:px-6 max-[425px]:py-3 py-6 mb-32'>
+         <h2>Available listings</h2> 
+         </motion.div>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-10 gap-10 gap-y-16 pb-24 mt-6">
       {listings.map(listing => (
         <ClientSideRoute route={`/listing/${listing.slug.current}`} key={listing._id}>
         <motion.div 

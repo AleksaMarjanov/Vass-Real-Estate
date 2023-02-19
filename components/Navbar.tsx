@@ -25,7 +25,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const changeColor = () => {
-      if(window.scrollY >= 90 ) {
+      if(window.scrollY >= 30 ) {
         setNavbar(true)
       }
       else {
