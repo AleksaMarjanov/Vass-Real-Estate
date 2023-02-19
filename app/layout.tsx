@@ -21,13 +21,32 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
 
-  const pathname = usePathname();
-  {/* Fixing error of not scrolling to the top of the page, [slug]/page.tsx top div has id of scroll-top */}
+  // const pathname = usePathname();
+  // {/* Fixing error of not scrolling to the top of the page, [slug]/page.tsx top div has id of scroll-top */}
+  // useEffect(() => {
+  //   document
+  //     .getElementById("scroll-top")
+  //     ?.scrollIntoView({ behavior: "smooth" });
+  // }, [pathname]);
+
+
+  const pathname = usePathname()
+    
   useEffect(() => {
-    document
-      .getElementById("scroll-top")
-      ?.scrollIntoView({ behavior: "smooth" });
-  }, [pathname]);
+      document.scrollingElement?.scroll(0, 0)
+  }, [pathname])
+  
+  useEffect(() => {
+      setTimeout(() => {
+          document.scrollingElement?.scrollTo(0, 0)
+      }, 50)
+      setTimeout(() => {
+          document.scrollingElement?.scrollTo(0, 0)
+      }, 100)
+      setTimeout(() => {
+          document.scrollingElement?.scrollTo(0, 0)
+      }, 200)
+  }, [])
 
   return (
 
