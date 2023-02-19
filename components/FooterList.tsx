@@ -51,12 +51,17 @@ const Footer = ({ socials }: Props) => {
           </div>
           <div className="flex gap-4">
             {socials.map((social) => (
-              <SocialIcon
-                key={social._id}
-                url={social.url}
-                fgColor="white"
-                bgColor="transparent"
-              />
+               <div
+               className="group"
+                 key={social._id}
+               >
+                 <SocialIcon
+                   url={social.url}
+                   fgColor="white"
+                   className="group-hover:bg-slate-700 rounded-full transition-all ease-in-out duration-700"
+                   bgColor="transparent"
+                 />
+               </div>
             ))}
           </div>
         </div>
