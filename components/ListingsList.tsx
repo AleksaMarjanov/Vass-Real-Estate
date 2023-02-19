@@ -30,7 +30,7 @@ const ListingsList = ({ listings } : Props) => {
       variants={textVariant(1.1)}
       // variants={slideIn('left', 'tween', 0.3, 1 )}
       viewport={{ once: true }}
-      className='w-full relative z-25 text-bold text-2xl flex items-left justify-left px-12 max-[425px]:px-6 max-[425px]:py-3 py-6 mb-32'>
+      className='w-full relative z-25 text-bold text-2xl flex items-left justify-left px-12 max-[425px]:px-6 max-[425px]:py-3 py-6 mb-32 max-[425px]:mb-4'>
          <h2>Available listings</h2> 
          </motion.div>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-10 gap-10 gap-y-16 pb-24 mt-6">
