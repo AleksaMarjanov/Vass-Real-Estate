@@ -1,6 +1,7 @@
 
 import styles from "@/styles";
-import { Hero, BulletSection, Services } from '@/components'
+import { Hero, BulletSection } from '@/components'
+import Services from "@/components/Services";
 
 
 const HomePage = () => {
