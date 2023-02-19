@@ -6,7 +6,6 @@ import { mobileVariants, navVariants } from '@/utils/motion';
 import Link from 'next/link'
 import Image from 'next/image';
 import { HiX } from "react-icons/hi"
-import { AiOutlineMenu } from 'react-icons/ai'
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false)
@@ -26,8 +25,8 @@ const Navbar = () => {
       variants={navVariants}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true }}
-      className={`sm:px-16 px-3 py-2`}
+      viewport={{ once: false, amount: 0.25 }}
+      className={`sm:px-16 px-3 py-2 overflow-x-hidden`}
     >
       <div className='w-full mx-auto flex items-center justify-between gap-8 py-5 left-0 top-0 '>
         <Link href='/' className='cursor-pointer'>
@@ -81,14 +80,12 @@ const Navbar = () => {
                     onClick={() => setRotate(prevState => !prevState)}
         >
           <div className="w-[30px] h-[30px] relative cursor-pointer"  onClick={() => setToggle(true)}>
-          {/* <Image
+          <Image
             src="/menu.svg"
             alt="menu"
             fill
             className="object-contain"
-          /> */}
-          <AiOutlineMenu size={35} />
-        
+          />
           </div>
         </div>
 
