@@ -1,7 +1,11 @@
+"use client";
+
 
 import "../styles/globals.css";
 import { Montserrat } from "@next/font/google";
 import { Navbar, Footer } from "@/components";
+import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 
 const montserrat = Montserrat({
   weight: ["400", "700"],
@@ -17,17 +21,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
 
+  const pathname = usePathname();
+  {/* Fixing error of not scrolling to the top of the page, [slug]/page.tsx top div has id of scroll-top */}
+  useEffect(() => {
+    document
+      .getElementById("scroll-top")
+      ?.scrollIntoView({ behavior: "smooth" });
+  }, [pathname]);
+
   return (
 
     <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
       <body className={`${montserrat.className} bg-[#121a34] text-white `}>
         <Navbar />
         {children}
-         {/* @ts-expect-error Server Component */}
         <Footer />
       </body>
     </html>

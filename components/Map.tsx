@@ -16,8 +16,9 @@ type Props = {
 
 const Map = async ({ listing } : Props) => {
 
+
 return (
-    <div className="relative z-[0] h-[100vw] w-[60%] max-[425px]:w-full max-[425px]:px-2 no-repeat">
+    <div className="relative z-[0] h-[60vh] max-[425px]:h-[40vh] w-[60%] max-[425px]:w-full max-[425px]:px-2 no-repeat">
       <MapWithNOSSR listing={listing}/>
     </div>
   )
