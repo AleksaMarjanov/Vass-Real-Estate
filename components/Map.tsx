@@ -1,5 +1,3 @@
-"use client;"
-
 import React, { useEffect } from 'react'
 import dynamic from "next/dynamic";
 import { Listing } from '@/typings';
@@ -13,7 +11,7 @@ type Props = {
   listing: Listing;
 }
 
-const Map = async ({ listing } : Props) => {
+const Map = ({ listing } : Props) => {
 
 
 return (
