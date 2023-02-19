@@ -120,7 +120,8 @@ const Navbar = () => {
             <div onClick={() => setRotate(prevState => !prevState )}>
             <HiX
               onClick={() => setToggle(false)}
-              className="w-[35px] h-[35px] text-white cursor-pointer ease-out transition-all duration-200"
+              size={35}
+              className="w-[35px] h-[35px] text-white cursor-pointer ease-out transition-all duration-200 mt-6"
             />
             </div>
             <ul className="list-none p-0 m-0 h-full w-full flex items-center justify-start flex-col relative">
