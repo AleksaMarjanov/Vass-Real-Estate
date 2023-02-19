@@ -6,10 +6,14 @@ import { mobileVariants, navVariants } from '@/utils/motion';
 import Link from 'next/link'
 import Image from 'next/image';
 import { HiX } from "react-icons/hi"
+import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false)
-  const [navbar, setNavbar] = useState()
+  const [color, setColor] = useState('transparent')
+  const [ textColor, setTextColor] = useState('white')
+  const [navbar, setNavbar] = useState(false)
   const [ rotate, setRotate ] = useState<boolean>(false)
 
   // 1.solution for document being undefined, 2. useEffect, 3. import it like dynamic
@@ -19,6 +23,17 @@ const Navbar = () => {
     }
   }, [rotate])
 
+  useEffect(() => {
+    const changeColor = () => {
+      if(window.scrollY >= 90 ) {
+        setNavbar(true)
+      }
+      else {
+        setNavbar(false)
+      }
+    }
+    window.addEventListener('scroll', changeColor)
+  }, [])
 
   return (
     <motion.nav
@@ -26,22 +41,22 @@ const Navbar = () => {
       variants={navVariants}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: false, amount: 0.25 }}
-      className={`sm:px-16 px-3 py-2`}
+      viewport={{ once: true }}
+      className={`fixed z-[50] w-full top-0`}
     >
-      <div className='w-full mx-auto flex items-center justify-between gap-8 max-[425px]:gap-4 py-5 left-0 top-0 '>
+      <div className={`w-full mx-auto px-6 lg:px-12 max-[768px]:px-2 flex items-center justify-between gap-8 max-[425px]:gap-0 left-0 top-0 ${navbar ? "bg-[#121a34] border-b border-[#F7AB0A] text-white"  : "bg-transparent'  'text-white"}`}>
         <Link href='/' className='cursor-pointer'>
           <div className="relative w-[150px] h-[150px] flex items-center justify-center">
           <Image
             src="/logoSvg.svg"
             alt="logo"
-            width={500}
-            height={500}
+            width={200}
+            height={200}
             priority
           />
           </div>
         </Link>
-        <ul className='hidden md:flex flex-1 relative items-center justify-center list-none space-x-6'>
+        <ul className='hidden md:flex flex-1 relative items-center justify-center list-none space-x-6 m-6'>
           {['listings', 'projects', 'transactions', 'about'].map((item, index) => (
             <div
               key={item + index}
@@ -53,8 +68,8 @@ const Navbar = () => {
                 <a
                   href={`/${item}`}
                   className={`${navbar
-                      ? "text-white group-hover:text-coffee-yellow"
-                      : "text-darker-white opacity-70 bg-left-bottom bg-gradient-to-r from-[#F7AB0A] to-[#F7AB0A] bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out"
+                      ? "opacity-70 bg-left-bottom bg-gradient-to-r from-[#F7AB0A] to-[#F7AB0A] bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out"
+                      : "opacity-70 bg-left-bottom bg-gradient-to-r from-[#F7AB0A] to-[#F7AB0A] bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out"
                     } uppercase no-underline font-bold`}
                 >
                   {item}
@@ -83,12 +98,13 @@ const Navbar = () => {
                     onClick={() => setRotate(prevState => !prevState)}
         >
           <div className="w-[30px] h-[30px] relative cursor-pointer"  onClick={() => setToggle(true)}>
-          <Image
+          {/* <Image
             src="/menu.svg"
             alt="menu"
             fill
             className="object-contain"
-          />
+          /> */}
+          <AiOutlineMenu size={35}/>
           </div>
         </div>
 
