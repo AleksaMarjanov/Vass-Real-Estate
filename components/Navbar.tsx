@@ -44,7 +44,7 @@ const Navbar = () => {
       viewport={{ once: true }}
       className={`fixed z-[50] w-full top-0`}
     >
-      <div className={`w-full mx-auto px-6 md:px-2 lg:px-12 max-[768px]:px-2 flex items-center justify-between gap-8 max-[425px]:gap-0 left-0 top-0 ${navbar ? "bg-[#121a34] backdrop-blur border-b border-[#F7AB0A] text-white"  : "bg-transparent'  'text-white"}`}>
+      <div className={`w-full mx-auto px-6 md:px-2 lg:px-12 max-[768px]:px-2 flex items-center justify-between gap-8 max-[425px]:gap-0 left-0 top-0 ${navbar ? "bg-[#121a34] backdrop-blur  text-white"  : "bg-transparent'  'text-white"}`}>
         <Link href='/' className='cursor-pointer'>
           <div className="relative w-[150px] h-[150px] flex items-center justify-center">
           <Image
