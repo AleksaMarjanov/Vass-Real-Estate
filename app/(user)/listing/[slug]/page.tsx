@@ -156,7 +156,6 @@ async function Listing({ params: { slug } }: Props) {
           <p className="text-lg items-left justify-left ">Map</p>
           <hr className="border-[#F7AB0A] mb-10 w-[40px]" />
           </div>
-           {/* @ts-expect-error Server Component */}
           <Map listing={listing}/>
         </div> 
       </article>
