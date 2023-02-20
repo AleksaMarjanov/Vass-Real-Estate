@@ -33,7 +33,7 @@ const OurServices = () => {
         >
           <h3 className="text-5xl">Our Services</h3>
         </motion.div>
-      <div className={`${styles.xPaddings} flex flex-col items-center justify-center md:flex-row mt-12 max-[425px]:mt-6 space-x-6 md:gap-6 mx-6`}>
+      <div className={`${styles.xPaddings} flex flex-col items-center justify-center lg:flex-row mt-12 max-[425px]:mt-6 space-x-6 md:gap-6 mx-6`}>
         <motion.div
           variants={slideIn("left", "tween", 0.35, 0.85)}
           className="flex items-center justify-center"
