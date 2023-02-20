@@ -8,13 +8,13 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const OurServices = () => {
-  const [ rotate, setRotate ] = useState<boolean>(false)
+  // const [ rotate, setRotate ] = useState<boolean>(false)
 
-  useEffect(() => {
-    if ( typeof window !== "undefined" ) {
-      rotate ? document.body.style.overflow = "hidden" : document.body.style.overflow = "auto";
-    }
-  }, [rotate])
+  // useEffect(() => {
+  //   if ( typeof window !== "undefined" ) {
+  //     rotate ? document.body.style.overflow = "hidden" : document.body.style.overflow = "auto";
+  //   }
+  // }, [rotate])
 
 
   return (
