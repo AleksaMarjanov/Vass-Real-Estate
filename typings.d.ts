@@ -17,6 +17,12 @@ interface Listing extends Base {
     path: Geopoint[] ;
 }
 
+interface Services extends Base {
+    title: string;
+    description: string;
+    mainImage: Image;
+}
+
 export interface PageInfo extends Base {
     _type: "pageInfo";
     address: string,
