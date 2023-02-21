@@ -9,7 +9,7 @@ const OurServices = () => {
 
   const [services, setServices] = useState([])
   const [filterServices, setFilterServices] = useState([])
-  const [activeFilter, setActiveFilter] = useState('Industrial');
+  const [activeFilter, setActiveFilter] = useState('All');
   const [animateCard, setAnimateCard ] = useState({ y: 0, opacity: 1 });
 
 const query = groq`
@@ -28,10 +28,10 @@ useEffect(() => {
   fetchServices()
 }, [])
 
-const handleMenusFilter = (item : any) => {
+const handleServiceFilter = (item : string) => {
+  setActiveFilter(item);
   // @ts-ignore
   setAnimateCard([{ x: 100, opacity: 0 }]);
-  setActiveFilter(item);
 
   setTimeout(() => {
     // @ts-ignore
@@ -46,8 +46,8 @@ const handleMenusFilter = (item : any) => {
 };
 
   return (
-    <div className="bg-[#0086bb]/20 ">
-      <ServiceCard services={services} filterServices={filterServices} handleMenusFilter={handleMenusFilter} activeFilter={activeFilter} animateCard={animateCard}/>
+    <div className="bg-[#0086bb]/20 rounded-tr-[140px] rounded-tl-[140px]">
+      <ServiceCard services={services} filterServices={filterServices} handleServiceFilter={handleServiceFilter} activeFilter={activeFilter} animateCard={animateCard}/>
     </div>
   );
 };
