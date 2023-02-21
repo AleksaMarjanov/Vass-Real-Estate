@@ -31,25 +31,24 @@ const ServiceCard = ({ services, handleMenusFilter, activeFilter, filterServices
       className={`${styles.innerWidth} mt-12 max-[425px]:mt-4 flex flex-col items-center justify-center ${styles.xPaddings} max-[425px]:mt-48`}
     >
       <motion.div
-        // variants={staggerContainer}
-        // initial="hidden"
-        // whileInView="show"
-        // viewport={{ once: true }}
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
       >
         <motion.div
-          // variants={fadeIn("up", "tween", 0.5, 0.85)}
+          variants={fadeIn("up", "tween", 0.5, 0.85)}
           className="text-center"
         >
           <h3 className="text-5xl mt-12 max-[425px]:mt">Our Services</h3>
-        </motion.div>
         <div className="flex-1 w-full flex-col ">
       <div className="flex flex-row flex-wrap justify-center items-center mt-16 lg:mt-2 px-3 mr-0 mb-8">
         {['Residental', 'Industrial'].map((item,index) => (
           <div key={index}
-            onClick={() => handleMenusFilter(item)}
-            className={`pt-2 pr-4 m-2 bg-[#F7AB0A] rounded-lg text-white font-semibold cursor-pointer transition-all animate ease-in duration-300 hover:bg-coffee-blue hover:text-white flex justify-center items-center p-text ${
-              activeFilter === item ? `${itemActive}` : `${notActiveItem}`
-            }`}
+          onClick={() => handleMenusFilter(item)}
+          className={`pt-2 pr-4 m-2 bg-[#F7AB0A] rounded-lg text-white font-semibold cursor-pointer transition-all animate ease-in duration-300 hover:bg-coffee-blue hover:text-white flex justify-center items-center p-text ${
+            activeFilter === item ? `${itemActive}` : `${notActiveItem}`
+          }`}
           >
               {item}
           </div>
@@ -57,16 +56,16 @@ const ServiceCard = ({ services, handleMenusFilter, activeFilter, filterServices
           </div>
           </div>
           <motion.div
-        // animate={animateCard}
-        // transition={{ duration: 0.5, delayChildren: 0.5 }}
+        animate={animateCard}
+        transition={{ duration: 0.5, delayChildren: 0.5 }}
         className="flex flex-wrap justify-center items-center"
-      >
+        >
           {filterServices.map((service : any, index: any) => (
-
+            
             <div
-             className="w-270 flex-col md:flex-row m-8 p-4 rounded-lg  cursor-pointer transition-all animate ease-in duration-300 hover:shadow-xl flex justify-center items-center"
-             key={index}
-           >
+            className="w-270 flex-col md:flex-row m-8 p-4 rounded-lg  cursor-pointer transition-all animate ease-in duration-300 hover:shadow-xl flex justify-center items-center"
+            key={index}
+            >
              <div className="relative w-full">
               <Image
                 src={urlFor(service.mainImage).url()}
@@ -75,7 +74,7 @@ const ServiceCard = ({ services, handleMenusFilter, activeFilter, filterServices
                 width={300}
                 height={300}
                 priority
-              />
+                />
             </div> 
              <div className="p-2 w-full relative flex flex-col items-center justify-center">
                  <h4 className="font-bold">{service.title}</h4>
@@ -85,6 +84,7 @@ const ServiceCard = ({ services, handleMenusFilter, activeFilter, filterServices
           ))}
           </motion.div>
       </motion.div>
+          </motion.div>
     </section>
   );
 };

@@ -27,12 +27,12 @@ useEffect(() => {
 
 const handleMenusFilter = (item : any) => {
   // @ts-ignore
-  setAnimateCard([{ x: 300, opacity: 0 }]);
+  setAnimateCard([{ y: 100, opacity: 0 }]);
   setActiveFilter(item);
 
   setTimeout(() => {
     // @ts-ignore
-    setAnimateCard([{ x: 0, opacity: 1 }]);
+    setAnimateCard([{ y: 0, opacity: 1 }]);
     if (item === "All") {
       setFilterServices(services);
     } else {
