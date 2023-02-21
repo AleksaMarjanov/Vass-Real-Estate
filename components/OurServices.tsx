@@ -10,7 +10,7 @@ const OurServices = () => {
   const [services, setServices] = useState([])
   const [filterServices, setFilterServices] = useState([])
   const [activeFilter, setActiveFilter] = useState('All');
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const [animateCard, setAnimateCard ] = useState({ y: 0, opacity: 1 });
 
 const query = groq`
   *[_type == 'services']
@@ -26,10 +26,13 @@ useEffect(() => {
 }, [query])
 
 const handleMenusFilter = (item : any) => {
+  // @ts-ignore
+  setAnimateCard([{ x: -100, opacity: 0 }]);
   setActiveFilter(item);
 
   setTimeout(() => {
-
+    // @ts-ignore
+    setAnimateCard([{ x: 0, opacity: 1 }]);
     if (item === "All") {
       setFilterServices(services);
     } else {
@@ -41,7 +44,7 @@ const handleMenusFilter = (item : any) => {
 
   return (
     <div className="bg-[#0086bb]/20">
-      <ServiceCard services={services} filterServices={filterServices} handleMenusFilter={handleMenusFilter} activeFilter={activeFilter}/>
+      <ServiceCard services={services} filterServices={filterServices} handleMenusFilter={handleMenusFilter} activeFilter={activeFilter} animateCard={animateCard}/>
     </div>
   );
 };
