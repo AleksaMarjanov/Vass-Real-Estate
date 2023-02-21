@@ -22,7 +22,7 @@ useEffect(() => {
   }
 
   fetchServices()
-}, [])
+}, [query])
 
 const handleMenusFilter = (item : any) => {
   setActiveFilter(item);
@@ -32,6 +32,7 @@ const handleMenusFilter = (item : any) => {
     if (item === "All") {
       setFilterServices(services);
     } else {
+      // @ts-ignore
       setFilterServices(services.filter((service) => service.tags.includes(item)));
     }
   }, 500);
