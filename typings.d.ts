@@ -21,7 +21,15 @@ interface Services extends Base {
     title: string;
     description: string;
     mainImage: Image;
+    tags: Tags;
 }
+
+interface Tags extends Base {
+    _type: string;
+    title: string;
+}
+
+
 
 export interface PageInfo extends Base {
     _type: "pageInfo";
