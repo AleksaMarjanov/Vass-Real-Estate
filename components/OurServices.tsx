@@ -27,7 +27,7 @@ useEffect(() => {
 
 const handleMenusFilter = (item : any) => {
   // @ts-ignore
-  setAnimateCard([{ x: -100, opacity: 0 }]);
+  setAnimateCard([{ x: -300, opacity: 0 }]);
   setActiveFilter(item);
 
   setTimeout(() => {
@@ -39,7 +39,7 @@ const handleMenusFilter = (item : any) => {
       // @ts-ignore
       setFilterServices(services.filter((service) => service.tags.includes(item)));
     }
-  }, 500);
+  }, 800);
 };
 
   return (
