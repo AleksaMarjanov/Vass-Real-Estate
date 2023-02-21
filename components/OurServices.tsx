@@ -20,6 +20,8 @@ useEffect(() => {
     const services = await client.fetch(query)
     setServices(services)
     setFilterServices(services)
+    console.log('These are filtered services',filterServices)
+    console.log('These are services', services[0].tags )
   }
 
   fetchServices()
