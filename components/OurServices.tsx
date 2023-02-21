@@ -2,7 +2,7 @@
 
 import { client } from '@/lib/sanity.client'
 import { groq } from 'next-sanity'
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import ServiceCard from './ServiceCard';
 
 const OurServices = () => {
@@ -15,6 +15,7 @@ const OurServices = () => {
 const query = groq`
   *[_type == 'services']
 `
+
 useEffect(() => {
   const fetchServices = async () => {
     const services = await client.fetch(query)
@@ -25,7 +26,7 @@ useEffect(() => {
   }
 
   fetchServices()
-}, [query])
+}, [])
 
 const handleMenusFilter = (item : any) => {
   // @ts-ignore
