@@ -46,7 +46,7 @@ const handleServiceFilter = (item : string) => {
 };
 
   return (
-    <div className="bg-[#0086bb]/20 rounded-tr-[140px] rounded-tl-[140px]">
+    <div className="bg-[#0086bb]/20  max-[768px]:rounded-tl-[160px] rounded-tl-[360px]">
       <ServiceCard services={services} filterServices={filterServices} handleServiceFilter={handleServiceFilter} activeFilter={activeFilter} animateCard={animateCard}/>
     </div>
   );
