@@ -43,7 +43,7 @@ const ServiceCard = ({ services, handleMenusFilter, activeFilter, filterServices
           <h3 className="text-5xl mt-12 max-[425px]:mt">Our Services</h3>
         <div className="flex-1 w-full flex-col ">
       <div className="flex flex-row flex-wrap justify-center items-center mt-16 lg:mt-2 px-3 mr-0 mb-8">
-        {['Residental', 'Industrial'].map((item,index) => (
+        {['Residential', 'Industrial'].map((item,index) => (
           <div key={index}
           onClick={() => handleMenusFilter(item)}
           className={`pt-2 pr-4 m-2 bg-[#F7AB0A] rounded-lg text-white font-semibold cursor-pointer transition-all animate ease-in duration-300 hover:bg-coffee-blue hover:text-white flex justify-center items-center p-text ${
