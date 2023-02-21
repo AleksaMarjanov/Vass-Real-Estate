@@ -9,7 +9,8 @@ const OurServices = () => {
 
   const [services, setServices] = useState([])
   const [filterServices, setFilterServices] = useState([])
-  const [activeFilter, setActiveFilter] = useState("Residental");
+  const [activeFilter, setActiveFilter] = useState('All');
+  const [currentIndex, setCurrentIndex] = useState(0)
 
 const query = groq`
   *[_type == 'services']
@@ -37,8 +38,6 @@ const handleMenusFilter = (item : any) => {
     }
   }, 500);
 };
-
-
 
   return (
     <div className="bg-[#0086bb]/20">

@@ -17,7 +17,10 @@ type Props = {
   filterServices: any;
 };
 
-const ServiceCard = ({ handleMenusFilter, activeFilter, filterServices }: Props, ) => {
+
+const ServiceCard = ({ handleMenusFilter, activeFilter, filterServices}: Props, ) => {
+  const [currentIndex, setCurrentIndex] = useState(0)  
+
   
 
   const itemActive = 'xl:border-2 hover:bg-[] xl:border-[#F7AB0A] px-3 py-2 rounded xl:rounded-lg flex items-center gap-2 justify-center cursor-pointer text-white';
@@ -40,7 +43,7 @@ const ServiceCard = ({ handleMenusFilter, activeFilter, filterServices }: Props,
         >
           <h3 className="text-5xl mt-12 max-[425px]:m,t">Our Services</h3>
         </motion.div>
-        <div className="flex-1 w-full flex-col font-poppins ">
+        <div className="flex-1 w-full flex-col ">
       <div className="flex flex-row flex-wrap justify-center items-center mt-16 lg:mt-2 px-3 mr-0 mb-8">
         {['Residental', 'Industrial'].map((item,index) => (
           <div key={index}
@@ -56,7 +59,8 @@ const ServiceCard = ({ handleMenusFilter, activeFilter, filterServices }: Props,
           </div>
 
           {filterServices.map((service : any, index: any) => (
-             <div
+
+            <div
              className="w-270 flex-col md:flex-row m-8 p-4 rounded-lg  cursor-pointer transition-all animate ease-in duration-300 hover:shadow-xl flex justify-center items-center"
              key={index}
            >
