@@ -43,7 +43,7 @@ const handleMenusFilter = (item : any) => {
 };
 
   return (
-    <div className="bg-[#0086bb]/20">
+    <div className="bg-[#0086bb]/20 ">
       <ServiceCard services={services} filterServices={filterServices} handleMenusFilter={handleMenusFilter} activeFilter={activeFilter} animateCard={animateCard}/>
     </div>
   );

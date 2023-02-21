@@ -28,19 +28,19 @@ const ServiceCard = ({ services, handleMenusFilter, activeFilter, filterServices
 
   return (
     <section
-      className={`${styles.innerWidth} mt-12 max-[425px]:mt-4 flex flex-col items-center justify-center ${styles.xPaddings} `}
+      className={`${styles.innerWidth} mt-12 max-[425px]:mt-4 flex flex-col items-center justify-center ${styles.xPaddings} max-[425px]:mt-48`}
     >
       <motion.div
-        variants={staggerContainer}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
+        // variants={staggerContainer}
+        // initial="hidden"
+        // whileInView="show"
+        // viewport={{ once: true }}
       >
         <motion.div
-          variants={fadeIn("up", "tween", 0.5, 0.85)}
+          // variants={fadeIn("up", "tween", 0.5, 0.85)}
           className="text-center"
         >
-          <h3 className="text-5xl mt-12 max-[425px]:m,t">Our Services</h3>
+          <h3 className="text-5xl mt-12 max-[425px]:mt">Our Services</h3>
         </motion.div>
         <div className="flex-1 w-full flex-col ">
       <div className="flex flex-row flex-wrap justify-center items-center mt-16 lg:mt-2 px-3 mr-0 mb-8">
