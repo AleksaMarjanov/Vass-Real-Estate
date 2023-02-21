@@ -84,42 +84,6 @@ const ServiceCard = ({ services, handleMenusFilter, activeFilter, filterServices
            </div>
           ))}
           </motion.div>
-        {/* {services.map((service) => (
-          <div
-            key={service._id}
-            className={`${styles.xPaddings} max-w-[1024px] flex flex-col items-center justify-center lg:flex-row mt-12 max-[425px]:mt-6 space-x-6 md:gap-6 mx-6`}
-          >
-           
-            <motion.div
-              variants={slideIn("left", "tween", 0.35, 0.85)}
-              className={`flex items-center justify-center`}
-            >
-              <motion.div variants={textVariant(1.4)} className="py-6 ">
-                <h3 className="font-extrabold">{service.title}</h3>
-                <ul className="list-disc mt-12">
-                  <li>{service.description}</li>
-                </ul>
-              </motion.div>
-            </motion.div>
-            <motion.div
-              variants={slideIn("right", "tween", 0.35, 0.85)}
-              className="flex items-center justify-center"
-            >
-
-              
-            </motion.div>
-            <div className="relative w-full">
-              <Image
-                src={urlFor(service.mainImage).url()}
-                className="object-cover object-left lg:object-center"
-                alt={service.title}
-                width={300}
-                height={300}
-                priority
-              />
-            </div> 
-          </div>
-        ))} */}
       </motion.div>
     </section>
   );
