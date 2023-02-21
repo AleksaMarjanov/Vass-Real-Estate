@@ -27,7 +27,7 @@ useEffect(() => {
 
 const handleMenusFilter = (item : any) => {
   // @ts-ignore
-  setAnimateCard([{ x: -300, opacity: 0 }]);
+  setAnimateCard([{ x: 300, opacity: 0 }]);
   setActiveFilter(item);
 
   setTimeout(() => {
