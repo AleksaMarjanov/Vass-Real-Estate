@@ -10,17 +10,19 @@ import { urlFor } from "@/lib/urlFor";
 
 type Props = {
   services: Services[];
-  handleMenusFilter: (event: React.MouseEvent<HTMLButtonElement>) => void
-  activeFilter: (event: React.MouseEvent<HTMLButtonElement>) => void
+  // handleMenusFilter: (event: React.MouseEvent<HTMLButtonElement>) => void
+  // activeFilter: (event: React.MouseEvent<HTMLButtonElement>) => void
+  handleMenusFilter: any,
+  activeFilter: any,
   filterServices: any;
 };
 
-const ServiceCard = ({ services, handleMenusFilter, activeFilter, filterServices }: Props, ) => {
+const ServiceCard = ({ handleMenusFilter, activeFilter, filterServices }: Props, ) => {
   
 
-  const itemActive = 'xl:border-2 hover:bg-primary xl:border-coffee-blue px-3 py-2 rounded xl:rounded-lg flex items-center gap-2 justify-center cursor-pointer text-white';
+  const itemActive = 'xl:border-2 hover:bg-[] xl:border-[#F7AB0A] px-3 py-2 rounded xl:rounded-lg flex items-center gap-2 justify-center cursor-pointer text-white';
 
-  const notActiveItem = 'xl:border-2 hover:bg-primary xl:border-gray-300 px-3 py-2 rounded xl:rounded-lg flex items-center gap-2 justify-center cursor-pointer text-black'
+  const notActiveItem = 'xl:border-2 hover:bg-primary  xl:border-[#F7AB0A] px-3 py-2 rounded xl:rounded-lg flex items-center gap-2 justify-center cursor-pointer text-black'
 
   return (
     <section
@@ -53,9 +55,9 @@ const ServiceCard = ({ services, handleMenusFilter, activeFilter, filterServices
           </div>
           </div>
 
-          {filterServices.map((service, index ) => (
+          {filterServices.map((service : any, index: any) => (
              <div
-             className="w-270 flex-col m-8 p-4 rounded-lg  cursor-pointer transition-all animate ease-in duration-300 hover:shadow-xl flex justify-center items-center"
+             className="w-270 flex-col md:flex-row m-8 p-4 rounded-lg  cursor-pointer transition-all animate ease-in duration-300 hover:shadow-xl flex justify-center items-center"
              key={index}
            >
              <div className="relative w-full">

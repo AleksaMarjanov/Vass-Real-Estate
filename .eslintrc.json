@@ -1,3 +1,5 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+    // Preventing react to throw error on missing dependecies in Navbar component since those missing dependecies are added/feature has a bug ....
+    "plugins": ["react-hooks"]
 }
