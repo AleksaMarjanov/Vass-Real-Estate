@@ -15,15 +15,14 @@ type Props = {
   handleMenusFilter: any,
   activeFilter: any,
   filterServices: any;
+  animateCard: any;
 };
 
 
-const ServiceCard = ({ handleMenusFilter, activeFilter, filterServices}: Props, ) => {
-  const [currentIndex, setCurrentIndex] = useState(0)  
+const ServiceCard = ({ services, handleMenusFilter, activeFilter, filterServices, animateCard}: Props, ) => {
 
   
-
-  const itemActive = 'xl:border-2 hover:bg-[] xl:border-[#F7AB0A] px-3 py-2 rounded xl:rounded-lg flex items-center gap-2 justify-center cursor-pointer text-white';
+  const itemActive = 'xl:border-2 hover:bg-primary-black xl:border-[#F7AB0A] px-3 py-2 rounded xl:rounded-lg flex items-center gap-2 justify-center cursor-pointer text-white';
 
   const notActiveItem = 'xl:border-2 hover:bg-primary  xl:border-[#F7AB0A] px-3 py-2 rounded xl:rounded-lg flex items-center gap-2 justify-center cursor-pointer text-black'
 
@@ -57,7 +56,11 @@ const ServiceCard = ({ handleMenusFilter, activeFilter, filterServices}: Props, 
           ))}
           </div>
           </div>
-
+          <motion.div
+        animate={animateCard}
+        transition={{ duration: 0.5, delayChildren: 0.5 }}
+        className="flex flex-wrap justify-center items-center"
+      >
           {filterServices.map((service : any, index: any) => (
 
             <div
@@ -80,6 +83,7 @@ const ServiceCard = ({ handleMenusFilter, activeFilter, filterServices}: Props, 
              </div>
            </div>
           ))}
+          </motion.div>
         {/* {services.map((service) => (
           <div
             key={service._id}
