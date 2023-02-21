@@ -21,13 +21,13 @@ interface Services extends Base {
     title: string;
     description: string;
     mainImage: Image;
-    tags: Tags;
+    tags: string[];
 }
 
-interface Tags extends Base {
-    _type: string;
-    title: string;
-}
+// interface Tags extends Base {
+//     _type: "tags";
+//     title: string;
+// }
 
 
 
