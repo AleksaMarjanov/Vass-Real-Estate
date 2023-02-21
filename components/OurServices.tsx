@@ -9,7 +9,7 @@ const OurServices = () => {
 
   const [services, setServices] = useState([])
   const [filterServices, setFilterServices] = useState([])
-  const [activeFilter, setActiveFilter] = useState('All');
+  const [activeFilter, setActiveFilter] = useState('Industrial');
   const [animateCard, setAnimateCard ] = useState({ y: 0, opacity: 1 });
 
 const query = groq`
@@ -27,12 +27,12 @@ useEffect(() => {
 
 const handleMenusFilter = (item : any) => {
   // @ts-ignore
-  setAnimateCard([{ y: 100, opacity: 0 }]);
+  setAnimateCard([{ x: 100, opacity: 0 }]);
   setActiveFilter(item);
 
   setTimeout(() => {
     // @ts-ignore
-    setAnimateCard([{ y: 0, opacity: 1 }]);
+    setAnimateCard([{ x: 0, opacity: 1 }]);
     if (item === "All") {
       setFilterServices(services);
     } else {
