@@ -33,6 +33,7 @@ useEffect(() => {
   return (
     <div className="mt-12 relative items-center justify-center flex w-full h-[150px] bg-[#0086bb]/20">
       <Swiper
+      className="swiper-wrapper"
         modules={[Navigation, Pagination, Autoplay]}
         slidesPerView={2}
         navigation={{
