@@ -40,7 +40,7 @@ const ServiceCard = ({  services, handleServiceFilter, activeFilter, filterServi
           variants={fadeIn("up", "tween", 0.5, 0.85)}
           className="text-center"
         >
-          <h3 className="text-5xl mt-12 max-[425px]:mt">Our Services</h3>
+          <h3 className="text-5xl mt-12 max-[425px]:mt">What we do</h3>
         <div className="flex-1 w-full flex-col ">
       <div className="flex flex-row flex-wrap justify-center items-center mt-16 lg:mt-2 px-3 mr-0 mb-8">
         {['Property Managment', 'Residential', 'Apartment Locator', 'All'].map((item,index) => (
