@@ -19,7 +19,7 @@ const HomePage = () => {
       <section id="trusted">
       <TrustedBy />
       </section>
-      <section id="services" className="relative">
+      <section id="services" className="">
         <OurServices />
       </section>
     </main>
