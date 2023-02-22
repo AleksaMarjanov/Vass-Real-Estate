@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 
+.swiper-wrapper {
+  transition-timing-function: linear;
+}
+
 .gradient-01 {
   background-image: linear-gradient(
     270deg,
