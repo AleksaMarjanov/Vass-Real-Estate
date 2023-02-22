@@ -5,11 +5,13 @@ import { groq } from 'next-sanity'
 import { useCallback, useEffect, useState } from 'react';
 import ServiceCard from './ServiceCard';
 
+
+
 const OurServices = () => {
 
   const [services, setServices] = useState([])
   const [filterServices, setFilterServices] = useState([])
-  const [activeFilter, setActiveFilter] = useState('All');
+  const [activeFilter, setActiveFilter] = useState('Residential');
   const [animateCard, setAnimateCard ] = useState({ y: 0, opacity: 1 });
 
 const query = groq`
@@ -21,18 +23,16 @@ useEffect(() => {
     const services = await client.fetch(query)
     setServices(services)
     setFilterServices(services)
-    console.log('These are filtered services',filterServices)
-    console.log('These are services', services[0].tags )
   }
-
+  
   fetchServices()
 }, [])
 
-const handleServiceFilter = (item : string) => {
+const handleServiceFilter = (item : any) => {
   setActiveFilter(item);
   // @ts-ignore
   setAnimateCard([{ x: 100, opacity: 0 }]);
-
+  
   setTimeout(() => {
     // @ts-ignore
     setAnimateCard([{ x: 0, opacity: 1 }]);

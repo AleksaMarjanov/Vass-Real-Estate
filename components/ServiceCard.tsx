@@ -9,20 +9,20 @@ import { useState } from 'react';
 import { urlFor } from "@/lib/urlFor";
 
 type Props = {
-  services: Services[];
   // handleMenusFilter: (event: React.MouseEvent<HTMLButtonElement>) => void
   // activeFilter: (event: React.MouseEvent<HTMLButtonElement>) => void
-  handleServiceFilter: any,
+  handleServiceFilter: any;
+  services: Services[]
   activeFilter: any,
   filterServices: any;
   animateCard: any;
 };
 
 
-const ServiceCard = ({ services, handleServiceFilter, activeFilter, filterServices, animateCard}: Props, ) => {
+const ServiceCard = ({  services, handleServiceFilter, activeFilter, filterServices, animateCard}: Props ) => {
 
   
-  const itemActive = 'xl:border-2 hover:bg-primary-black xl:border-[#121a34] px-3 py-2 rounded xl:rounded-lg flex items-center gap-2 justify-center cursor-pointer text-white';
+  const itemActive = 'xl:border-2 hover:bg-primary-black xl:border-[#121a34] border-[#121a34] px-3 py-2 rounded xl:rounded-lg flex items-center gap-2 justify-center cursor-pointer text-white';
 
   const notActiveItem = 'xl:border-2 hover:bg-white  xl:border-[#F7AB0A] px-3 py-2 rounded xl:rounded-lg flex items-center gap-2 justify-center cursor-pointer text-black'
 
@@ -43,7 +43,7 @@ const ServiceCard = ({ services, handleServiceFilter, activeFilter, filterServic
           <h3 className="text-5xl mt-12 max-[425px]:mt">Our Services</h3>
         <div className="flex-1 w-full flex-col ">
       <div className="flex flex-row flex-wrap justify-center items-center mt-16 lg:mt-2 px-3 mr-0 mb-8">
-        {['Residential', 'Industrial'].map((item,index) => (
+        {['Property Managment', 'Residential', 'Apartment Locator', 'All'].map((item,index) => (
           <div key={index}
           onClick={() => handleServiceFilter(item)}
           className={`pt-2 pr-4 m-2 bg-[#F7AB0A] rounded-lg text-white font-semibold cursor-pointer transition-all animate ease-in duration-300 hover:bg-coffee-blue hover:text-white flex justify-center items-center p-text ${
