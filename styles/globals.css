@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 
-.swiper-wrapper {
+.swiper-slide {
   transition-timing-function: linear;
 }
 
