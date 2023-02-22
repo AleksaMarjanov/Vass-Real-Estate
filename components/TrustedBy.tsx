@@ -56,15 +56,16 @@ useEffect(() => {
             }
         }}
         loop={true}
+        speed={5000}
         autoplay={{
-            delay: 0,
+            delay: 1,
             disableOnInteraction: false,
           }}
         // pagination={{ clickable: true }}
       >
         {trusted.map((slide : any, index : number) => (
           <div className="swiper-slide m-0 flex items-center justify-center" key={slide._id} >
-            <SwiperSlide key={slide._id + index}>
+            <SwiperSlide key={slide._id + index} >
               <div className="object-center flex items-center justify-center px-2 w-[80px] h-[80px] max-[425px]:w-[50px] max-[425px]:h-[50px]">
                 <Image
                   className="object-contain"
