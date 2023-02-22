@@ -56,7 +56,7 @@ useEffect(() => {
         }}
         loop={true}
         autoplay={{
-            delay: 2500,
+            delay: 0,
             disableOnInteraction: false,
           }}
         // pagination={{ clickable: true }}
