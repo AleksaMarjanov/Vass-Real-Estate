@@ -11,7 +11,7 @@ const OurServices = () => {
 
   const [services, setServices] = useState([])
   const [filterServices, setFilterServices] = useState([])
-  const [activeFilter, setActiveFilter] = useState('Residential');
+  const [activeFilter, setActiveFilter] = useState('Property Managment');
   const [animateCard, setAnimateCard ] = useState({ y: 0, opacity: 1 });
 
 const query = groq`
@@ -28,7 +28,7 @@ useEffect(() => {
   fetchServices()
 }, [])
 
-const handleServiceFilter = (item : any) => {
+const handleServiceFilter = (item: any) => {
   setActiveFilter(item);
   // @ts-ignore
   setAnimateCard([{ x: 100, opacity: 0 }]);
@@ -46,7 +46,7 @@ const handleServiceFilter = (item : any) => {
 };
 
   return (
-    <div className="bg-[#0086bb]/20  max-[768px]:rounded-tl-[160px] rounded-tl-[360px]">
+    <div className="bg-[#0086bb]/20 mt-32 max-[768px]:rounded-tl-[160px] rounded-tl-[360px] relative">
       <ServiceCard services={services} filterServices={filterServices} handleServiceFilter={handleServiceFilter} activeFilter={activeFilter} animateCard={animateCard}/>
     </div>
   );

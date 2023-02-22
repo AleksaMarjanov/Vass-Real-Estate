@@ -24,12 +24,9 @@ interface Services extends Base {
     tags: string[];
 }
 
-// interface Tags extends Base {
-//     _type: "tags";
-//     title: string;
-// }
-
-
+interface TrustedBy extends Base {
+    mainImage: Image;
+}
 
 export interface PageInfo extends Base {
     _type: "pageInfo";
