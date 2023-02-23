@@ -20,11 +20,11 @@ import { HiChevronLeft, HiChevronRight } from 'react-icons/hi';
 
 const Testimonials = () => {
   return (
-    <div className="relative w-full flex flex-col items-center justify-center min-h-[70vh] mt-12 bg-[#0086bb]/10">
+    <div className="relative w-full flex flex-col items-center justify-center md:min-h-[70vh] h-screen mt-24 bg-[#0086bb]/10">
       <h2 className="text-white md:text-3xl text-xl py-12">What people say about us</h2>
       <div className="flex flex-row items-center justify-center md:items-start md:justify-center w-full">
         <div className="hidden md:flex items-end justify-end">
-          <div className='relative w-[300px] h-[300px] max-[768px]:w-[250px] max-[768px]:h-[250px] flex items-center justify-center object-center'>
+          <div className='relative w-[350px] h-[350px] flex items-center justify-center object-center'>
             <Image
               src='./testimonials1.svg'
               alt="testimonial picture"
@@ -36,7 +36,7 @@ const Testimonials = () => {
         </div>
         {/* with w-full content shows up but messes up the bigger screen sizes
          */}
-        <div className='md:w-[440px] w-full md:px-4 relative object-contain'>
+        <div className='lg:w-[540px] sm:w-[340px] w-full object-contain'>
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
           slidesPerView={1}
@@ -51,16 +51,16 @@ const Testimonials = () => {
           {SliderData.map((slide: any, index: any) => (
               <SwiperSlide key={slide.id + index}>
             <div className="swiper-slide" key={slide.id + index}>
-                <div className="relative w-full h-[300px] flex items-start justify-start">
+                <div className="relative w-full h-[440px] max-[425px]:h-[540px] flex items-start justify-start">
                   <motion.div
                     variants={fadeIn("left", "tween", 0.2, 1)}
                     initial="hidden"
                     whileInView="show"
-                    className="absolute max-w-[470px] max-h-[600px] p-4 object-contain"
+                    className="p-4 object-contain"
                   >
 
                     <div className="lg:flex lg:flex-col items-start lg:py-4 justify-center top-0">
-                      <span className="text-gray-200 max-[425px]:text-sm text-[14px] md:text-lg">
+                      <span className="text-gray-200 text-lg white-space overflow-hidden">
                         <Image src='/quotes.svg' alt="quotes" width={30} height={30} priority />{slide.desc}
                       </span>
                       <h1 className="text-xl text-bold">
