@@ -21,7 +21,7 @@ import { HiChevronLeft, HiChevronRight } from 'react-icons/hi';
 const Testimonials = () => {
   return (
     <div className="relative w-full flex flex-col items-center justify-center md:min-h-[70vh] h-screen mt-24 bg-[#0086bb]/10">
-      <h2 className="text-white md:text-3xl text-xl py-12">What people say about us</h2>
+      <h2 className="text-white text-2xl py-12 px-12 md:px-6">What people say about us</h2>
       <div className="flex flex-row items-center justify-center md:items-start md:justify-center w-full">
         <div className="hidden md:flex items-end justify-end">
           <div className='relative w-[350px] h-[350px] flex items-center justify-center object-center'>
@@ -51,7 +51,7 @@ const Testimonials = () => {
           {SliderData.map((slide: any, index: any) => (
               <SwiperSlide key={slide.id + index}>
             <div className="swiper-slide" key={slide.id + index}>
-                <div className="relative w-full h-[540px] lg:h-[380px] max-[425px]:h-[540px] flex items-start justify-start">
+                <div className="relative w-full h-[540px] lg:h-[380px] max-[425px]:h-[580px] flex items-start justify-start">
                   <motion.div
                     variants={fadeIn("left", "tween", 0.2, 1)}
                     initial="hidden"
