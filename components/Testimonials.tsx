@@ -34,6 +34,7 @@ const Testimonials = () => {
               />
              </div>
         </div>
+        {/* <div className='w-full relative'> */}
         <Swiper
               modules={[Navigation, Pagination, Autoplay]}
               slidesPerView={1}
@@ -83,6 +84,7 @@ const Testimonials = () => {
               
             ))}
             </Swiper>
+            {/* </div> */}
       </div>
     </div>
   )
