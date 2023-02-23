@@ -24,7 +24,7 @@ const Testimonials = () => {
     <h2 className="text-white md:text-3xl text-xl py-12">What people say about us</h2>
     <div className="flex flex-row items-center justify-center w-full">
 
-    <div className="md:w-[540px] w-full border flex-[1] max-[767]:w-full">
+    {/* <div className="md:w-[540px] w-full border flex-[1] max-[767]:w-full"> */}
             <Swiper
               modules={[Navigation, Pagination, Autoplay]}
               slidesPerView={1}
@@ -74,7 +74,7 @@ const Testimonials = () => {
               
             ))}
             </Swiper>
-            </div>
+            {/* </div> */}
       </div>
     </div>
   )
