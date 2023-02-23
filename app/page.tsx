@@ -24,12 +24,12 @@ const HomePage = () => {
       <section id="services" className="relative">
         <OurServices />
       </section>
-      <section>
+      {/* <section>
       <FAQ />
       </section>
       <section id="testiomnials">
         <Testimonials />
-      </section>
+      </section> */}
     </main>
   ) 
 }
