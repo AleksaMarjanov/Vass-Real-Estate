@@ -12,7 +12,7 @@ const FAQ = () => {
 
 
     return(
-                <div className="w-full md:px-24 px-6 max-[768px]:min-h-screen min-h-[30vh] md:mt-64 mt-24">
+                <div className="w-full md:px-24 px-6 min-h-[30vh] md:mt-64 mt-24">
                   
 <div id="accordion-color" data-accordion="collapse" data-active-classes="bg-blue-100 dark:bg-gray-800 text-blue-600 dark:text-white">
   <h2 id="accordion-color-heading-1">
