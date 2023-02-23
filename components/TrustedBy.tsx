@@ -31,8 +31,7 @@ useEffect(() => {
 
 
   return (
-    <div className=" h-[30vh] mt-24">
-    <div className="relative items-center justify-center flex w-full h-[120px] bg-darker-white/50">
+    <div className="mt-12 relative items-center justify-center flex w-full h-[150px] bg-[#0086bb]/20">
       <Swiper
       className="swiper-wrapper"
         modules={[Navigation, Pagination, Autoplay]}
@@ -57,22 +56,21 @@ useEffect(() => {
             }
         }}
         loop={true}
-        speed={5000}
         autoplay={{
-            delay: 1,
+            delay: 0,
             disableOnInteraction: false,
           }}
         // pagination={{ clickable: true }}
       >
         {trusted.map((slide : any, index : number) => (
           <div className="swiper-slide m-0 flex items-center justify-center" key={slide._id} >
-            <SwiperSlide key={slide._id + index} >
-              <div className="flex items-center justify-center px-2 w-[40px] h-[40px] max-[425px]:w-[30px] max-[425px]:h-[30px]">
+            <SwiperSlide key={slide._id + index}>
+              <div className="object-center flex items-center justify-center px-2 w-[80px] h-[80px] max-[425px]:w-[50px] max-[425px]:h-[50px]">
                 <Image
                   className="object-contain"
                   src={urlFor(slide.mainImage).url()}
                   alt="trusted by"
-                  fill   
+                 fill   
                   priority
                 />
               </div>
@@ -80,7 +78,6 @@ useEffect(() => {
           </div>
         ))}
       </Swiper>
-    </div>
     </div>
   );
 };
