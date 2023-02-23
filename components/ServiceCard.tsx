@@ -5,21 +5,50 @@ import { slideIn, staggerContainer, textVariant, fadeIn } from "@/utils/motion";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Services } from "@/typings";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { urlFor } from "@/lib/urlFor";
+import { client } from "@/lib/sanity.client";
+import { groq } from "next-sanity";
 
-type Props = {
-  // handleMenusFilter: (event: React.MouseEvent<HTMLButtonElement>) => void
-  // activeFilter: (event: React.MouseEvent<HTMLButtonElement>) => void
-  handleServiceFilter: any;
-  services: Services[]
-  activeFilter: any,
-  filterServices: any;
-  animateCard: any;
+const ServiceCard = () => {
+
+  const [services, setServices] = useState([])
+  const [filterServices, setFilterServices] = useState([])
+  const [activeFilter, setActiveFilter] = useState('Property Managment');
+  const [animateCard, setAnimateCard ] = useState({ y: 0, opacity: 1 });
+
+const query = groq`
+  *[_type == 'services']
+`
+
+useEffect(() => {
+  const fetchServices = async () => {
+    const services = await client.fetch(query)
+    setServices(services)
+    setFilterServices(services)
+  }
+  
+  fetchServices()
+}, [])
+
+
+const handleServiceFilter = (item: any) => {
+  setActiveFilter(item);
+  // @ts-ignore
+  setAnimateCard([{ x: 100, opacity: 0 }]);
+  
+  setTimeout(() => {
+    // @ts-ignore
+    setAnimateCard([{ x: 0, opacity: 1 }]);
+    if (item === "All") {
+      setFilterServices(services);
+    } else {
+      // @ts-ignore
+      setFilterServices(services.filter((service) => service.tags.includes(item)));
+    }
+  }, 800);
 };
 
-
-const ServiceCard = ({  services, handleServiceFilter, activeFilter, filterServices, animateCard}: Props ) => {
 
   
   const itemActive = 'xl:border-2 hover:bg-primary-black xl:border-[#121a34] border-[#121a34] px-3 py-2 rounded xl:rounded-lg flex items-center gap-2 justify-center cursor-pointer text-white';
@@ -28,7 +57,7 @@ const ServiceCard = ({  services, handleServiceFilter, activeFilter, filterServi
 
   return (
     <section
-      className={`${styles.innerWidth} mt-12 max-[425px]:mt-4 flex flex-col items-center justify-center ${styles.xPaddings} max-[425px]:mt-48`}
+      className={`${styles.innerWidth} ${styles.xPaddings} mt-12 flex flex-col items-center justify-center `}
     >
       <motion.div
         variants={staggerContainer}

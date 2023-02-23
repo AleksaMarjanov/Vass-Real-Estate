@@ -1,6 +1,6 @@
 
 import styles from "@/styles";
-import { Hero, BulletSection, OurServices, TrustedBy } from '@/components'
+import { Hero, BulletSection, ServiceCard, TrustedBy } from '@/components'
 import FAQ from "@/components/faq";
 import Testimonials from "@/components/Testimonials";
 
@@ -21,13 +21,13 @@ const HomePage = () => {
       <section id="trusted">
       <TrustedBy />
       </section>
-      <section id="services" className="">
-        <OurServices />
+      <section id="services" className="bg-[#0086bb]/10">
+        <ServiceCard />
       </section>
        <section>
       <FAQ />
       </section>
-      <section id="testiomnials">
+      <section id="testiomnials" className="bg-[#0086bb]/10">
         <Testimonials />
       </section> 
     </main>
