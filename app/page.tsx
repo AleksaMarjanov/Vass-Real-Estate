@@ -1,6 +1,12 @@
 
 import styles from "@/styles";
+<<<<<<< HEAD
 import { Hero, BulletSection, OurServices, TrustedBy, FAQ, Testimonials } from '@/components'
+=======
+import { Hero, BulletSection, OurServices, TrustedBy } from '@/components'
+import FAQ from "@/components/faq";
+import Testimonials from "@/components/Testimonials";
+>>>>>>> 837ba2fabc6989625568ed57842dd4bab3dd18e0
 
 
 const HomePage = () => {
@@ -22,12 +28,21 @@ const HomePage = () => {
       <section id="services" className="">
         <OurServices />
       </section>
+<<<<<<< HEAD
       <section className="">
         <FAQ />
       </section>
       <section>
         <Testimonials />
       </section>
+=======
+       <section>
+      <FAQ />
+      </section>
+      <section id="testiomnials">
+        <Testimonials />
+      </section> 
+>>>>>>> 837ba2fabc6989625568ed57842dd4bab3dd18e0
     </main>
   ) 
 }
