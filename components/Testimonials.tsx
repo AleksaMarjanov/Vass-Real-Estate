@@ -24,7 +24,7 @@ const Testimonials = () => {
       <h2 className="text-white md:text-3xl text-xl py-12">What people say about us</h2>
       <div className="flex flex-row items-center justify-center w-full">
         <div className="hidden md:flex w-1/2 flex-[0.5] items-end justify-end">
-          <div className='relative w-[300px] h-[300px] flex items-center justify-center object-center'>
+          <div className='relative w-[300px] h-[300px] max-[768px]:w-[250px] max-[768px]:h-[250px] flex items-center justify-center object-center'>
             <Image
               src='./testimonials1.svg'
               alt="testimonial picture"
@@ -36,7 +36,7 @@ const Testimonials = () => {
         </div>
         {/* with w-full content shows up but messes up the bigger screen sizes
          */}
-        <div className='md:w-[640px] w-full max-[425px]:px-4 relative object-contain'>
+        <div className='md:w-[440px] w-full md:px-4 relative object-contain'>
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
           slidesPerView={1}
@@ -49,8 +49,8 @@ const Testimonials = () => {
           autoplay={{ delay: 5000 }}
         >
           {SliderData.map((slide: any, index: any) => (
-            <div className="swiper-slide" key={slide.id + index}>
               <SwiperSlide key={slide.id + index}>
+            <div className="swiper-slide" key={slide.id + index}>
                 <div className="relative w-full h-[300px] flex items-start justify-start">
                   <motion.div
                     variants={fadeIn("left", "tween", 0.2, 1)}
@@ -60,7 +60,7 @@ const Testimonials = () => {
                   >
 
                     <div className="lg:flex lg:flex-col items-start lg:py-4 justify-center top-0">
-                      <span className="text-gray-200 max-[425px]:text-sm text-lg">
+                      <span className="text-gray-200 max-[425px]:text-sm text-[14px] md:text-lg">
                         <Image src='/quotes.svg' alt="quotes" width={30} height={30} priority />{slide.desc}
                       </span>
                       <h1 className="text-xl text-bold">
@@ -71,7 +71,8 @@ const Testimonials = () => {
                     </div>
                   </motion.div>
                 </div>
-                <div className="absolute z-[30] bottom-0 right-0 text-darker-white/70 select-none gap-1  flex-row items-start justify-start mt-32 p-0 lg:flex">
+                </div>
+                <div className="absolute right-0 bottom-0 text-darker-white/70 select-none gap-1  flex-row items-start justify-start mt-32 p-0 flex">
                   <HiChevronLeft
                     size={20}
                     className="z-[2] image-swiper-button-prev cursor-pointer w-[40px] h-[40px] bg-nice-blue hover:bg-darker-white hover:text-nice-blue transition-all ease-in-out duration-500"
@@ -80,9 +81,8 @@ const Testimonials = () => {
                     size={5}
                     className="z-[2] image-swiper-button-next cursor-pointer w-[40px] h-[40px] bg-nice-blue  hover:bg-darker-white hover:text-nice-blue transition-all ease-in-out duration-500"
                   />
-                </div>
-              </SwiperSlide>
             </div>
+              </SwiperSlide>
 
           ))}
         </Swiper>
