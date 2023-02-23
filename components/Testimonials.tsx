@@ -20,14 +20,9 @@ import { HiChevronLeft, HiChevronRight } from 'react-icons/hi';
 
 const Testimonials = () => {
   return (
-    <div className="items-center justify-center">
-            <Swiper
-            
-            >
-                <SwiperSlide>
+    <div className="relative w-full flex flex-col items-center justify-center min-h-[70vh] mt-12 bg-[#0086bb]/10">
+    <h2 className="text-white md:text-3xl text-xl py-12">What people say about us</h2>
 
-                </SwiperSlide>
-            </Swiper>
     </div>
   )
 }
