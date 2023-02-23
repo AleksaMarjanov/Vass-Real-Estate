@@ -31,7 +31,7 @@ useEffect(() => {
 
 
   return (
-    <div className=" h-[30vh] mt-24">
+    <div className=" h-[30vh] mt-24 relative">
     <div className="relative items-center justify-center flex w-full h-[120px] bg-darker-white/50">
       <Swiper
       className="swiper-wrapper"
