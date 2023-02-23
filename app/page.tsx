@@ -1,6 +1,8 @@
 
 import styles from "@/styles";
 import { Hero, BulletSection, OurServices, TrustedBy } from '@/components'
+import FAQ from "@/components/faq";
+import Testimonials from "@/components/Testimonials";
 
 
 const HomePage = () => {
@@ -21,6 +23,12 @@ const HomePage = () => {
       </section>
       <section id="services" className="relative">
         <OurServices />
+      </section>
+      <section>
+      <FAQ />
+      </section>
+      <section id="testiomnials">
+        <Testimonials />
       </section>
     </main>
   ) 
