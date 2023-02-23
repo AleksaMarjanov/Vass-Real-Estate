@@ -2,6 +2,7 @@
 module.exports = {
   content: [
     './app/**/*.{js,ts,jsx,tsx}',
+    "./node_modules/flowbite-react/**/*.js",
     './components/**/*.{html,js,jsx,tsx}',
     './pages/**/*.{js,ts,jsx,tsx}',
   ],
@@ -27,6 +28,7 @@ module.exports = {
     },
   },
   plugins: [
-    require('@tailwindcss/line-clamp')
+    require('@tailwindcss/line-clamp'),
+    require("flowbite/plugin")
   ],
 }
