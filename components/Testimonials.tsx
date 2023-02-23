@@ -16,7 +16,7 @@ import { HiChevronLeft, HiChevronRight } from 'react-icons/hi';
 
 const Testimonials = () => {
   return (
-    <div className="relative w-full flex flex-col items-center justify-center min-h-[70vh] mt-12 bg-[#0086bb]/10">
+    <div className="relative w-full flex flex-col items-center justify-center mt-12 bg-[#0086bb]/10">
       <h2 className="text-white md:text-3xl text-xl py-12">What people say about us</h2>
     <div className="flex flex-row items-center justify-center w-full">
             <div className="hidden md:flex w-1/2 flex-[0.5] items-end justify-end">
@@ -30,7 +30,8 @@ const Testimonials = () => {
               />
              </div>
             </div>
-            <div className="md:w-[540px] w-full border flex-[1] max-[767]:w-full">
+            {/* <div className="md:w-[540px] w-full border flex-[1] max-[767]:w-full"> */}
+            <div className="w-full">
             <Swiper
               modules={[Navigation, Pagination, Autoplay]}
               slidesPerView={1}

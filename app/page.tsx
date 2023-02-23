@@ -27,9 +27,9 @@ const HomePage = () => {
        <section>
       <FAQ />
       </section>
-      <section id="testiomnials">
+      {/* <section id="testiomnials">
         <Testimonials />
-      </section> 
+      </section>  */}
     </main>
   ) 
 }
