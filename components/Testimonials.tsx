@@ -36,7 +36,7 @@ const Testimonials = () => {
         </div>
         {/* with w-full content shows up but messes up the bigger screen sizes
          */}
-        <div className='w-[640px] relative object-contain'>
+        <div className='md:w-[640px] w-full max-[425px]:px-4 relative object-contain'>
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
           slidesPerView={1}
