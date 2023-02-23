@@ -51,7 +51,7 @@ const Testimonials = () => {
           {SliderData.map((slide: any, index: any) => (
               <SwiperSlide key={slide.id + index}>
             <div className="swiper-slide" key={slide.id + index}>
-                <div className="relative w-full h-[540px] lg:h-[380px] max-[425px]:h-[580px] flex items-start justify-start">
+                <div className="relative w-full h-[540px] lg:h-[380px] max-[320px]:h-[580px] max-[425px]:h-[500px] flex items-start justify-start">
                   <motion.div
                     variants={fadeIn("left", "tween", 0.2, 1)}
                     initial="hidden"
