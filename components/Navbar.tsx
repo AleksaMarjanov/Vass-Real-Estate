@@ -38,7 +38,7 @@ const Navbar = () => {
             priority
           />
         </Link>
-        <ul className='hidden md:flex flex-1 relative items-center justify-center list-none space-x-6'>
+        <ul className='hidden lg:flex flex-1 relative items-center justify-center list-none space-x-6'>
           {['listings', 'projects', 'transactions', 'about'].map((item, index) => (
             <div
               key={item + index}
@@ -76,7 +76,7 @@ const Navbar = () => {
 
 
         <div
-          className="md:hidden block relative"
+          className="lg:hidden block relative"
                     onClick={() => setRotate(prevState => !prevState)}
         >
           <div className="w-[30px] h-[30px] relative cursor-pointer"  onClick={() => setToggle(true)}>
