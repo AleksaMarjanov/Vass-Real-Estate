@@ -34,7 +34,7 @@ const Testimonials = () => {
             />
           </div>
         </div>
-        <div className='w-full relative'>
+        <div className='max-w-[640px] relative object-contain'>
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
           slidesPerView={1}
