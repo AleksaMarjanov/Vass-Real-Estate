@@ -34,9 +34,6 @@ const Testimonials = () => {
               />
              </div>
             </div>
-    <div className="md:w-[540px] w-full border flex-[1] max-[767]:w-full">
-           
-            </div>
       </div>
     </div>
   )
