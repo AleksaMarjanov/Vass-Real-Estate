@@ -68,7 +68,7 @@ const ServiceCard = () => {
 
   return (
     <section
-      className={`${styles.innerWidth} max-[425px]:mt-6  mt-12 flex flex-col items-center justify-center `}
+      className={`${styles.innerWidth} max-[425px]:mt-24 mt-12 flex flex-col items-center justify-center `}
     >
       <motion.div
         variants={staggerContainer}
@@ -77,16 +77,18 @@ const ServiceCard = () => {
         viewport={{ once: true }}
       >
         <motion.div
-          variants={fadeIn("up", "tween", 0.5, 0.85)}
+          variants={fadeIn("up", "tween", 0.7, 0.85)}
           className="text-center"
         >
+          <div className="flex flex-col items-center justify-center py-6">
           <h3 className="text-2xl mt-12 max-[425px]:mt-4 max-[425px]:px-12">
             What we do
           </h3>
-          <p className="max-[425px]:text-[14px] max-[425px]:mx-6 ">
+          <p className="max-[425px]:text-[14px] max-[425px]:mx-6 mt-6">
             offers buying/selling, management, market analysis, investment
             consulting, and client service{" "}
           </p>
+          </div>
           <div className="flex-1 w-full flex-col md:flex-row ">
             <div className="flex flex-row flex-wrap justify-center items-center md:mt-16 mt-2 px-3 mr-0 md:mb-8">
               {["Property Managment", "Residential", "Apartment Locator"].map(
