@@ -31,8 +31,8 @@ useEffect(() => {
 
 
   return (
-    <div className=" h-[30vh] mt-24 relative">
-    <div className="relative items-center justify-center flex w-full h-[120px] bg-darker-white/50">
+    <div className="h-[30vh] max-[425px]:h-[30%] mt-12 relative">
+    <div className="relative items-center justify-center flex w-full h-[120px] max-[425px]:h-[100px] bg-darker-white/50">
       <Swiper
       className="swiper-wrapper"
         modules={[Navigation, Pagination, Autoplay]}
@@ -44,16 +44,16 @@ useEffect(() => {
         }}
         breakpoints = {{
             499: {
-                slidesPerView: 2,
-                spaceBetween: 50
-            },
-            999: {
                 slidesPerView: 3,
                 spaceBetween: 100
             },
+            999: {
+                slidesPerView: 4,
+                spaceBetween: 10
+            },
             1440: {
-                slidesPerView: 3,
-                spaceBetween: 50
+                slidesPerView: 4,
+                spaceBetween: 10
             }
         }}
         loop={true}
@@ -67,12 +67,15 @@ useEffect(() => {
         {trusted.map((slide : any, index : number) => (
           <div className="swiper-slide m-0 flex items-center justify-center" key={slide._id} >
             <SwiperSlide key={slide._id + index} >
-              <div className="flex items-center justify-center px-2 w-[40px] h-[40px] max-[425px]:w-[30px] max-[425px]:h-[30px]">
+              <div className="relative flex items-center justify-center px-2 w-[100px] h-[100px] md:w-[150px] md:h-[150px]">
                 <Image
-                  className="object-contain"
+                  className="object-contain object-center"
                   src={urlFor(slide.mainImage).url()}
                   alt="trusted by"
-                  fill   
+                  fill
+                  sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
                   priority
                 />
               </div>

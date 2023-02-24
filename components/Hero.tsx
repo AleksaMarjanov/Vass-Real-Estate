@@ -77,6 +77,7 @@ const Hero = () => {
             src="/bestPlace.svg"
             alt="heroImage"
             fill
+            priority
             //   className="object-contain"
           />
        </motion.div> 

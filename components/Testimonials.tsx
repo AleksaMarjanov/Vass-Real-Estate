@@ -57,7 +57,7 @@ const Testimonials = () => {
                       className="p-4 object-contain"
                     >
                       <div className="lg:flex lg:flex-col items-start lg:py-4 justify-center top-0">
-                        <span className="text-gray-200 text-lg white-space overflow-hidden">
+                        <span className="relative w-[30px] h-[30px] text-gray-200 text-lg white-space overflow-hidden">
                           <Image
                             src="/quotes.svg"
                             alt="quotes"
