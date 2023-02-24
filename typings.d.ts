@@ -21,7 +21,7 @@ interface Services extends Base {
     title: string;
     description: string;
     mainImage: Image;
-    tags: string[];
+    tags: string;
 }
 
 interface TrustedBy extends Base {

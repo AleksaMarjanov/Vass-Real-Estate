@@ -16,7 +16,7 @@ type Props = {
   service: Services;
 }
 
-const ServiceCard = () => {
+const ServiceCard = ({ service } : Props) => {
 
   const [services, setServices] = useState([])
   const [filterServices, setFilterServices] = useState([])
@@ -27,13 +27,18 @@ const query = groq`
   *[_type == 'services']
 `
 
+
+
 useEffect(() => {
   const fetchServices = async () => {
     const services = await client.fetch(query)
     setServices(services)
     setFilterServices(services)
+    console.log(services, 'dasdasdasdsadas')
+    // Have to fix types of services tags doesn't exist on type Props
+    // @ts-ignore 
+    setFilterServices(services.filter((service: service) => service.tags.includes(activeFilter)));
   }
-  
   fetchServices()
 }, [])
 
@@ -50,7 +55,7 @@ const handleServiceFilter = (item : string) => {
       setFilterServices(services);
     } else {
       // @ts-ignore
-      setFilterServices(services.filter((service) => service.tags.includes(item)));
+      setFilterServices(services.filter((service) => service.tags.includes(activeFilter)));
     }
   }, 700);
 };
@@ -78,7 +83,7 @@ const handleServiceFilter = (item : string) => {
           <h3 className="text-5xl mt-12 max-[425px]:mt">What we do</h3>
         <div className="flex-1 w-full flex-col ">
       <div className="flex flex-row flex-wrap justify-center items-center mt-16 lg:mt-2 px-3 mr-0 mb-8">
-        {['Property Managment', 'Residential', 'Apartment Locator', 'All'].map((item,index) => (
+        {['Property Managment', 'Residential', 'Apartment Locator'].map((item,index) => (
           <div key={index}
           onClick={() => handleServiceFilter(item)}
           className={`pt-2 pr-4 m-2 bg-[#F7AB0A] rounded-lg text-white font-semibold cursor-pointer transition-all animate ease-in duration-300 hover:bg-coffee-blue hover:text-white flex justify-center items-center p-text ${
