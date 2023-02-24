@@ -12,9 +12,6 @@ import { groq } from "next-sanity";
 import { useEffect, useState } from "react";
 import { client } from "@/lib/sanity.client";
 import { urlFor } from "@/lib/urlFor";
-import { motion } from 'framer-motion';
-import { slideIn, staggerContainer } from "@/utils/motion";
-
 
 const TrustedBy = () => {
 const [trusted, setTrusted] = useState([])
@@ -34,15 +31,8 @@ useEffect(() => {
 
 
   return (
-    <motion.div
-    variants={staggerContainer}
-    initial="hidden"
-    whileInView="show"
-    viewport={{ once: true}} 
-    className="h-[30vh] max-[425px]:h-[30%] mt-12 relative">
-    <motion.div 
-     variants={slideIn('up', 'tween', 0.6, 0.85)}
-    className="relative items-center justify-center flex w-full h-[120px] max-[425px]:h-[100px] bg-darker-white/50">
+    <div className=" h-[30vh] mt-24 relative">
+    <div className="relative items-center justify-center flex w-full h-[120px] bg-darker-white/50">
       <Swiper
       className="swiper-wrapper"
         modules={[Navigation, Pagination, Autoplay]}
@@ -54,16 +44,16 @@ useEffect(() => {
         }}
         breakpoints = {{
             499: {
+                slidesPerView: 2,
+                spaceBetween: 50
+            },
+            999: {
                 slidesPerView: 3,
                 spaceBetween: 100
             },
-            999: {
-                slidesPerView: 4,
-                spaceBetween: 10
-            },
             1440: {
-                slidesPerView: 4,
-                spaceBetween: 10
+                slidesPerView: 3,
+                spaceBetween: 50
             }
         }}
         loop={true}
@@ -77,12 +67,12 @@ useEffect(() => {
         {trusted.map((slide : any, index : number) => (
           <div className="swiper-slide m-0 flex items-center justify-center" key={slide._id} >
             <SwiperSlide key={slide._id + index} >
-              <div className="relative flex items-center justify-center px-2 w-[100px] h-[100px] md:w-[150px] md:h-[150px]">
+              <div className="flex items-center justify-center px-2 w-[100px] h-[100px] max-[425px]:w-[30px] max-[425px]:h-[30px]">
                 <Image
-                  className="object-contain object-center"
+                  className="object-contain"
                   src={urlFor(slide.mainImage).url()}
                   alt="trusted by"
-                  fill
+                  fill   
                   priority
                 />
               </div>
@@ -90,8 +80,8 @@ useEffect(() => {
           </div>
         ))}
       </Swiper>
-    </motion.div>
-    </motion.div>
+    </div>
+    </div>
   );
 };
 
