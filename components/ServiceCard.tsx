@@ -116,14 +116,22 @@ const ServiceCard = () => {
                 className="w-270 flex-col md:flex-row md:m-8 md:p-4 rounded-lg  cursor-pointer transition-all animate ease-in duration-300 hover:shadow-xl flex justify-center items-center"
                 key={index}
               >
-                <div className="p-2 md:max-w-[550px] max w-full flex flex-col items-left justify-left text-left md:px-12 md:mx-12">
+                <div className="p-2 md:w-[550px] max w-full flex flex-col items-left justify-left text-left md:px-12 md:mx-12">
                   {/* <h4 className="font-bold">{service.title}</h4> */}
                   <PortableText
                     value={service.body}
                     components={RichTextComponents}
                   />
                 </div>
-           
+                <div className="relative object-contain lg:w-[350px] lg:h-[350px] w-[300px] h-[300px]  max-[425px]:w-[250px] max-[425px]:h-[250px] max-[375px]:w-[150px] max-[375px]:h-[150px] flex items-center justify-center">
+                  <Image
+                    src={urlFor(service.mainImage).url()}
+                    className="object-contain lg:object-center"
+                    alt={service.title}
+                    fill
+                    priority
+                  />
+                </div>
               </div>
             ))}
           </motion.div>
