@@ -19,9 +19,9 @@ interface Listing extends Base {
 
 interface Services extends Base {
     title: string;
-    description: string;
+    body: Block[];
     mainImage: Image;
-    tags: string[];
+    tags: string;
 }
 
 interface TrustedBy extends Base {
