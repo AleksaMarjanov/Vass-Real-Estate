@@ -9,6 +9,8 @@ import { useEffect, useState } from 'react';
 import { urlFor } from "@/lib/urlFor";
 import { client } from "@/lib/sanity.client";
 import { groq } from "next-sanity";
+import { PortableText } from "@portabletext/react";
+import { RichTextComponents } from "@/components/RichTextComponents";
 
 
 
@@ -62,7 +64,7 @@ const handleServiceFilter = (item : string) => {
 
 
   
-  const itemActive = 'sm:border-2 hover:bg-primary-black border-nice-blue bg-nice-blue px-3 py-2 rounded sm:rounded-lg flex items-center gap-2 justify-center cursor-pointer text-white';
+  const itemActive = '  border-nice-blue bg-nice-blue px-3 py-2 rounded sm:rounded-lg flex items-center gap-2 justify-center cursor-pointer text-white';
 
   const notActiveItem = 'px-3 py-2 rounded sm:rounded-lg flex items-center gap-2 justify-center cursor-pointer text-black'
 
@@ -81,12 +83,13 @@ const handleServiceFilter = (item : string) => {
           className="text-center"
         >
           <h3 className="text-2xl mt-12 max-[425px]:mt-4 max-[425px]:px-12">What we do</h3>
-        <div className="flex-1 w-full flex-col ">
-      <div className="flex flex-row flex-wrap justify-center items-center mt-16 lg:mt-2 px-3 mr-0 mb-8">
+          <p className="max-[425px]:text-[14px] max-[425px]:mx-6 ">offers buying/selling, management, market analysis, investment consulting, and client service </p>
+        <div className="flex-1 w-full flex-col md:flex-row ">
+      <div className="flex flex-row flex-wrap justify-center items-center md:mt-16 mt-2 px-3 mr-0 md:mb-8">
         {['Property Managment', 'Residential', 'Apartment Locator'].map((item,index) => (
           <div key={index}
           onClick={() => handleServiceFilter(item)}
-          className={`pt-2 pr-4 m-2 bg-[#F7AB0A] rounded-lg text-white font-semibold cursor-pointer transition-all animate ease-in duration-300 hover:bg-nice-blue hover:text-white flex justify-center items-center p-text ${
+          className={`md:pt-2 pt-1 mr-2 md:pr-4 m-2 bg-[#F7AB0A] rounded-[5px] md:text-lg text-sm text-white font-semibold cursor-pointer transition-all animate ease-in duration-300 hover:bg-nice-blue hover:text-white flex justify-center items-center ${
             activeFilter === item ? `${itemActive}` : `${notActiveItem}`
           }`}
           >
@@ -103,25 +106,25 @@ const handleServiceFilter = (item : string) => {
           {filterServices.map((service : Services, index: number) => (
             
             <div
-            className="w-270 flex-col md:flex-row m-8 p-4 rounded-lg  cursor-pointer transition-all animate ease-in duration-300 hover:shadow-xl flex justify-center items-center"
+            className="w-270 flex-col md:flex-row md:m-8 md:p-4 rounded-lg  cursor-pointer transition-all animate ease-in duration-300 hover:shadow-xl flex justify-center items-center"
             key={index}
             >
-            
-             <div className="p-2 w-full relative flex flex-col items-left justify-left text-left">
-                 <h4 className="font-bold">{service.title}</h4>
-                 <p className="leading-5 mt-2">{service.description}</p>
-             </div>
-              <div className="relative w-full flex items-center justify-center">
+             <div className="p-2 max-w-[550px] max-[425px]:w-full flex flex-col items-left justify-left text-left px-12 mx-12">
+                 {/* <h4 className="font-bold">{service.title}</h4> */}
+                 <PortableText value={service.body} components={RichTextComponents}/>
+                 </div>
+             <div className="relative object-contain lg:w-[350px] lg:h-[350px] w-[300px] h-[300px]  max-[425px]:w-[250px] max-[425px]:h-[250px] max-[375px]:w-[150px] max-[375px]:h-[150px] flex items-center justify-center">
               <Image
                 src={urlFor(service.mainImage).url()}
-                className="object-cover lg:object-center"
+                className="object-contain lg:object-center"
                 alt={service.title}
-                width={300}
-                height={300}
+                fill
                 priority
                 />
             </div> 
-           </div>
+             </div>
+             
+           
           ))}
           </motion.div>
       </motion.div>

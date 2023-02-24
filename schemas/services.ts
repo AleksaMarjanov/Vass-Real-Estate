@@ -11,10 +11,10 @@ export default defineType({
             type: 'string',
         }),
         defineField({
-            name: 'description',
-            title: 'Description',
-            type: 'string',
-          }),
+          name: 'body',
+          title: 'Body',
+          type: 'blockContent',
+        }),
           defineField({
             name: 'mainImage',
             title: 'Main Image',
