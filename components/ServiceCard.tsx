@@ -46,10 +46,10 @@ useEffect(() => {
 const handleServiceFilter = (item : string) => {
   setActiveFilter(item);
   // @ts-ignore
-  setAnimateCard([{ x: 100, opacity: 0 }]);
+  setAnimateCard([{ x: '-100%', opacity: 0 }]);
   
   setTimeout(() => {
-    // @ts-ignore
+     // @ts-ignore
     setAnimateCard([{ x: 0, opacity: 1 }]);
     if (item === "All") {
       setFilterServices(services);
@@ -57,7 +57,7 @@ const handleServiceFilter = (item : string) => {
       // @ts-ignore
       setFilterServices(services.filter((service) => service.tags.includes(item)));
     }
-  }, 300);
+  }, 800);
 };
 
 
@@ -97,7 +97,7 @@ const handleServiceFilter = (item : string) => {
           </div>
           <motion.div
         animate={animateCard}
-        transition={{ duration: 0.5, delayChildren: 0.5 }}
+        transition={{ type: 'tween', duration: 0.5, delayChildren: 0.5 }}
         className="flex flex-wrap justify-center items-center"
         >
           {filterServices.map((service : Services, index: number) => (
