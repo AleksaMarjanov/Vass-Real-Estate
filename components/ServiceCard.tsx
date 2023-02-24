@@ -68,7 +68,7 @@ const ServiceCard = () => {
 
   return (
     <section
-      className={`${styles.innerWidth} max-[425px]:h-screen  mt-12 flex flex-col items-center justify-center `}
+      className={`${styles.innerWidth} max-[425px]:mt-6  mt-12 flex flex-col items-center justify-center `}
     >
       <motion.div
         variants={staggerContainer}
