@@ -21,15 +21,7 @@ const HomePage = () => {
       <section id="trusted">
       <TrustedBy />
       </section>
-      <section id="services">
-        <ServiceCard />
-      </section>
-       <section>
-      <FAQ />
-      </section>
-      <section id="testiomnials" className="bg-[#0086bb]/10">
-        <Testimonials />
-      </section> 
+   
     </main>
   ) 
 }
