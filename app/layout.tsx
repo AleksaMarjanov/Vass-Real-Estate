@@ -6,7 +6,7 @@ import { Montserrat } from "@next/font/google";
 import { Navbar, Footer } from "@/components";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: 'Vass Real Estate Solutions - Real Estate, Property Managment',
