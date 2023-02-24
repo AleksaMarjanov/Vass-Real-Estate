@@ -44,7 +44,7 @@ const Testimonials = () => {
               disabledClass: "swiper-button-disabled",
             }}
             loop={true}
-            autoplay={{ delay: 7000 }}
+            autoplay={{ delay: 6000 }}
           >
             {SliderData.map((slide: any, index: any) => (
               <SwiperSlide key={slide.id + index}>
@@ -57,7 +57,7 @@ const Testimonials = () => {
                       className="p-4 object-contain"
                     >
                       <div className="lg:flex lg:flex-col items-start lg:py-4 justify-center top-0">
-                        <span className="relative w-[30px] h-[30px] text-gray-200 text-lg white-space overflow-hidden">
+                        <span className="text-gray-200 text-lg white-space overflow-hidden">
                           <Image
                             src="/quotes.svg"
                             alt="quotes"

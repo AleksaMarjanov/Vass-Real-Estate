@@ -12,6 +12,9 @@ import { groq } from "next-sanity";
 import { useEffect, useState } from "react";
 import { client } from "@/lib/sanity.client";
 import { urlFor } from "@/lib/urlFor";
+import { motion } from 'framer-motion';
+import { slideIn, staggerContainer } from "@/utils/motion";
+
 
 const TrustedBy = () => {
 const [trusted, setTrusted] = useState([])
@@ -31,8 +34,15 @@ useEffect(() => {
 
 
   return (
-    <div className="h-[30vh] max-[425px]:h-[30%] mt-12 relative">
-    <div className="relative items-center justify-center flex w-full h-[120px] max-[425px]:h-[100px] bg-darker-white/50">
+    <motion.div
+    variants={staggerContainer}
+    initial="hidden"
+    whileInView="show"
+    viewport={{ once: false, amount: 0.25}} 
+    className="h-[30vh] max-[425px]:h-[30%] mt-12 relative">
+    <motion.div 
+     variants={slideIn('up', 'tween', 0.6, 0.85)}
+    className="relative items-center justify-center flex w-full h-[120px] max-[425px]:h-[100px] bg-darker-white/50">
       <Swiper
       className="swiper-wrapper"
         modules={[Navigation, Pagination, Autoplay]}
@@ -83,8 +93,8 @@ useEffect(() => {
           </div>
         ))}
       </Swiper>
-    </div>
-    </div>
+    </motion.div>
+    </motion.div>
   );
 };
 
