@@ -10,6 +10,12 @@ import { urlFor } from "@/lib/urlFor";
 import { client } from "@/lib/sanity.client";
 import { groq } from "next-sanity";
 
+
+
+type Props = {
+  service: Services;
+}
+
 const ServiceCard = () => {
 
   const [services, setServices] = useState([])
@@ -32,7 +38,7 @@ useEffect(() => {
 }, [])
 
 
-const handleServiceFilter = (item: any) => {
+const handleServiceFilter = (item : string) => {
   setActiveFilter(item);
   // @ts-ignore
   setAnimateCard([{ x: 100, opacity: 0 }]);
@@ -46,7 +52,7 @@ const handleServiceFilter = (item: any) => {
       // @ts-ignore
       setFilterServices(services.filter((service) => service.tags.includes(item)));
     }
-  }, 800);
+  }, 700);
 };
 
 
@@ -89,7 +95,7 @@ const handleServiceFilter = (item: any) => {
         transition={{ duration: 0.5, delayChildren: 0.5 }}
         className="flex flex-wrap justify-center items-center"
         >
-          {filterServices.map((service : any, index: any) => (
+          {filterServices.map((service : Services, index: number) => (
             
             <div
             className="w-270 flex-col md:flex-row m-8 p-4 rounded-lg  cursor-pointer transition-all animate ease-in duration-300 hover:shadow-xl flex justify-center items-center"
