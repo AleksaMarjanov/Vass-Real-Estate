@@ -8,6 +8,12 @@ import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: 'Vass Real Estate Solutions - Real Estate, Property Managment',
+  description: 'Deano Vass Real Estate is a full-service broker company based in Williston, North Dakota, that specializes in providing exceptional residential and commercial real estate services, property management, market analysis, and investment consulting. With a commitment to exceptional client service, local expertise, and innovative use of technology, Deano Vass Real Estate is a trusted expert in the local real estate industry. For more information about their services, please contact them at (701)572-1111',
+  keywords: ['Real estate','Broker','Property management','Market analysis','Investment consulting','Residential,Commercial','Williston','North Dakota','Client-centered','Local expertise','Innovative technology','Trusted expert','Exceptional service','Negotiation','Property value','Commission','Timeline','Listings','Buyers','Sellers','Property search','Comparative analysis','Offers','Closing process','Marketing','Promotion','Advocacy','Resources']
+}
+
 const montserrat = Montserrat({
   weight: ["400", "700"],
   subsets: ["latin"],
