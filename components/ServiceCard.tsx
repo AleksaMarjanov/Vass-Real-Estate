@@ -34,8 +34,7 @@ const ServiceCard = () => {
       console.log(services, "dasdasdasdsadas");
       // Have to fix types of services tags doesn't exist on type Props
       // @ts-ignore
-      setFilterServices(
-        services.filter((service: service) =>
+      setFilterServices(services.filter((service: service) =>
           service.tags.includes(activeFilter)
         )
       );
@@ -55,8 +54,7 @@ const ServiceCard = () => {
         setFilterServices(services);
       } else {
         // @ts-ignore
-        setFilterServices(
-          services.filter((service) => service.tags.includes(item))
+        setFilterServices(services.filter((service) => service.tags.includes(item))
         );
       }
     }, 600);
