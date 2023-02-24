@@ -57,14 +57,14 @@ const handleServiceFilter = (item : string) => {
       // @ts-ignore
       setFilterServices(services.filter((service) => service.tags.includes(item)));
     }
-  }, 800);
+  }, 600);
 };
 
 
   
-  const itemActive = 'xl:border-2 hover:bg-primary-black xl:border-[#121a34] border-[#121a34] px-3 py-2 rounded xl:rounded-lg flex items-center gap-2 justify-center cursor-pointer text-white';
+  const itemActive = 'sm:border-2 hover:bg-primary-black border-nice-blue bg-nice-blue px-3 py-2 rounded sm:rounded-lg flex items-center gap-2 justify-center cursor-pointer text-white';
 
-  const notActiveItem = 'xl:border-2 hover:bg-white  xl:border-[#F7AB0A] px-3 py-2 rounded xl:rounded-lg flex items-center gap-2 justify-center cursor-pointer text-black'
+  const notActiveItem = 'px-3 py-2 rounded sm:rounded-lg flex items-center gap-2 justify-center cursor-pointer text-black'
 
   return (
     <section
@@ -80,13 +80,13 @@ const handleServiceFilter = (item : string) => {
           variants={fadeIn("up", "tween", 0.5, 0.85)}
           className="text-center"
         >
-          <h3 className="text-5xl mt-12 max-[425px]:mt">What we do</h3>
+          <h3 className="text-2xl mt-12 max-[425px]:mt-4 max-[425px]:px-12">What we do</h3>
         <div className="flex-1 w-full flex-col ">
       <div className="flex flex-row flex-wrap justify-center items-center mt-16 lg:mt-2 px-3 mr-0 mb-8">
         {['Property Managment', 'Residential', 'Apartment Locator'].map((item,index) => (
           <div key={index}
           onClick={() => handleServiceFilter(item)}
-          className={`pt-2 pr-4 m-2 bg-[#F7AB0A] rounded-lg text-white font-semibold cursor-pointer transition-all animate ease-in duration-300 hover:bg-coffee-blue hover:text-white flex justify-center items-center p-text ${
+          className={`pt-2 pr-4 m-2 bg-[#F7AB0A] rounded-lg text-white font-semibold cursor-pointer transition-all animate ease-in duration-300 hover:bg-nice-blue hover:text-white flex justify-center items-center p-text ${
             activeFilter === item ? `${itemActive}` : `${notActiveItem}`
           }`}
           >

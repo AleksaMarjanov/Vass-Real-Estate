@@ -44,7 +44,7 @@ const Testimonials = () => {
               disabledClass: "swiper-button-disabled",
             }}
             loop={true}
-            autoplay={{ delay: 5000 }}
+            autoplay={{ delay: 7000 }}
           >
             {SliderData.map((slide: any, index: any) => (
               <SwiperSlide key={slide.id + index}>
