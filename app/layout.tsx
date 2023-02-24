@@ -6,6 +6,7 @@ import { Montserrat } from "@next/font/google";
 import { Navbar, Footer } from "@/components";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
+import { Metadata } from "next";
 
 const montserrat = Montserrat({
   weight: ["400", "700"],
