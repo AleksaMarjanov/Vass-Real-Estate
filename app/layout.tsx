@@ -7,7 +7,6 @@ import { Navbar, Footer } from "@/components";
 // import { usePathname } from "next/navigation";
 
 
-
 const montserrat = Montserrat({
   weight: ["400", "700"],
   subsets: ["latin"],
