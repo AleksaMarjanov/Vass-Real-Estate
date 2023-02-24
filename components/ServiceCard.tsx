@@ -16,7 +16,7 @@ type Props = {
   service: Services;
 }
 
-const ServiceCard = ({ service } : Props) => {
+const ServiceCard = () => {
 
   const [services, setServices] = useState([])
   const [filterServices, setFilterServices] = useState([])
@@ -57,7 +57,7 @@ const handleServiceFilter = (item : string) => {
       // @ts-ignore
       setFilterServices(services.filter((service) => service.tags.includes(activeFilter)));
     }
-  }, 700);
+  }, 300);
 };
 
 
