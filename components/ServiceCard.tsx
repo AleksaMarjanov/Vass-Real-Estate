@@ -123,15 +123,7 @@ const ServiceCard = () => {
                     components={RichTextComponents}
                   />
                 </div>
-                <div className="relative object-contain lg:w-[350px] lg:h-[350px] w-[300px] h-[300px]  max-[425px]:w-[250px] max-[425px]:h-[250px] max-[375px]:w-[150px] max-[375px]:h-[150px] flex items-center justify-center">
-                  <Image
-                    src={urlFor(service.mainImage).url()}
-                    className="object-contain lg:object-center"
-                    alt={service.title}
-                    fill
-                    priority
-                  />
-                </div>
+           
               </div>
             ))}
           </motion.div>
