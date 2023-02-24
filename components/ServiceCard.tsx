@@ -55,7 +55,7 @@ const handleServiceFilter = (item : string) => {
       setFilterServices(services);
     } else {
       // @ts-ignore
-      setFilterServices(services.filter((service) => service.tags.includes(activeFilter)));
+      setFilterServices(services.filter((service) => service.tags.includes(item)));
     }
   }, 300);
 };
