@@ -67,7 +67,7 @@ useEffect(() => {
         {trusted.map((slide : any, index : number) => (
           <div className="swiper-slide m-0 flex items-center justify-center" key={slide._id} >
             <SwiperSlide key={slide._id + index} >
-              <div className="flex items-center justify-center px-2 w-[40px] h-[40px] max-[425px]:w-[30px] max-[425px]:h-[30px]">
+              <div className="flex items-center justify-center px-2 w-[100px] h-[100px] max-[425px]:w-[30px] max-[425px]:h-[30px]">
                 <Image
                   className="object-contain"
                   src={urlFor(slide.mainImage).url()}
