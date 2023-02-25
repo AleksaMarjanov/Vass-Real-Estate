@@ -72,7 +72,7 @@ const Hero = () => {
         </motion.div>
         <motion.div
           variants={slideIn("right", "tween", 0.4, 0.85)}
-          className="relative w-full lg:w-[724px]"
+          className="relative w-full"
         >
           <Image
             src="/bestPlace.svg"
