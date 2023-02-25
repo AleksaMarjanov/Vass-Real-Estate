@@ -38,7 +38,7 @@ useEffect(() => {
     variants={staggerContainer}
     initial="hidden"
     whileInView="show"
-    viewport={{ once: true}} 
+    viewport={{ once: false, amount: 0.25}} 
     className="h-[30vh] max-[425px]:h-[30%] mt-12 relative">
     <motion.div 
      variants={slideIn('up', 'tween', 0.6, 0.85)}

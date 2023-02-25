@@ -14,7 +14,7 @@ const Hero = () => {
     initial="hidden"
     whileInView="show"
     viewport={{ once: true }}
-    className={`${styles.innerWidth} min-h-[70vh] relative`}
+    className={` min-h-[60vh] w-full relative`}
     >
            <motion.div
       variants={slideIn('left', 'tween', 0.3, 0.85)}
@@ -24,7 +24,7 @@ const Hero = () => {
 
        </motion.div>  
       <motion.div
-        className={`${styles.xPaddings} items-center flex justify-center flex-col md:flex-row relative z-[30]`}
+        className={`${styles.xPaddings} items-center flex justify-center max-[768px]:flex-col flex-row relative z-[30]`}
       >
        
         <motion.div variants={slideIn("left", "tween", 0.3, 0.85)}>
@@ -71,7 +71,7 @@ const Hero = () => {
         </motion.div>
         <motion.div
           variants={slideIn("right", "tween", 0.4, 0.85)}
-          className="relative w-full md:w-[1024px] lg:w-[480px] max-[425px]:w-[400px]"
+          className="relative w-full sm:w-[1240px] md:w-[1040px] lg:w-[860px]"
         >
           <Image
             src="/bestPlace.svg"

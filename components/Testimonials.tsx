@@ -10,13 +10,15 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { SliderData } from "./../lib/sliderData";
 import { motion } from "framer-motion";
-import { fadeIn } from "@/utils/motion";
+import { fadeIn, slideIn } from "@/utils/motion";
 import Image from "next/image";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 
 const Testimonials = () => {
   return (
-    <div className="relative w-full flex flex-col items-center justify-center md:min-h-[70vh] h-screen mt-24">
+    <motion.div 
+    variants={slideIn('up', 'tween', 0.5, 0.85)}
+    className="relative w-full flex flex-col items-center justify-center md:min-h-[70vh] h-screen mt-24">
       <h2 className="text-white text-2xl py-12 px-12 md:px-6">
         What people say about us
       </h2>
@@ -88,7 +90,7 @@ const Testimonials = () => {
           </Swiper>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
