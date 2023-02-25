@@ -112,7 +112,7 @@ const ServiceCard = () => {
           >
             {filterServices.map((service: Services, index: number) => (
               <div
-                className="w-270 flex-col md:flex-row md:m-8 md:p-4 rounded-lg  cursor-pointer transition-all animate ease-in duration-300 hover:shadow-xl flex justify-center items-center"
+                className="w-270 flex-col lg:flex-row rounded-lg  cursor-pointer transition-all animate ease-in duration-300 hover:shadow-xl flex justify-center items-center"
                 key={index}
               >
                 <div className="p-2 w-full lg:w-[550px] flex flex-col items-left  text-lg justify-left text-left md:px-12 md:mx-12">
