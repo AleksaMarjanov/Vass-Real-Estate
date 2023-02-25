@@ -27,7 +27,6 @@ useEffect(() => {
     const fetchTrusted = async () => {
         const trusted = await client.fetch(query)
         setTrusted(trusted);
-        console.log(trusted);
     }
     fetchTrusted()
 }, [])
@@ -38,7 +37,7 @@ useEffect(() => {
     variants={staggerContainer}
     initial="hidden"
     whileInView="show"
-    viewport={{ once: false, amount: 0.25}} 
+    viewport={{ once: true }} 
     className="h-[30vh] max-[425px]:h-[30%] mt-12 relative">
     <motion.div 
      variants={slideIn('up', 'tween', 0.6, 0.85)}
@@ -83,6 +82,9 @@ useEffect(() => {
                   src={urlFor(slide.mainImage).url()}
                   alt="trusted by"
                   fill
+                  sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
                   priority
                 />
               </div>

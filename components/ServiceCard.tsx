@@ -31,7 +31,6 @@ const ServiceCard = () => {
       const services = await client.fetch(query);
       setServices(services);
       setFilterServices(services);
-      console.log(services, "dasdasdasdsadas");
       // Have to fix types of services tags doesn't exist on type Props
       // @ts-ignore
       setFilterServices(services.filter((service: service) =>

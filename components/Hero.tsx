@@ -20,7 +20,8 @@ const Hero = () => {
       variants={slideIn('left', 'tween', 0.3, 0.85)}
       className="w-full relative"
       >
-          <div className="w-full absolute z-0 -top-[50px] max-[768px]:top-[50px] max-[1440px]:top-[10px] min-[1440px]:top-[10px] bg-[#0086bb]/20 h-[600px] max-[768px]:h-[600px] max-[768px]:rounded-br-[160px] rounded-br-[360px]" />
+          <div className="w-full absolute z-0 -top-[50px] max-[768px]:top-[50px] max-[1440px]:top-[10px] 
+          min-[1440px]:top-[10px] bg-[#0086bb]/20 h-[600px] max-[768px]:h-[600px] md:h-[500px] max-[768px]:rounded-br-[160px] rounded-br-[360px]" />
 
        </motion.div>  
       <motion.div
@@ -91,7 +92,7 @@ const Hero = () => {
       viewport={{ once: false, amount: 0.25}}
       >
 
-      <a href="#bulletsection" rel="norefferer" className="flex items-center justify-center mt-[64px] cursor-pointer">
+      <a href="#bulletsection" rel="norefferer" className="flex items-center justify-center mt-[64px] max-[768px]:mt-[24px] cursor-pointer">
       <motion.img
           variants={fadeIn('up', 'tween', 0.3,1)}
           src="/arrow-down.svg"
