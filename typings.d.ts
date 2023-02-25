@@ -45,6 +45,12 @@ export interface BulletSection extends Base {
     mainImage: Image;
     title: string;
 }
+export interface Testimonials extends Base {
+    _type: "testimonials";
+    feeback: string;
+    mainImage: Image;
+    name: string;
+}
 
 export interface Social extends Base {
     _type: "social";

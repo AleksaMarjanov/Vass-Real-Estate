@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper";
 import "swiper/css";
@@ -8,13 +8,30 @@ import "swiper/css/autoplay";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import { SliderData } from "./../lib/sliderData";
 import { motion } from "framer-motion";
 import { fadeIn, slideIn, staggerContainer } from "@/utils/motion";
 import Image from "next/image";
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
+import { groq } from "next-sanity";
+import { client } from "@/lib/sanity.client";
+import { urlFor } from '@/lib/urlFor'
+import { SliderData } from './../lib/sliderData';
 
 const Testimonials = () => {
+  const [testimonials, setTestimonials] = useState([]);
+    const query = groq`
+    *[_type == 'testimonials']
+    `
+ const fetchTest = async () => {
+   const data = await client.fetch(query)
+   setTestimonials(data)
+ }
+  
+  useEffect(() => {
+    fetchTest();
+  }, [])
+
+
   return (
     <motion.div
       variants={staggerContainer} 
@@ -54,10 +71,10 @@ const Testimonials = () => {
             }}
             loop={true}
             autoplay={{ delay: 6000 }}
-          >
-            {SliderData.map((slide: any, index: any) => (
-              <SwiperSlide key={slide.id + index}>
-                <div className="swiper-slide" key={slide.id + index}>
+    >
+            {testimonials.map((testimonial: any, index: any) => (
+              <SwiperSlide key={testimonial._id + index}>
+                <div className="swiper-slide" key={testimonial._id + index}>
                   <div className="relative w-full h-[540px] lg:h-[380px] max-[320px]:h-[580px] max-[425px]:h-[500px] flex items-start justify-start">
                     <motion.div
                       variants={fadeIn("left", "tween", 0.2, 1)}
@@ -65,7 +82,7 @@ const Testimonials = () => {
                       whileInView="show"
                       className="p-4 object-contain"
                     >
-                      <div className="lg:flex lg:flex-col items-start lg:py-4 justify-center top-0">
+                      <div className="lg:flex lg:flex-col items-start lg:py-4 py-8 justify-center top-0">
                         <span className="relative text-gray-200 text-lg white-space overflow-hidden">
                           <Image
                             src="/quotes.svg"
@@ -74,10 +91,15 @@ const Testimonials = () => {
                             height={30}
                             priority
                           />
-                          {slide.desc}
+                          {testimonial.feedback}
                         </span>
-                        <h1 className="text-xl text-bold">{slide.title}</h1>
-                        <div></div>
+                        <div className="flex flex-row items-center justify-center">
+                        <div className="relative w-full">
+                          <Image src={urlFor(testimonial.imgUrl).url()} alt={testimonial.name} width={50} height={50} priority className="object-contain rounded-full" />
+                        </div>
+                        
+                        <h1 className="text-xl text-extrabold">{testimonial.name}</h1>
+                        </div>
                       </div>
                     </motion.div>
                   </div>
