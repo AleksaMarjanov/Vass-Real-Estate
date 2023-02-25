@@ -45,24 +45,24 @@ useEffect(() => {
       <Swiper
       className="swiper-wrapper"
         modules={[Navigation, Pagination, Autoplay]}
-        slidesPerView={2}
+        slidesPerView={3}
         navigation={{
           nextEl: ".image-swiper-button-next",
           prevEl: ".image-swiper-button-prev",
           disabledClass: "swiper-button-disabled",
         }}
         breakpoints = {{
-            499: {
-                slidesPerView: 2,
+            425: {
+                slidesPerView: 3,
                 spaceBetween: 100
             },
             999: {
-                slidesPerView: 3,
+                slidesPerView: 4,
                 spaceBetween: 10
             },
             1440: {
-                slidesPerView: 3,
-                spaceBetween: 10
+                slidesPerView: 5,
+                spaceBetween: 100
             }
         }}
         loop={true}
