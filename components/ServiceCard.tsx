@@ -93,7 +93,7 @@ const ServiceCard = () => {
                   <div
                     key={index}
                     onClick={() => handleServiceFilter(item)}
-                    className={`md:pt-2 pt-1 mr-2 md:pr-4 m-2 bg-[#F7AB0A] rounded-[5px] md:text-lg text-sm text-white font-semibold cursor-pointer transition-all animate ease-in duration-300 hover:bg-nice-blue hover:text-white flex justify-center items-center ${
+                    className={`pt-2 mr-2 pr-4 m-2 bg-[#F7AB0A] rounded-[5px] md:text-lg text-sm text-white font-semibold cursor-pointer transition-all animate ease-in duration-300 hover:bg-nice-blue hover:text-white flex justify-center items-center ${
                       activeFilter === item
                         ? `${itemActive}`
                         : `${notActiveItem}`
