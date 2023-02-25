@@ -43,7 +43,7 @@ const fetchData = async () => {
     <motion.div 
     variants={fadeIn('up', 'tween', 0.35, 0.85)}
     className="relative w-full flex flex-col items-center justify-center md:min-h-[70vh] h-screen ">
-      <h2 className="text-white text-2xl py-12 px-12 md:px-6">
+      <h2 className="text-white text-2xl md:py-12 py-6 px-12 md:px-6">
         What people say about us
       </h2>
       <div className="flex flex-row lg:mx-12 items-center justify-center md:items-start md:justify-center w-full">
@@ -78,7 +78,7 @@ const fetchData = async () => {
             {SliderData.map((testimonial: any, index: number) => (
               <SwiperSlide key={testimonial.id + index}>
                 <div className="swiper-slide" key={testimonial.id + index}>
-                  <div className="relative w-full h-[540px] lg:h-[480px] max-[320px]:h-[580px] max-[425px]:h-[500px] flex items-start justify-start">
+                  <div className="relative w-full h-[540px] lg:h-[480px] max-[320px]:h-[580px] max-[425px]:h-[520px] flex items-start justify-start">
                     <motion.div
                       variants={fadeIn("left", "tween", 0.2, 1)}
                       initial="hidden"
