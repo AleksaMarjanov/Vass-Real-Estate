@@ -27,7 +27,7 @@ const HomePage = () => {
        <section>
       <FAQ />
       </section>
-      <section id="testiomnials" className="bg-[#0086bb]/10">
+      <section id="testiomnials" >
         <Testimonials />
       </section> 
     </main>
