@@ -4,7 +4,7 @@ import { initAccordions } from "flowbite";
 import 'flowbite'
 import { motion } from 'framer-motion'
 import { useEffect } from 'react';
-import { slideIn, staggerContainer } from "@/utils/motion";
+import { fadeIn, slideIn, staggerContainer } from "@/utils/motion";
 
 const FAQ = () => {
 
@@ -23,7 +23,7 @@ const FAQ = () => {
       >
       
                 <motion.div
-                variants={slideIn('up', 'tween', 0.35, 0.85)}
+                variants={fadeIn('left', 'tween', 0.45, 0.85)}
                 className="w-full md:px-24 px-6 min-h-[30vh] md:mt-24 max-[425x]:mt-12">
                   <h1 className="flex items-center justify-center text-2xl max-[425px]:px-6 py-12 max-[425px]:py-6">Frequently Asked</h1>
                   

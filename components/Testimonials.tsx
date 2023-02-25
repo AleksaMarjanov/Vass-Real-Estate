@@ -24,7 +24,7 @@ const Testimonials = () => {
       className="bg-[#0086bb]/10"
     >
     <motion.div 
-    variants={slideIn('up', 'tween', 0.3, 0.85)}
+    variants={fadeIn('right', 'tween', 0.3, 0.85)}
     className="relative w-full flex flex-col items-center justify-center md:min-h-[70vh] h-screen mt-24">
       <h2 className="text-white text-2xl py-12 px-12 md:px-6">
         What people say about us

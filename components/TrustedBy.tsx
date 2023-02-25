@@ -53,22 +53,22 @@ useEffect(() => {
         }}
         breakpoints = {{
             499: {
-                slidesPerView: 3,
+                slidesPerView: 2,
                 spaceBetween: 100
             },
             999: {
-                slidesPerView: 4,
+                slidesPerView: 3,
                 spaceBetween: 10
             },
             1440: {
-                slidesPerView: 4,
+                slidesPerView: 3,
                 spaceBetween: 10
             }
         }}
         loop={true}
         speed={5000}
         autoplay={{
-            delay: 1,
+            delay: 0,
             disableOnInteraction: false,
           }}
         // pagination={{ clickable: true }}
