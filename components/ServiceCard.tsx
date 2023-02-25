@@ -87,7 +87,7 @@ const ServiceCard = () => {
             offers buying/selling, management, market analysis, investment
             consulting, and client service{" "}
           </p>
-          <div className="flex-1 w-full flex-col md:flex-row ">
+          <div className="flex-1 flex-col md:flex-row ">
             <div className="flex flex-row flex-wrap justify-center items-center md:mt-16 mt-2 px-3 mr-0 md:mb-8">
               {["Property Managment", "Residential", "Apartment Locator"].map(
                 (item, index) => (
@@ -116,19 +116,20 @@ const ServiceCard = () => {
                 className="w-270 flex-col md:flex-row md:m-8 md:p-4 rounded-lg  cursor-pointer transition-all animate ease-in duration-300 hover:shadow-xl flex justify-center items-center"
                 key={index}
               >
-                <div className="p-2 md:w-[550px] max w-full flex flex-col items-left justify-left text-left md:px-12 md:mx-12">
+                <div className="p-2 w-full lg:w-[550px] flex flex-col items-left justify-left text-left md:px-12 md:mx-12">
                   {/* <h4 className="font-bold">{service.title}</h4> */}
                   <PortableText
                     value={service.body}
                     components={RichTextComponents}
                   />
                 </div>
-                <div className="relative object-contain lg:w-[350px] lg:h-[350px] w-[300px] h-[300px]  max-[425px]:w-[250px] max-[425px]:h-[250px] max-[375px]:w-[150px] max-[375px]:h-[150px] flex items-center justify-center">
+                <div className="relative  object-contain lg:w-[350px] lg:h-[350px] w-[300px] h-[300px]  max-[425px]:w-[250px] max-[425px]:h-[250px] max-[375px]:w-[150px] max-[375px]:h-[150px] flex items-center justify-center">
                   <Image
                     src={urlFor(service.mainImage).url()}
                     className="object-contain lg:object-center"
                     alt={service.title}
-                    fill
+                    width={300}
+                    height={300}
                     priority
                   />
                 </div>

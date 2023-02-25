@@ -20,11 +20,11 @@ const Hero = () => {
       variants={slideIn('left', 'tween', 0.3, 0.85)}
       className="w-full relative"
       >
-          <div className="w-full absolute z-0 -top-[100px] max-[768px]:top-[20px] max-[1440px]:top-[10px] min-[1440px]:top-[10px] bg-[#0086bb]/20 h-[600px] max-[768px]:h-[600px] max-[768px]:rounded-br-[160px] rounded-br-[360px]" />
+          <div className="w-full absolute z-0 -top-[50px] max-[768px]:top-[50px] max-[1440px]:top-[10px] min-[1440px]:top-[10px] bg-[#0086bb]/20 h-[600px] max-[768px]:h-[600px] max-[768px]:rounded-br-[160px] rounded-br-[360px]" />
 
        </motion.div>  
       <motion.div
-        className={`${styles.xPaddings} items-center flex justify-center flex-row max-[768px]:flex-col relative z-[30]`}
+        className={`${styles.xPaddings} items-center flex justify-center flex-col md:flex-row relative z-[30]`}
       >
        
         <motion.div variants={slideIn("left", "tween", 0.3, 0.85)}>
@@ -71,14 +71,15 @@ const Hero = () => {
         </motion.div>
         <motion.div
           variants={slideIn("right", "tween", 0.4, 0.85)}
-          className="w-[1024px] h-[480px] max-[768px]:w-[480px] max-[768px]:h-[260px] max-[425px]:w-[280px] relative z-10 right-0"
+          className="relative w-full md:w-[1024px] lg:w-[480px] max-[425px]:w-[400px]"
         >
           <Image
             src="/bestPlace.svg"
             alt="heroImage"
-            fill
+            width={1000}
+            height={1000}
             priority
-            //   className="object-contain"
+              className="object-contain"
           />
        </motion.div> 
       </motion.div>
