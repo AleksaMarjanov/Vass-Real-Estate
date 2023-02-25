@@ -18,19 +18,20 @@ import { urlFor } from '@/lib/urlFor'
 import { SliderData } from './../lib/sliderData';
 
 const Testimonials = () => {
-  const [testimonials, setTestimonials] = useState([]);
-    const query = groq`
-    *[_type == 'testimonials']
-    `
- const fetchTest = async () => {
-   const data = await client.fetch(query)
-   setTestimonials(data)
- }
-  
-  useEffect(() => {
-    fetchTest();
-  }, [])
+  const [testimonials, setTestimonials] = useState([])
 
+  const query = groq`
+  *[_type == 'testimonials']
+`;
+
+const fetchData = async () => {
+  const data = await client.fetch(query);
+  setTestimonials(data)
+
+};
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
     <motion.div
@@ -38,17 +39,16 @@ const Testimonials = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.25}}   
-      className="bg-[#0086bb]/10"
     >
     <motion.div 
     variants={fadeIn('up', 'tween', 0.35, 0.85)}
-    className="relative w-full flex flex-col items-center justify-center md:min-h-[70vh] h-screen mt-24">
+    className="relative w-full flex flex-col items-center justify-center md:min-h-[70vh] h-screen ">
       <h2 className="text-white text-2xl py-12 px-12 md:px-6">
         What people say about us
       </h2>
-      <div className="flex flex-row items-center justify-center md:items-start md:justify-center w-full">
+      <div className="flex flex-row lg:mx-12 items-center justify-center md:items-start md:justify-center w-full">
         <div className="hidden md:flex items-end justify-end">
-          <div className="relative w-[350px] h-[350px] flex items-center justify-center object-center">
+          <div className="relative w-[350px] h-[350px] lg:w-[400px] lg:h-[400px] flex items-center justify-center object-center">
             <Image
               src="./testimonials1.svg"
               alt="testimonial picture"
@@ -70,12 +70,15 @@ const Testimonials = () => {
               disabledClass: "swiper-button-disabled",
             }}
             loop={true}
+            observer={true}
+            observeParents={true}
+            parallax={true}
             autoplay={{ delay: 6000 }}
     >
-            {testimonials.map((testimonial: any, index: any) => (
-              <SwiperSlide key={testimonial._id + index}>
-                <div className="swiper-slide" key={testimonial._id + index}>
-                  <div className="relative w-full h-[540px] lg:h-[380px] max-[320px]:h-[580px] max-[425px]:h-[500px] flex items-start justify-start">
+            {SliderData.map((testimonial: any, index: number) => (
+              <SwiperSlide key={testimonial.id + index}>
+                <div className="swiper-slide" key={testimonial.id + index}>
+                  <div className="relative w-full h-[540px] lg:h-[480px] max-[320px]:h-[580px] max-[425px]:h-[500px] flex items-start justify-start">
                     <motion.div
                       variants={fadeIn("left", "tween", 0.2, 1)}
                       initial="hidden"
@@ -83,7 +86,7 @@ const Testimonials = () => {
                       className="p-4 object-contain"
                     >
                       <div className="lg:flex lg:flex-col items-start lg:py-4 py-8 justify-center top-0">
-                        <span className="relative text-gray-200 text-lg white-space overflow-hidden">
+                        <div className="relative text-gray-200 text-lg white-space overflow-hidden">
                           <Image
                             src="/quotes.svg"
                             alt="quotes"
@@ -91,20 +94,20 @@ const Testimonials = () => {
                             height={30}
                             priority
                           />
-                          {testimonial.feedback}
-                        </span>
-                        <div className="flex flex-row items-center justify-center">
-                        <div className="relative w-full">
-                          <Image src={urlFor(testimonial.imgUrl).url()} alt={testimonial.name} width={50} height={50} priority className="object-contain rounded-full" />
-                        </div>
-                        
-                        <h1 className="text-xl text-extrabold">{testimonial.name}</h1>
+                          {testimonial.desc}
                         </div>
                       </div>
+                        <div className="flex flex-row bottom-0 relative">
+                          <Image src={testimonial.imgUrl} alt={testimonial.title} width={50} height={50} priority className="object-contain rounded-full" />
+                          {/* <Image src={urlFor(testimonial.imgUrl).url()} alt={testimonial.title} width={50} height={50} priority className="object-contain rounded-full" /> */}
+                        <h1 className="text-xl text-extrabold mx-6 flex items-center justify-center">{testimonial.title}</h1>
+                        </div>
                     </motion.div>
                   </div>
                 </div>
-                <div className="absolute right-0 bottom-0 text-white select-none gap-1  flex-row items-start justify-start mt-32 p-0 flex">
+              </SwiperSlide>
+            ))}
+                <div className="absolute  bottom-0 right-10 lg:right-0 text-white select-none gap-1  flex-row items-start justify-start mt-32 flex">
                   <BiLeftArrowAlt
                     size={20}
                     className="z-[2] image-swiper-button-prev cursor-pointer p-1 w-[40px] h-[40px] bg-[#F7AB0A] hover:bg-white hover:text-[#F7AB0A] transition-all ease-in-out duration-500"
@@ -114,8 +117,6 @@ const Testimonials = () => {
                     className="z-[2] image-swiper-button-next cursor-pointer w-[40px] p-1 h-[40px] bg-[#F7AB0A]  hover:bg-white hover:text-[#F7AB0A] transition-all ease-in-out duration-500"
                   />
                 </div>
-              </SwiperSlide>
-            ))}
           </Swiper>
         </div>
       </div>
