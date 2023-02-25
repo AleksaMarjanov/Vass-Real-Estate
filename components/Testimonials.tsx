@@ -85,11 +85,11 @@ const Testimonials = () => {
                 <div className="absolute right-0 bottom-0 text-white select-none gap-1  flex-row items-start justify-start mt-32 p-0 flex">
                   <BiLeftArrowAlt
                     size={20}
-                    className="z-[2] image-swiper-button-prev cursor-pointer p-2 w-[40px] h-[40px] bg-[#F7AB0A] hover:bg-white hover:text-[#F7AB0A] transition-all ease-in-out duration-500"
+                    className="z-[2] image-swiper-button-prev cursor-pointer p-1 w-[40px] h-[40px] bg-[#F7AB0A] hover:bg-white hover:text-[#F7AB0A] transition-all ease-in-out duration-500"
                   />
                   <BiRightArrowAlt
                     size={20}
-                    className="z-[2] image-swiper-button-next cursor-pointer w-[40px] p-2 h-[40px] bg-[#F7AB0A]  hover:bg-white hover:text-[#F7AB0A] transition-all ease-in-out duration-500"
+                    className="z-[2] image-swiper-button-next cursor-pointer w-[40px] p-1 h-[40px] bg-[#F7AB0A]  hover:bg-white hover:text-[#F7AB0A] transition-all ease-in-out duration-500"
                   />
                 </div>
               </SwiperSlide>
