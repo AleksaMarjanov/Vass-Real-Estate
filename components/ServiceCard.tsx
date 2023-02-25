@@ -76,7 +76,7 @@ const ServiceCard = () => {
         viewport={{ once: true }}
       >
         <motion.div
-          variants={fadeIn("up", "tween", 0.5, 0.85)}
+          variants={fadeIn("up", "tween", 0.8, 0.85)}
           className="text-center"
         >
           <h3 className="text-2xl mt-12 max-[425px]:mt-4 max-[425px]:px-12">
