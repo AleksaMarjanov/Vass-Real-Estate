@@ -22,7 +22,7 @@ const BulletList = ({ bullets }: Props) => {
           variants={staggerContainer}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: false, amount: 0.25 }}
+          viewport={{ once: true }}
           key={bullet._id}
           className="flex items-left justify-left flex-col space-y-4 space-x-0"
         >

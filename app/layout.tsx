@@ -53,7 +53,7 @@ export default function RootLayout({
   return (
 
     <html lang="en">
-      <body className={`${montserrat.className} bg-[#121a34] text-white `}>
+      <body className={`${montserrat.className} bg-[#121a34] text-white overflow-hidden`}>
         <Navbar />
         {children}
         <Footer />
