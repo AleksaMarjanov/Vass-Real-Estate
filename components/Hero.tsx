@@ -21,7 +21,7 @@ const Hero = () => {
       className="w-full relative"
       >
           <div className="w-full absolute z-0 -top-[50px] max-[768px]:top-[50px] max-[1440px]:top-[10px] 
-          min-[1440px]:top-[10px] bg-[#0086bb]/20 h-[600px] max-[768px]:h-[600px] md:h-[500px] xl:h-[700px] max-[768px]:rounded-br-[160px] rounded-br-[360px]" />
+          min-[1440px]:top-[10px] bg-[#0086bb]/20 h-[700px] max-[768px]:h-[600px] md:h-[480px] lg:h-[500px] xl:h-[700px] max-[768px]:rounded-br-[160px] rounded-br-[360px]" />
 
        </motion.div>  
       <motion.div
@@ -72,7 +72,7 @@ const Hero = () => {
         </motion.div>
         <motion.div
           variants={slideIn("right", "tween", 0.4, 0.85)}
-          className="relative w-full "
+          className="relative w-full sm:w-[524px] md:w-[740px] lg:w-full"
         >
           <Image
             src="/bestPlace.svg"

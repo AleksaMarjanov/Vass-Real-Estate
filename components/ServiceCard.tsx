@@ -67,7 +67,7 @@ const ServiceCard = () => {
 
   return (
     <section
-      className={`${styles.innerWidth} max-[425px]:mt-6  mt-12 flex flex-col items-center justify-center `}
+      className={`${styles.innerWidth} max-[425px]:mt-24  mt-12 flex flex-col items-center justify-center `}
     >
       <motion.div
         variants={staggerContainer}
@@ -115,7 +115,7 @@ const ServiceCard = () => {
                 className="w-270 flex-col md:flex-row md:m-8 md:p-4 rounded-lg  cursor-pointer transition-all animate ease-in duration-300 hover:shadow-xl flex justify-center items-center"
                 key={index}
               >
-                <div className="p-2 w-full lg:w-[550px] flex flex-col items-left justify-left text-left md:px-12 md:mx-12">
+                <div className="p-2 w-full lg:w-[550px] flex flex-col items-left  text-lg justify-left text-left md:px-12 md:mx-12">
                   {/* <h4 className="font-bold">{service.title}</h4> */}
                   <PortableText
                     value={service.body}
