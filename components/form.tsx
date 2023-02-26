@@ -5,13 +5,13 @@ import React, { useRef, useState } from "react";
 
 const Form = () => {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
-  const form = React.useRef<HTMLFormElement | null>()
+  const form = useRef<HTMLFormElement>(null)
 
   const handleSubmit = () => {};
 
   return (
     <div className="max-w-[1240px] m-auto p-4 h-screen">
-    <form className="max-w-[600px] m-auto">
+    <form ref={form} className="max-w-[600px] m-auto">
         <div className="grid grid-cols-2 gap-2">
             <input  className="border shadow-lg p-3" type="text" placeholder="Name"/>
             <input  className="border shadow-lg p-3" type="email" placeholder="Email"/>
