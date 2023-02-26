@@ -8,6 +8,7 @@ import { RichTextComponents } from "@/components/RichTextComponents";
 import Link from "next/link";
 import { Listing } from "@/typings";
 import Map from "@/components/Map";
+import Form from "@/components/form";
 
 
 
@@ -158,6 +159,8 @@ async function Listing({ params: { slug } }: Props) {
           </div>
           <Map listing={listing}/>
         </div> 
+        <h3 className="flex items-center justify-center underline md:mt-16 mt-8">Request more info</h3>
+        <Form />
       </article>
       </>
   );
