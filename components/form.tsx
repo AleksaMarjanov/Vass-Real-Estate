@@ -116,7 +116,7 @@ const Form = () => {
             >
               <Container maxW="850px" mt={12} className="text-white">
                 {error && (
-                  <Text color="white" my={4} fontSize="xl">
+                  <Text color="#F7AB0A" my={4} fontSize="xl">
                     {error}
                   </Text>
                 )}
@@ -197,7 +197,8 @@ const Form = () => {
                 </FormControl>
 
                 <Button
-                  variant="outline"
+className="hover:bg-slate-700"
+variant="outline"
                   colorScheme="white"
                   isLoading={isLoading}
                   disabled={
