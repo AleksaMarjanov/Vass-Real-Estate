@@ -87,7 +87,7 @@ const ServiceCard = () => {
             consulting, and client service{" "}
           </p>
           <div className="flex-1 flex-col md:flex-row ">
-            <div className="flex flex-row flex-wrap justify-center items-center md:mt-16 mt-2 px-3 mr-0 md:mb-8">
+            <div className="grid grid-cols-2 md:flex md:flex-row md:flex-wrap justify-center items-center max-[768px]:mt-16 md:mt-2 px-3 mr-0 max-[768px]:mb-8">
               {["Property Managment", "Residential", "Apartment Locator"].map(
                 (item, index) => (
                   <div

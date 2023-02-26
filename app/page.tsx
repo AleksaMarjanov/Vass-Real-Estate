@@ -1,4 +1,3 @@
-
 import styles from "@/styles";
 import { Hero, BulletSection, ServiceCard, TrustedBy } from '@/components'
 import FAQ from "@/components/faq";

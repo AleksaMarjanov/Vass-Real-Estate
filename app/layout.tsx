@@ -7,7 +7,6 @@ import { Navbar, Footer } from "@/components";
 import { useEffect } from 'react'
 import { usePathname } from "next/navigation";
 
-
 const montserrat = Montserrat({
   weight: ["400", "700"],
   subsets: ["latin"],
