@@ -15,7 +15,6 @@ type Props = {
 }
 
 const Map = ({ listing } : Props) => {
-  const router = useRouter()
 
 return (
     <div className="relative z-[0] h-[60vh] max-[425px]:h-[40vh] w-[60%] max-[425px]:w-full max-[425px]:px-2 no-repeat">
