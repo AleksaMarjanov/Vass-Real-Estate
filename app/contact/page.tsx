@@ -1,6 +1,6 @@
 import Form from "@/components/form";
 import { Heading } from "@chakra-ui/react";
-import { PhoneIcon } from "@heroicons/react/24/solid";
+
 
 import dynamic from "next/dynamic";
 

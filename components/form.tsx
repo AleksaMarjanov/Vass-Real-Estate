@@ -13,10 +13,11 @@ import {
   Textarea,
   useToast,
 } from "@chakra-ui/react";
+import { PhoneIcon } from "@heroicons/react/24/solid";
 import React, { useRef, useState, useEffect } from "react";
 import { ChakraProvider } from "@chakra-ui/react";
 import { motion } from 'framer-motion';
-import { fadeIn, slideIn, staggerContainer } from "@/utils/motion";
+import { fadeIn, slideIn, staggerContainer, textVariant } from "@/utils/motion";
 import emailjs from "@emailjs/browser";
 
 const initValues = { name: "", email: "", subject: "", message: "" };
@@ -109,7 +110,9 @@ const Form = () => {
         variants={fadeIn('right', 'tween', 0.35, 0.8)}
       >
         {!isFormSubmitted ? (
-          <div className="flex flex-col items-center justify-center">
+          <motion.div
+          variants={slideIn('up', 'tween', 1, 0.85)}
+          className="flex flex-col items-center justify-center">
             <div className="my-4">
            <h1 className="md:text-4xl text-2xl font-extrabold">Contact Us</h1>
             <div className="text-xl">
@@ -225,17 +228,20 @@ variant="outline"
               </Container>
             </form>
       </div>
-      <div className="flex flex-col items-start justify-center my-2">
+      <div className="flex flex-col items-start justify-center my-2 md:mt-8 mt-4 ">
         <h2 className="text-2xl">Vass Real Estate Solutions</h2>
+        <div className="text-lg">
         <p className="md:text-lg text-md font-normal" >417 1st Avenue East, Williston, North Dakota</p>
         <p className="md:text-lg text-md font-normal">58801, United States</p>
-      <span className="text-[#F7AB0A] text-decoration">
+        <a href="tel:7015721111">
+      <span className="text-[#F7AB0A] text-decoration text-bold">
         (701)572-1111
       </span>
-      <p>deano@vassres.com</p>
+        </a>
+        </div>
+      <p className="text-bold">deano@vassres.com</p>
       </div>
-          
-          </div>
+          </motion.div>
           ) : (
             <motion.div
             variants={textVariant(1.2)}
