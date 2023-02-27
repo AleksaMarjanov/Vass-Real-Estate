@@ -109,6 +109,17 @@ const Form = () => {
         variants={fadeIn('right', 'tween', 0.35, 0.8)}
       >
         {!isFormSubmitted ? (
+          <div className="flex flex-col items-center justify-center">
+            <div className="my-4">
+           <h1 className="md:text-4xl text-2xl font-extrabold">Contact Us</h1>
+            <div className="text-xl">
+            <p>Feel free to give us a call <span className="font-bold">anytime!</span></p>
+            <p>We work when the oil field works</p>
+            <p>24/7 Boots  on the ground</p>
+
+            </div>
+            </div>
+           <div className="w-full">
             <form
               ref={form}
               onSubmit={sendEmail}
@@ -213,8 +224,22 @@ variant="outline"
                 </Button>
               </Container>
             </form>
+      </div>
+      <div className="flex flex-col items-start justify-center my-2">
+        <h2 className="text-2xl">Vass Real Estate Solutions</h2>
+        <p className="md:text-lg text-md font-normal" >417 1st Avenue East, Williston, North Dakota</p>
+        <p className="md:text-lg text-md font-normal">58801, United States</p>
+      <span className="text-[#F7AB0A] text-decoration">
+        (701)572-1111
+      </span>
+      <p>deano@vassres.com</p>
+      </div>
+          
+          </div>
           ) : (
-            <div className="flex flex-col items-center justify-center text-white h-screen">
+            <motion.div
+            variants={textVariant(1.2)}
+            className="flex flex-col items-center justify-center text-white h-screen">
               <h2 className="font-poppins text-[32px] max-[425px]:text-[18px] max-[425px]:p-3 h-screen">
                 Thank you for getting in touch with us!
                 <br />
@@ -223,8 +248,8 @@ variant="outline"
                 as soon as possible from our team
                 <br />
               </h2>
-
-            </div>
+              <PhoneIcon  className="h-7 w-7 animate-pulse" />
+            </motion.div>
           )}
     {/* <form ref={form} className="max-w-[600px] m-auto">
         <div className="grid grid-cols-2 gap-2">
