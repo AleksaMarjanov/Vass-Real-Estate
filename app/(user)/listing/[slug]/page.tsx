@@ -152,7 +152,7 @@ async function Listing({ params: { slug } }: Props) {
         <PortableText value={listing.body} components={RichTextComponents}/>
         </div>  
         {/* </div> */}
-        <div className="flex flex-col items-center justify-center mt-64 max-[768px]:mt-32">
+        <div className="flex flex-col items-center justify-center md:mt-32 max-[768px]:mt-16">
           <div>
           <p className="text-lg items-left justify-left ">Map</p>
           <hr className="border-[#F7AB0A] mb-10 w-[40px]" />

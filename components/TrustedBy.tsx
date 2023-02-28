@@ -45,7 +45,7 @@ useEffect(() => {
       <Swiper
       className="swiper-wrapper"
         modules={[Navigation, Pagination, Autoplay]}
-        slidesPerView={3}
+        slidesPerView='auto'
         navigation={{
           nextEl: ".image-swiper-button-next",
           prevEl: ".image-swiper-button-prev",
@@ -54,21 +54,21 @@ useEffect(() => {
         breakpoints = {{
             499: {
                 slidesPerView: 3,
-                spaceBetween: 100
+                spaceBetween: 50
             },
             999: {
                 slidesPerView: 3,
-                spaceBetween: 10
+                spaceBetween: 100
             },
             1440: {
                 slidesPerView: 4,
-                spaceBetween: 100
+                spaceBetween: 150
             }
         }}
         loop={true}
-        speed={10000}
+        speed={5000}
         autoplay={{
-            delay: 3000,
+            delay: 1,
             disableOnInteraction: false,
           }}
         // pagination={{ clickable: true }}

@@ -87,13 +87,13 @@ const ServiceCard = () => {
             consulting, and client service{" "}
           </p>
           <div className="flex-1 flex-col md:flex-row ">
-            <div className="grid grid-cols-2 md:flex md:flex-row md:flex-wrap justify-center items-center max-[768px]:mt-16 md:mt-2 px-3 mr-0 max-[768px]:mb-8">
+            <div className="grid grid-cols-2 md:flex md:flex-row md:flex-wrap max-[425px]:px-12 py-4 justify-center items-center max-[768px]:mt-16 md:mt-2 px-3 mr-0 max-[768px]:mb-8">
               {["Property Managment", "Residential", "Apartment Locator"].map(
                 (item, index) => (
                   <div
                     key={index}
                     onClick={() => handleServiceFilter(item)}
-                    className={`pt-2 mr-2 pr-4 m-2 bg-[#F7AB0A] rounded-[5px] md:text-lg text-sm text-white font-semibold cursor-pointer transition-all animate ease-in duration-300 hover:bg-nice-blue hover:text-white flex justify-center items-center ${
+                    className={`pt-2 mr-2 pr-4 m-2 bg-[#F7AB0A] rounded-[5px] md:text-lg text-[16px] text-white font-semibold cursor-pointer transition-all animate ease-in duration-300 hover:bg-nice-blue hover:text-white flex justify-center items-center ${
                       activeFilter === item
                         ? `${itemActive}`
                         : `${notActiveItem}`
