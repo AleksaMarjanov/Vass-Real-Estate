@@ -157,14 +157,10 @@ async function Listing({ params: { slug } }: Props) {
           <hr className="border-[#F7AB0A] mb-10 w-[40px]" />
           </div>
           <Map listing={listing}/>
-          <div className="md:mt-16 mt-4">
-          <p className="text-lg items-left justify-left ">Request More Info</p>
-          <hr className="border-[#F7AB0A] w-[155px]" />
-          </div>
-        </div>
-        <div className="w-full flex items-center justify-center w-full">
+        </div> 
+        <div className="flex items-center justify-center" >
         <FormListing />
-          </div> 
+        </div>
       </article>
       </>
   );

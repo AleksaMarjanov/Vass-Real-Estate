@@ -105,13 +105,18 @@ const FormListing = () => {
     initial="hidden"
     whileInView="show"
     viewport={{ once: true }}
-    className="max-w-[1240px] mt-0 p-4 flex items-center justify-center">
+    className="max-w-[1240px] mt-0 p-4 w-full">
       <motion.div
         variants={fadeIn('right', 'tween', 0.35, 0.8)}
       >
         {!isFormSubmitted ? (
           <motion.div
           className="flex flex-col items-center justify-center">
+            <>
+            <div className="md:mt-16 mt-4">
+          <p className="text-lg items-left justify-left ">Request More Info</p>
+          <hr className="border-[#F7AB0A] w-[150px]" />
+          </div>
            <div className="w-full">
             <form
               ref={form}
@@ -218,6 +223,7 @@ variant="outline"
               </Container>
             </form>
       </div>
+            </>
           </motion.div>
           ) : (
             <motion.div
