@@ -105,7 +105,7 @@ const FormListing = () => {
     initial="hidden"
     whileInView="show"
     viewport={{ once: true }}
-    className="max-w-[1240px] m-auto p-4">
+    className="max-w-[1240px] mt-0 p-4 flex items-center justify-center">
       <motion.div
         variants={fadeIn('right', 'tween', 0.35, 0.8)}
       >

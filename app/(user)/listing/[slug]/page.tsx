@@ -8,7 +8,6 @@ import { RichTextComponents } from "@/components/RichTextComponents";
 import Link from "next/link";
 import { Listing } from "@/typings";
 import Map from "@/components/Map";
-import Form from "@/components/form";
 import FormListing from "@/components/formListing";
 
 
@@ -158,9 +157,14 @@ async function Listing({ params: { slug } }: Props) {
           <hr className="border-[#F7AB0A] mb-10 w-[40px]" />
           </div>
           <Map listing={listing}/>
-        </div> 
-        <h3 className="flex items-center justify-center underline md:mt-16 mt-8">Request more info</h3>
+          <div className="md:mt-16 mt-4">
+          <p className="text-lg items-left justify-left ">Request More Info</p>
+          <hr className="border-[#F7AB0A] w-[155px]" />
+          </div>
+        </div>
+        <div className="w-full flex items-center justify-center w-full">
         <FormListing />
+          </div> 
       </article>
       </>
   );
