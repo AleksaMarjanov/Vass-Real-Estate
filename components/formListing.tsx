@@ -111,7 +111,6 @@ const FormListing = () => {
       >
         {!isFormSubmitted ? (
           <motion.div
-          variants={slideIn('up', 'tween', 1, 0.85)}
           className="flex flex-col items-center justify-center">
            <div className="w-full">
             <form
