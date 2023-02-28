@@ -52,23 +52,23 @@ useEffect(() => {
           disabledClass: "swiper-button-disabled",
         }}
         breakpoints = {{
-            425: {
+            499: {
                 slidesPerView: 3,
                 spaceBetween: 100
             },
             999: {
-                slidesPerView: 4,
+                slidesPerView: 3,
                 spaceBetween: 10
             },
             1440: {
-                slidesPerView: 5,
+                slidesPerView: 4,
                 spaceBetween: 100
             }
         }}
         loop={true}
-        speed={5000}
+        speed={10000}
         autoplay={{
-            delay: 0,
+            delay: 3000,
             disableOnInteraction: false,
           }}
         // pagination={{ clickable: true }}

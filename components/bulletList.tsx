@@ -11,6 +11,7 @@ type Props = {
   bullets: BulletSection[];
 };
 
+
 const BulletList = ({ bullets }: Props) => {
   return (
     <section
