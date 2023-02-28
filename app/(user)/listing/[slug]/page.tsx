@@ -9,7 +9,7 @@ import Link from "next/link";
 import { Listing } from "@/typings";
 import Map from "@/components/Map";
 import Form from "@/components/form";
-
+import FormListing from "@/components/formListing";
 
 
 type Props = {
@@ -160,7 +160,7 @@ async function Listing({ params: { slug } }: Props) {
           <Map listing={listing}/>
         </div> 
         <h3 className="flex items-center justify-center underline md:mt-16 mt-8">Request more info</h3>
-        <Form />
+        <FormListing />
       </article>
       </>
   );
