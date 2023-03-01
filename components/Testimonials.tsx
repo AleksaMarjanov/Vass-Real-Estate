@@ -75,9 +75,9 @@ const fetchData = async () => {
             parallax={true}
             autoplay={{ delay: 6000 }}
     >
-            {SliderData.map((testimonial: any, index: number) => (
-              <SwiperSlide key={testimonial.id + index}>
-                <div className="swiper-slide" key={testimonial.id + index}>
+            {testimonials.map((testimonial: any, index: number) => (
+              <SwiperSlide key={testimonial._d + index}>
+                <div className="swiper-slide" key={testimonial._id + index}>
                   <div className="relative w-full h-[540px] lg:h-[480px] max-[320px]:h-[580px] max-[425px]:h-[520px] flex items-start justify-start">
                     <motion.div
                       variants={fadeIn("left", "tween", 0.2, 1)}
@@ -94,12 +94,12 @@ const fetchData = async () => {
                             height={30}
                             priority
                           />
-                          {testimonial.desc}
+                          {testimonial.feedback}
                         </div>
                       </div>
                         <div className="flex flex-row bottom-0 relative">
-                          <Image src={testimonial.imgUrl} alt={testimonial.title} width={50} height={50} priority className="object-contain rounded-full" />
-                          {/* <Image src={urlFor(testimonial.imgUrl).url()} alt={testimonial.title} width={50} height={50} priority className="object-contain rounded-full" /> */}
+                          {/* <Image src={testimonial.imgUrl} alt={testimonial.title} width={50} height={50} priority className="object-contain rounded-full" /> */}
+                          <Image src={urlFor(testimonial.imgUrl).url()} alt={testimonial.title} width={50} height={50} priority className="object-contain rounded-full" />
                         <h1 className="text-xl text-extrabold mx-6 flex items-center justify-center">{testimonial.title}</h1>
                         </div>
                     </motion.div>

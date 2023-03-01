@@ -158,7 +158,7 @@ async function Listing({ params: { slug } }: Props) {
           </div>
           <Map listing={listing}/>
         </div> 
-        <div className="flex items-center justify-center" >
+        <div className="flex items-center justify-center">
         <FormListing />
         </div>
       </article>

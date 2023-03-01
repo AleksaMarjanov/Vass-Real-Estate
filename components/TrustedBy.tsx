@@ -41,11 +41,11 @@ useEffect(() => {
     className="h-[30vh] max-[425px]:h-[30%] mt-12 relative">
     <motion.div 
      variants={slideIn('up', 'tween', 0.6, 0.85)}
-    className="relative items-center justify-center flex w-full h-[120px] max-[425px]:h-[100px] bg-darker-white/50">
+    className="relative items-center justify-center flex w-full h-[120px] max-[425px]:h-[100px] bg-nice-blue/60">
       <Swiper
       className="swiper-wrapper"
         modules={[Navigation, Pagination, Autoplay]}
-        slidesPerView='auto'
+        slidesPerView={3}
         navigation={{
           nextEl: ".image-swiper-button-next",
           prevEl: ".image-swiper-button-prev",
