@@ -47,8 +47,8 @@ export interface BulletSection extends Base {
 }
 export interface Testimonials extends Base {
     _type: "testimonials";
-    feeback: string;
-    mainImage: Image;
+    feedback: string;
+    imgUrl: Image;
     name: string;
 }
 

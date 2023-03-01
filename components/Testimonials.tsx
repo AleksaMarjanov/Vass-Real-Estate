@@ -16,6 +16,7 @@ import { groq } from "next-sanity";
 import { client } from "@/lib/sanity.client";
 import { urlFor } from '@/lib/urlFor'
 import { SliderData } from './../lib/sliderData';
+import { Testimonials } from "@/typings";
 
 const Testimonials = () => {
   const [testimonials, setTestimonials] = useState([])
@@ -27,12 +28,13 @@ const Testimonials = () => {
 const fetchData = async () => {
   const data = await client.fetch(query);
   setTestimonials(data)
-
+  
 };
-  useEffect(() => {
-    fetchData();
-  }, []);
+useEffect(() => {
+  fetchData();
+}, []);
 
+console.log('Testimonials Data',testimonials)
   return (
     <motion.div
       variants={staggerContainer} 
@@ -75,8 +77,8 @@ const fetchData = async () => {
             parallax={true}
             autoplay={{ delay: 6000 }}
     >
-            {testimonials.map((testimonial: any, index: number) => (
-              <SwiperSlide key={testimonial._d + index}>
+            {testimonials.map((testimonial: Testimonials, index: number) => (
+              <SwiperSlide key={testimonial._id + index}>
                 <div className="swiper-slide" key={testimonial._id + index}>
                   <div className="relative w-full h-[540px] lg:h-[480px] max-[320px]:h-[580px] max-[425px]:h-[520px] flex items-start justify-start">
                     <motion.div
@@ -99,7 +101,7 @@ const fetchData = async () => {
                       </div>
                         <div className="flex flex-row bottom-0 relative">
                           {/* <Image src={testimonial.imgUrl} alt={testimonial.title} width={50} height={50} priority className="object-contain rounded-full" /> */}
-                          <Image src={urlFor(testimonial.imgUrl).url()} alt={testimonial.title} width={50} height={50} priority className="object-contain rounded-full" />
+                          <Image src={`${urlFor(testimonial.imgUrl).url()}`} alt={testimonial.name} width={50} height={50} priority className="object-contain rounded-full" />
                         <h1 className="text-xl text-extrabold mx-6 flex items-center justify-center">{testimonial.name}</h1>
                         </div>
                     </motion.div>
