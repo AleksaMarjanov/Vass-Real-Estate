@@ -34,7 +34,6 @@ useEffect(() => {
   fetchData();
 }, []);
 
-console.log('Testimonials Data',testimonials)
   return (
     <motion.div
       variants={staggerContainer} 
