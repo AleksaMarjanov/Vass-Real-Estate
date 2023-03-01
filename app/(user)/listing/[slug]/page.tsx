@@ -87,7 +87,6 @@ async function Listing({ params: { slug } }: Props) {
                 fill
                 />
             </div>
-
             <section className="p-5 bg-darker-white text-primary-black w-full">
               <div className="flex flex-col md:flex-row justify-between gap-y-5 ">
                 <div>

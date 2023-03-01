@@ -1,5 +1,4 @@
 export { default as Navbar } from './Navbar'
-export { default as Footer } from './Footer'
 export { default as Hero } from './Hero'
 export { default as BulletSection } from './BulletSection'
 export { default as AboutList } from './AboutList'

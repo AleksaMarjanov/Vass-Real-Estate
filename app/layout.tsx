@@ -3,7 +3,7 @@
 
 import "../styles/globals.css";
 import { Montserrat } from "@next/font/google";
-import { Navbar, Footer } from "@/components";
+import { Navbar, Socials } from "@/components";
 import { useEffect } from 'react'
 import { usePathname } from "next/navigation";
 
@@ -55,7 +55,7 @@ export default function RootLayout({
       <body className={`${montserrat.className} bg-[#121a34] text-white overflow-hidden`}>
         <Navbar />
         {children}
-        <Footer />
+        <Socials />
       </body>
     </html>
   );

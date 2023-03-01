@@ -15,7 +15,36 @@ type Props = {
   socials: Social[];
 };
 
-const Socials = ({ socials }: Props) => {
+export const revalidate = 60;
+
+const Socials = () => {
+  const [socials, setSocials] = useState([])
+
+  
+  const query = groq`
+*[_type == 'social']
+`
+
+  {/* Error Occured when switching layout.tsx from SSC to Client Side,To Fix This Error: Objects are not valid as a React child (found: [object Promise]). If you meant to render a collection of children, use an array instead. 
+
+  fetching data inside useEffect that will load only once having dependency array empty
+
+*/}
+
+useEffect(() => {
+  try {
+    const fetchData = async () => {
+      let socials = await client.fetch(query);
+      setSocials(socials)
+    }
+    // call the function
+    fetchData()
+  } catch (err) {
+    (console.error)
+  }
+}, [])
+
+
   return (
     <motion.footer
       variants={footerVariants}
@@ -51,7 +80,7 @@ const Socials = ({ socials }: Props) => {
             
           </div>
           <div className="flex gap-4">
-            {socials.map((social) => (
+            {socials.map((social : Social) => (
                <div
                className="group"
                  key={social._id}
