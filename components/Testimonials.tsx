@@ -100,7 +100,7 @@ const fetchData = async () => {
                         <div className="flex flex-row bottom-0 relative">
                           {/* <Image src={testimonial.imgUrl} alt={testimonial.title} width={50} height={50} priority className="object-contain rounded-full" /> */}
                           <Image src={urlFor(testimonial.imgUrl).url()} alt={testimonial.title} width={50} height={50} priority className="object-contain rounded-full" />
-                        <h1 className="text-xl text-extrabold mx-6 flex items-center justify-center">{testimonial.title}</h1>
+                        <h1 className="text-xl text-extrabold mx-6 flex items-center justify-center">{testimonial.name}</h1>
                         </div>
                     </motion.div>
                   </div>
