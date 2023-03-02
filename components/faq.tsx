@@ -3,13 +3,14 @@
 import { initAccordions } from "flowbite";
 import "flowbite";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { fadeIn, slideIn, staggerContainer } from "@/utils/motion";
 import { groq } from "next-sanity";
 import { client } from "@/lib/sanity.client";
 import { FAQs } from "@/typings";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import styles from "@/styles";
 
 type Props = {
   faq: FAQs[]
@@ -18,19 +19,15 @@ type Props = {
 
 const FAQ = () => {
   const[faqs, setFaqs ] = useState([])
-  const[expand, setExpand] = useState<boolean>(false)
-  const expandClass = expand ? 'display' : 'hidden';
-  const ansClass = `${expandClass} p-4`
-
+  // const[expand, setExpand] = useState<boolean>(false)
+  // const expandClass = expand ? 'display' : 'hidden';
+  // const ansClass = `${expandClass} p-4`
+  // const [active, setActive] = useState('168c242a-067e-4ae8-8f7e-5f05aa84a97f')
+  // const contentRef = useRef<HTMLElement>(null)
 
   const query = groq`
   *[_type == 'faqs']
   `
-
-  useEffect(() => {
-    initAccordions();
-  });
-
   useEffect(() => {
     const fetchFaqs = async () => {
       const faqs = await client.fetch(query)
@@ -39,42 +36,47 @@ const FAQ = () => {
     fetchFaqs()
   }, [])
 
-  return (
-    <motion.div
-      variants={staggerContainer}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true }}
-      className="relative "
-    >
-      <motion.div
-        variants={fadeIn("up", "tween", 0.45, 0.85)}
-        className="max-[425x]:mt-12 min-h-[30vh] w-full px-6 md:mt-24 md:px-24"
-      >
-        <h1 className="max-[425px]:px-6 max-[425px]:py-6 flex items-center justify-center py-12 text-2xl">
-          Frequently Asked
-        </h1>
-        {faqs?.map((faq : FAQs) => (
-    <div key={faq._id} className="shadow rounded border border-gray-100 border-t-1">
-    <div className="p-4 text-xl relative font-medium">
-      <div className="w-5/6">
-          {faq.question}
-      </div>
-      <button 
-      aria-label="question-expander"
-      onClick={() => setExpand(!expand)}
-      className="text-xl absolute top-0 right-0 p-4 focus:outline-none">
-        {expand ? <FontAwesomeIcon icon={faChevronUp} /> : <FontAwesomeIcon icon={faChevronDown} />}
-      </button>
-    </div>
-          <div className={ansClass}>
-              {faq.answer}
-          </div>
-    </div>
-        ))}
 
-      </motion.div>
+  console.log(faqs)
+  return (
+    <section className={`${styles.paddings} text-white`} >
+    <motion.div
+    variants={slideIn('left', 'tween', 0.5, 1 )}
+  className={`${styles.innerWidth} w-full container px-5 py-24 mx-auto relative z-10`}
+    id="faq"> 
+        <motion.div 
+        variants={slideIn('left', 'tween', 0.2, 1)}
+        className="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2 relative z-10">
+          <div className="w-full lg:w-1/2 px-4 py-2 sm:text-[24px] md:text-[18px]">
+          {faqs?.map((faq : FAQs, index) => (
+                <details key={faq.question + index} className="mb-4">
+              <summary className="font-semibold  bg-nice-blue rounded-md py-2 px-4 cursor-pointer hover:bg-nice-blue/60 transition-all duration-300 ease-in-out">
+                  {faq.question}
+                </summary>
+
+              <span className="text-white">
+                  {faq.answer}
+              </span>
+                </details>
+          )).slice(0,4)}
+
+          </div>
+          <div className="w-full lg:w-1/2 px-4 py-2 sm:text-[24px] md:text-[18px]">
+          {faqs?.map((faq : FAQs, index) => (
+            <details key={faq.question + index} className="mb-4">
+                  <summary className="font-semibold  bg-nice-blue rounded-md py-2 px-4 cursor-pointer hover:bg-nice-blue/60 transition-all duration-300 ease-in-out">
+                  {faq.question}
+                </summary>
+
+              <span className="text-white">
+                  {faq.answer}
+              </span>
+                </details>
+          )).slice(4,8)}
+          </div>
+        </motion.div>
     </motion.div>
+    </section>
   );
 };
 
