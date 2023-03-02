@@ -228,7 +228,7 @@ variant="outline"
               </Container>
             </form>
       </div>
-      <div className="flex flex-col items-start justify-center my-2 md:mt-8 mt-4 ">
+      <div className="flex flex-col items-center md:items-start justify-center my-2 md:mt-8 mt-4 ">
         <h2 className="text-2xl">Vass Real Estate Solutions</h2>
         <div className="text-lg">
         <p className="md:text-lg text-md font-normal" >417 1st Avenue East, Williston, North Dakota</p>

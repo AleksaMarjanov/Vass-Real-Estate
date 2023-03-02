@@ -58,6 +58,12 @@ export interface Social extends Base {
     url: string;
 }
 
+export interface FAQs extends Base {  
+    _type: "faqs";
+    question: string;
+    answer: string;
+}
+
 
 interface Author extends Base {
     bio: Block[];

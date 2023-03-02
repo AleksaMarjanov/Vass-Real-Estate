@@ -14,7 +14,7 @@ const Contact = () => {
         <div className="w-full">
         <Form />
         </div>
-      <div className="relative z-[0] h-[60vh] max-[425px]:h-[40vh] w-[60%] max-[425px]:w-full max-[425px]:px-2 no-repeat">
+      <div className="relative z-[0] h-[60vh] max-[425px]:h-[40vh] w-[60%] max-[425px]:w-[85%] max-[425px]:px-2 no-repeat">
         <MapWithNOSSR />
       </div>
     </section>
