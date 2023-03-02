@@ -38,7 +38,7 @@ useEffect(() => {
     initial="hidden"
     whileInView="show"
     viewport={{ once: true }} 
-    className="h-[30vh] max-[425px]:h-[30%] mt-12 relative">
+    className="h-[30vh] max-[425px]:h-[30%] max-[425px]:mt-24 mt-12 relative">
     <motion.div 
      variants={slideIn('up', 'tween', 0.6, 0.85)}
     className="relative items-center justify-center flex w-full h-[120px] max-[425px]:h-[100px] bg-nice-blue/60">

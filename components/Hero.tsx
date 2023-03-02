@@ -92,7 +92,7 @@ const Hero = () => {
       viewport={{ once: false, amount: 0.25}}
       >
 
-      <a href="#bulletsection" rel="norefferer" className="flex items-center justify-center mt-[64px] max-[768px]:mt-[24px] cursor-pointer">
+      <a href="#bulletsection" rel="norefferer" className="flex items-center justify-center mt-[64px] max-[425px]:mt-[64px] cursor-pointer">
       <motion.img
           variants={fadeIn('up', 'tween', 0.3,1)}
           src="/arrow-down.svg"

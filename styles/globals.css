@@ -3,6 +3,23 @@
 @tailwind utilities;
 
 
+
+/* @apply {
+  details[open] {
+    summary::after {
+      content: "-";
+    }
+  } 
+
+  details summary::-webkit-details-marker {
+    display: none;
+}
+
+  details[open] summary ~ * {
+    animation: slideDown 0.5s ease-in-out;
+  }
+} */
+
 .swiper-slide {
   transition-timing-function: linear;
 }

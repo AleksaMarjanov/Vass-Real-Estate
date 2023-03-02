@@ -63,8 +63,8 @@ const FAQ = () => {
           </div>
           <div className="w-full lg:w-1/2 px-4 py-2 sm:text-[24px] md:text-[18px]">
           {faqs?.map((faq : FAQs, index) => (
-            <details key={faq.question + index} className="mb-4">
-                  <summary className="font-semibold  bg-nice-blue rounded-md py-2 px-4 cursor-pointer hover:bg-nice-blue/60 transition-all duration-300 ease-in-out">
+            <details key={faq.question + index} className="mb-4 transition-all animate-fade-in-out duration-500">
+                  <summary className="font-semibold  bg-nice-blue rounded-md py-2 px-4 cursor-pointer hover:bg-nice-blue/60 transition-all duration-300 ease-in-out marker">
                   {faq.question}
                 </summary>
 
