@@ -76,7 +76,7 @@ const Testimonials = () => {
               parallax={true}
               autoplay={{ delay: 6000 }}
             >
-              {testimonials.map((testimonial: Testimonials, index: number) => (
+              {testimonials?.map((testimonial: Testimonials, index: number) => (
                 <SwiperSlide key={testimonial._id + index}>
                   <div className="swiper-slide" key={testimonial._id + index}>
                     <div className="relative flex h-[540px] w-full items-start justify-start max-[425px]:h-[520px] max-[320px]:h-[580px] lg:h-[480px]">
@@ -95,13 +95,13 @@ const Testimonials = () => {
                               height={30}
                               priority
                             />
-                            {testimonial.feedback}
+                            {testimonial?.feedback}
                           </div>
                         </div>
                         <div className="relative bottom-0 flex flex-row">
                           {/* <Image src={testimonial.imgUrl} alt={testimonial.title} width={50} height={50} priority className="object-contain rounded-full" /> */}
                           <Image
-                            src={`${urlFor(testimonial.imgUrl).url()}`}
+                            src={`${urlFor(testimonial?.imgUrl).url()}`}
                             alt={testimonial.name}
                             width={50}
                             height={50}
@@ -109,7 +109,7 @@ const Testimonials = () => {
                             className="rounded-full object-contain"
                           />
                           <h1 className="text-extrabold mx-6 flex items-center justify-center text-xl">
-                            {testimonial.name}
+                            {testimonial?.name}
                           </h1>
                         </div>
                       </motion.div>
