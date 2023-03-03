@@ -45,10 +45,10 @@ const Navbar = () => {
             >
               <li
                 className='mt-0 cursor-pointer flex flex-col items-center justify-center group list-none'
-                key={`${item}`}
+                key={`link-${item}`}
               >
                 <a
-                  href={`/${item}`}
+                  href={`${item}`}
                   className={`${navbar
                       ? "text-white group-hover:text-coffee-yellow"
                       : "text-white  bg-left-bottom bg-gradient-to-r hover:text-[#F7AB0A] from-[#F7AB0A] to-[#F7AB0A] bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out"
@@ -73,6 +73,7 @@ const Navbar = () => {
             ></span>
           </a>
         </ul>
+        
 
 
         <div
@@ -123,7 +124,7 @@ const Navbar = () => {
                         key={`link-${item}`}
                       >
                         <a
-                          href={`/${item}`}
+                          href={`${item}`}
                           className="text-white xl:text-2xl sm:text-xl
                           uppercase bg-left-bottom bg-gradient-to-r hover:text-[#F7AB0A] from-[#F7AB0A] to-[#F7AB0A] bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out no-underline font-bold relative z-[50]"
                           onClick={() => setToggle(false)}
