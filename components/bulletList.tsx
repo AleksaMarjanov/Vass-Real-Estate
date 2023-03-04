@@ -15,8 +15,8 @@ type Props = {
 const BulletList = ({ bullets }: Props) => {
   return (
     <section
-      className={` flex md:flex-row w-full mt-24 max-[425px]:mt-48
-        flex-col items-left justify-left max-[425px]:px-4 px-12 md:px-36 gap-12 max-[768px]:gap-6 text-white min-h-[40vh]`}
+      className={` flex md:flex-row w-full mt-32 max-[425px]:mt-48
+        flex-col items-left justify-left max-[425px]:px-4 px-12 md:px-6 gap-12 max-[768px]:gap-6 text-white min-h-[40vh]`}
     >
       {bullets.map((bullet) => (
         <motion.div

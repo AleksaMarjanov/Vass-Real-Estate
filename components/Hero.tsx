@@ -20,17 +20,17 @@ const Hero = () => {
       variants={slideIn('left', 'tween', 0.3, 0.85)}
       className="w-full relative"
       >
-          <div className="w-full absolute z-0 -top-[50px] max-[768px]:top-[50px] max-[1440px]:top-[10px] 
-          min-[1440px]:top-[10px] bg-[#0086bb]/20 h-[600px] max-[768px]:h-[600px] md:h-[500px] xl:h-[700px] max-[768px]:rounded-br-[160px] rounded-br-[360px]" />
+          <div className="w-full absolute z-0 -top-[50px] max-[768px]:top-[30px] max-[1440px]:top-[10px] 
+          min-[1440px]:top-[10px] bg-[#0086bb]/20 h-[600px] max-[768px]:h-[600px] md:h-[650px] lg:h-[500px] xl:h-[700px] max-[768px]:rounded-br-[160px] rounded-br-[360px]" />
 
        </motion.div>  
       <motion.div
-        className={`${styles.xPaddings} items-center flex justify-center flex-col md:flex-row relative z-[30]`}
+        className={`${styles.xPaddings} items-center flex justify-center flex-col lg:flex-row relative z-[30]`}
       >
        
-        <motion.div variants={slideIn("left", "tween", 0.3, 0.85)}>
+        <motion.div variants={fadeIn("left", "tween", 0.2, 0.5)}>
           <motion.div
-            className="flex flex-col relative z-10 items-left justify-left mt-0 max-[425px]:px-2"
+            className="flex flex-col relative z-10 items-left justify-left max-[425px]:mt-12 mt-0 max-[425px]:px-2"
           >
             
             <motion.h1
@@ -51,7 +51,7 @@ const Hero = () => {
           </motion.div>
 
           <motion.div
-            variants={textVariant(1.6)}
+            variants={textVariant(1.3)}
             className="max-[768px]:flex items-center justify-center relative z-20"
           >
             <a
@@ -71,7 +71,7 @@ const Hero = () => {
           </motion.div>
         </motion.div>
         <motion.div
-          variants={slideIn("right", "tween", 0.4, 0.85)}
+          variants={fadeIn("left", "tween", 0.7, 0.95)}
           className="relative w-full"
         >
           <Image
