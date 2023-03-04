@@ -40,7 +40,7 @@ const FAQ = () => {
 
   console.log(faqs)
   return (
-    <section className={`${styles.paddings} text-white`} >
+    <section className={`text-white`} >
     <motion.div
     variants={staggerContainer}
     initial="hidden"

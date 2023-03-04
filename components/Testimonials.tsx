@@ -42,7 +42,7 @@ const Testimonials = () => {
     >
       <motion.div
         variants={fadeIn("up", "tween", 0.35, 0.85)}
-        className="relative flex h-screen w-full flex-col items-center justify-center md:min-h-[70vh] "
+        className="relative flex w-full flex-col items-center justify-center md:min-h-[70vh] "
       >
         <h2 className="py-6 px-12 text-2xl text-white md:py-12 md:px-6">
           What people say about us
