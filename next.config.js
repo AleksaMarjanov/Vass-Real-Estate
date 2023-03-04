@@ -18,15 +18,18 @@ const nextConfig = {
     emailJs_template: process.env.REACT_APP_EMAILJS_TEMPLATE,
     emailJs_API: process.env.REACT_APP_EMAILJS_API_KEY
   },
-  async redirect() {
+  redirects: async () => {
     return [
-      {
-        source: 'home',
-        destination: '/',
-        permanent: false,
-      },
+        {
+            // Source Path ( from )
+            source: '/home',
+
+            // Destination Path ( to )
+            destination: '/',
+            permanent: true,
+        },
     ]
-  } 
+},
 }
 
 module.exports = nextConfig

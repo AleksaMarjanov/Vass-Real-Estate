@@ -39,16 +39,16 @@ const Navbar = () => {
           />
         </Link>
         <ul className='hidden lg:flex flex-1 relative items-center justify-center list-none space-x-6'>
-          {['listings', 'projects', 'transactions', 'about'].map((item, index) => (
+          {['home','listings', 'transactions', 'about'].map((item, index) => (
             <div
               key={item + index}
             >
               <li
                 className='mt-0 cursor-pointer flex flex-col items-center justify-center group list-none'
-                key={`link-${item}`}
+                key={`${item}`}
               >
                 <a
-                  href={`${item}`}
+                  href={`/${item}`}
                   className={`${navbar
                       ? "text-white group-hover:text-coffee-yellow"
                       : "text-white  bg-left-bottom bg-gradient-to-r hover:text-[#F7AB0A] from-[#F7AB0A] to-[#F7AB0A] bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out"
@@ -117,7 +117,7 @@ const Navbar = () => {
                   />
                 </a>
                 <div className="mt-32">
-                {["listings", "projects", "transactions", "about"].map(
+                {["home","listings", "transactions", "about"].map(
                   (item, index) => (
                     <div key={item + index} >
                       <li className="m-4 group"
