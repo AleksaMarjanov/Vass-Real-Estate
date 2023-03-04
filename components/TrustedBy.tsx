@@ -73,7 +73,7 @@ useEffect(() => {
             }
         }}
         loop={true}
-        speed={5000}
+        speed={2500}
         autoplay={{
             delay: 1000,
             disableOnInteraction: false,
