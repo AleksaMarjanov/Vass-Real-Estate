@@ -61,7 +61,7 @@ const FAQ = () => {
             </motion.div>
           {faqs?.map((faq : FAQs, index) => (
                 <div key={faq.question + index} className="py-5">
-                <details  className="group open:shadow-xl rounded-lg open:bg-white open:text-primary-black transition-all duration-400 ease-in-out cursor-pointer">
+                <details  className="group open:shadow-xl rounded-lg open:focus:ring-nice-blue cursor-pointer">
               <summary className="font-extrabold flex items-center px-3 py-2 justify-between cursor-pointer">
                   {faq.question}
                   <span className="transition group-open:rotate-180">
@@ -70,7 +70,7 @@ const FAQ = () => {
 </span>
                 </summary>
 
-              <p className="mt-3 group-open:animate-fadeIn px-4">
+              <p className="mt-3 group-open:animate-fadeIn px-4 py-2">
                   {faq.answer}
               </p>
                 </details>
