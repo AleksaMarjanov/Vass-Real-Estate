@@ -71,7 +71,7 @@ const Hero = () => {
           </motion.div>
         </motion.div>
         <motion.div
-          variants={fadeIn("left", "tween", 0.7, 0.95)}
+          variants={fadeIn("left", "tween", 0.6, 0.95)}
           className="relative w-full"
         >
           <Image
@@ -92,7 +92,7 @@ const Hero = () => {
       viewport={{ once: false, amount: 0.25}}
       >
 
-      <a href="#bulletsection" rel="norefferer" className="flex items-center justify-center mt-[64px] max-[425px]:mt-[64px] cursor-pointer">
+      <a href="#bulletsection" rel="norefferer" className="animate-pulse flex items-center justify-center mt-[64px] lg:mt-[86px] max-[425px]:mt-[82px] cursor-pointer">
       <motion.img
           variants={fadeIn('up', 'tween', 0.3,1)}
           src="/arrow-down.svg"
