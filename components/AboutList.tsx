@@ -40,9 +40,6 @@ const AboutList = ({ pageInfo, socials }: Props) => {
           height={300}
           priority
         />
-           <div
-    className={`glassmorphism `}
-  />    
         <div className="flex items-center justify-center space-x-3 mt-3 flex-row ">
         {socials.map(social => (
           <div
