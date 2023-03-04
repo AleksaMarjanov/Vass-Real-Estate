@@ -3,22 +3,17 @@
 @tailwind utilities;
 
 
-
-/* @apply {
-  details[open] {
-    summary::after {
-      content: "-";
-    }
-  } 
-
+/** Define @layer for details summary and marker */
+@layer components {
   details summary::-webkit-details-marker {
     display: none;
+  }
+} 
+details[open] summary ~ * {
+  animation: slideDown 0.3s ease-in-out;
 }
 
-  details[open] summary ~ * {
-    animation: slideDown 0.5s ease-in-out;
-  }
-} */
+
 
 .swiper-slide {
   transition-timing-function: linear;

@@ -45,45 +45,37 @@ const FAQ = () => {
     variants={staggerContainer}
     initial="hidden"
     whileInView="show"
-    viewport={{ once: false, amount: 0.25}}
+    viewport={{ once: true }}
   className={`${styles.innerWidth} w-full container px-5 py-24 mx-auto relative z-10`}
     id="faq"> 
         <motion.div 
         variants={slideIn('up', 'tween', 0.3, 0.9)}
         className="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2 relative z-10">
-          <div className="w-full lg:w-1/2 px-4 py-2 sm:text-[24px] md:text-[18px]">
+          <div className="w-full px-4 py-2 sm:text-[24px] md:text-[18px]">
             <motion.div
             variants={textVariant(1.1)}
             >
-            <h3 className="text-2xl mt-12 max-[425px]:mt-4 max-[425px]:px-12">
+            <h3 className="flex items-center justify-center text-2xl mt-12 max-[425px]:mt-4 max-[425px]:px-12">
             Frequently Asked
           </h3>
             </motion.div>
           {faqs?.map((faq : FAQs, index) => (
-                <details key={faq.question + index} className="mb-4">
-              <summary className="font-semibold mt-6 bg-nice-blue rounded-md py-2 px-4 cursor-pointer hover:bg-nice-blue/60 transition-all duration-300 ease-in-out">
+                <div key={faq.question + index} className="py-5">
+                <details  className="group open:shadow-xl rounded-lg open:bg-white open:text-primary-black transition-all duration-400 ease-in-out cursor-pointer">
+              <summary className="font-extrabold flex items-center px-3 py-2 justify-between cursor-pointer">
                   {faq.question}
+                  <span className="transition group-open:rotate-180">
+                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path>
+</svg>
+</span>
                 </summary>
 
-              <span className="text-white">
+              <p className="mt-3 group-open:animate-fadeIn md:px-4">
                   {faq.answer}
-              </span>
+              </p>
                 </details>
-          )).slice(0,4)}
-
-          </div>
-          <div className="w-full lg:w-1/2 px-4 py-2 sm:text-[24px] md:text-[18px]">
-          {faqs?.map((faq : FAQs, index) => (
-            <details key={faq.question + index} className="mb-4 transition-all animate-fade-in-out duration-500">
-                  <summary className="font-semibold  bg-nice-blue rounded-md py-2 px-4 cursor-pointer hover:bg-nice-blue/60 transition-all duration-300 ease-in-out marker">
-                  {faq.question}
-                </summary>
-
-              <span className="text-white">
-                  {faq.answer}
-              </span>
-                </details>
-          )).slice(4,8)}
+                </div>
+          ))}
           </div>
         </motion.div>
     </motion.div>

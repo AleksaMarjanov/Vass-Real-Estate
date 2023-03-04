@@ -2,7 +2,7 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper";
-import "swiper/css";
+import "swiper/swiper.min.css";
 import "swiper/css/autoplay";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -14,6 +14,7 @@ import { client } from "@/lib/sanity.client";
 import { urlFor } from "@/lib/urlFor";
 import { motion } from 'framer-motion';
 import { slideIn, staggerContainer } from "@/utils/motion";
+import { TrustedBy } from "@/typings";
 
 
 const TrustedBy = () => {
@@ -73,7 +74,7 @@ useEffect(() => {
           }}
         // pagination={{ clickable: true }}
       >
-        {trusted.map((slide : any, index : number) => (
+        {trusted.map((slide : TrustedBy, index : number) => (
           <div className="swiper-slide m-0 flex items-center justify-center" key={slide._id} >
             <SwiperSlide key={slide._id + index} >
               <div className="relative flex items-center justify-center px-2 w-[100px] h-[100px] md:w-[150px] md:h-[150px]">
