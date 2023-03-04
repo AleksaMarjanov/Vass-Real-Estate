@@ -18,6 +18,8 @@ import { urlFor } from "@/lib/urlFor";
 import { SliderData } from "./../lib/sliderData";
 import { Testimonials } from "@/typings";
 
+export const revalidate = 60;
+
 const Testimonials = () => {
   const [testimonials, setTestimonials] = useState([]);
 

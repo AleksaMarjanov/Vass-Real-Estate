@@ -17,14 +17,10 @@ type Props = {
   faq: FAQs[]
 }
 
+export const revalidate = 60;
 
 const FAQ = () => {
   const[faqs, setFaqs ] = useState([])
-  // const[expand, setExpand] = useState<boolean>(false)
-  // const expandClass = expand ? 'display' : 'hidden';
-  // const ansClass = `${expandClass} p-4`
-  // const [active, setActive] = useState('168c242a-067e-4ae8-8f7e-5f05aa84a97f')
-  // const contentRef = useRef<HTMLElement>(null)
 
   const query = groq`
   *[_type == 'faqs']

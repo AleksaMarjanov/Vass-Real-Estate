@@ -16,6 +16,8 @@ type Props = {
   service: Services;
 };
 
+export const revalidate = 60;
+
 const ServiceCard = () => {
   const [services, setServices] = useState([]);
   const [filterServices, setFilterServices] = useState([]);
@@ -25,6 +27,7 @@ const ServiceCard = () => {
   const query = groq`
   *[_type == 'services']
 `;
+
 
   useEffect(() => {
     const fetchServices = async () => {
