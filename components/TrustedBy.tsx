@@ -45,8 +45,14 @@ useEffect(() => {
     className="relative items-center justify-center flex w-full h-[120px] max-[425px]:h-[100px] bg-nice-blue/60">
       <Swiper
       className="swiper-wrapper"
+        observer={true}
         modules={[Navigation, Pagination, Autoplay]}
         slidesPerView={3}
+        onSwiper={swiper => {
+          setTimeout(() => {
+             swiper.update(); // ------> this solution
+           }, 3000);
+           }}
         navigation={{
           nextEl: ".image-swiper-button-next",
           prevEl: ".image-swiper-button-prev",
