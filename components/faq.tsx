@@ -70,7 +70,7 @@ const FAQ = () => {
 </span>
                 </summary>
 
-              <p className="mt-3 group-open:animate-fadeIn md:px-4">
+              <p className="mt-3 group-open:animate-fadeIn px-4">
                   {faq.answer}
               </p>
                 </details>
