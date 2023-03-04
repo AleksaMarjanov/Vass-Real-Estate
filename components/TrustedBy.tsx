@@ -46,8 +46,8 @@ useEffect(() => {
       <Swiper
       className="swiper-wrapper"
         observer={true}
+        slidesPerView={2}
         modules={[Navigation, Pagination, Autoplay]}
-        slidesPerView={3}
         onSwiper={swiper => {
           setTimeout(() => {
              swiper.update(); // ------> this solution
@@ -60,7 +60,7 @@ useEffect(() => {
         }}
         breakpoints = {{
             499: {
-                slidesPerView: 3,
+                slidesPerView: 2,
                 spaceBetween: 50
             },
             999: {
@@ -68,14 +68,14 @@ useEffect(() => {
                 spaceBetween: 100
             },
             1440: {
-                slidesPerView: 4,
+                slidesPerView: 3,
                 spaceBetween: 150
             }
         }}
         loop={true}
         speed={5000}
         autoplay={{
-            delay: 1,
+            delay: 1000,
             disableOnInteraction: false,
           }}
         // pagination={{ clickable: true }}
@@ -83,12 +83,13 @@ useEffect(() => {
         {trusted.map((slide : TrustedBy, index : number) => (
           <div className="swiper-slide m-0 flex items-center justify-center" key={slide._id} >
             <SwiperSlide key={slide._id + index} >
-              <div className="relative flex items-center justify-center px-2 w-[100px] h-[100px] md:w-[150px] md:h-[150px]">
+              <div className="relative flex items-center justify-center object-center px-2 w-[130px] h-[130px] md:w-[150px] md:h-[150px] lg:w-[160px]">
                 <Image
-                  className="object-contain object-center"
+                  className="object-contain lg:object-center"
                   src={urlFor(slide.mainImage).url()}
                   alt="trusted by"
-                  fill
+                  width={500}
+                  height={500}
                   sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw"
