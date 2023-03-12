@@ -2,9 +2,9 @@
 
 const TransactionList = () => {
 
-  return(
-    <div className="flex flex-col"></div>
-  )
+    return (
+        <div className="grid">Transactions | Leased </div>
+    )
 }
 
-export const TransactionList;
+export default TransactionList;
