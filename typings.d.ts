@@ -17,6 +17,10 @@ interface Listing extends Base {
     path: Geopoint[];
 }
 
+interface Transactions extends Base {
+    imgurl: Image;
+}
+
 interface Services extends Base {
     title: string;
     body: Block[];

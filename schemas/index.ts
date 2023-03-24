@@ -10,5 +10,6 @@ import listing from './listing'
 import bulletSection from './bulletSection'
 import trustedBy from './trustedBy'
 import testimonials from './testimonials'
+import transactions from './transactions'
 
-export const schemaTypes = [listing, trustedBy, services,  bulletSection, pageInfo, testimonials, social, faqs, author, category, blockContent]
+export const schemaTypes = [transactions, listing, trustedBy, services,  bulletSection, pageInfo, testimonials, social, faqs, author, category, blockContent]
