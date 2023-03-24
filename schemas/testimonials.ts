@@ -6,24 +6,28 @@ export default defineType({
     type: 'document',
     fields: [
         defineField({
-        name: 'name',
-        title: 'Name',
-        type: 'string',
-      }),
-    
-      defineField({
-        name: 'feedback',
-        title: 'Feedback',
-        type: 'string',
-      }),
-      defineField({
-        name: 'imgUrl',
-        title: 'ImageUrl',
-        type: 'image',
-        options: {
-          hotspot: true,
-        },
-      }),
-     
+            name: 'name',
+            title: 'Name',
+            type: 'string',
+        }),
+        defineField({
+            name: 'date',
+            title: 'Date Posted',
+            type: 'string',
+        }),
+        defineField({
+            name: 'feedback',
+            title: 'Feedback',
+            type: 'string',
+        }),
+        defineField({
+            name: 'imgUrl',
+            title: 'ImageUrl',
+            type: 'image',
+            options: {
+                hotspot: true,
+            },
+        }),
+
     ],
-  });
+});
