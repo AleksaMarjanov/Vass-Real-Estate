@@ -110,7 +110,7 @@ const Testimonials = () => {
                                                         priority
                                                         className="rounded-full object-contain"
                                                     />
-                                                    <div className="flex-col flex px-2">
+                                                    <div className="flex-row flex px-2">
                                                         <h1 className="text-extrabold mx-6 flex items-center justify-center text-xl">
                                                             {testimonial?.name}
                                                         </h1>
