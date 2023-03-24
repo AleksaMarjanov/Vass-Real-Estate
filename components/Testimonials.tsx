@@ -110,10 +110,11 @@ const Testimonials = () => {
                                                         priority
                                                         className="rounded-full object-contain"
                                                     />
-                                                    <div className="flex-col flex">
+                                                    <div className="flex-col flex px-2">
                                                         <h1 className="text-extrabold mx-6 flex items-center justify-center text-xl">
                                                             {testimonial?.name}
                                                         </h1>
+                                                        <p>{testimonial?.date}</p>
                                                     </div>
                                                 </div>
                                             </motion.div>

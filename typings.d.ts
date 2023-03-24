@@ -14,7 +14,7 @@ interface Listing extends Base {
     slug: Slug;
     title: string;
     description: string;
-    path: Geopoint[] ;
+    path: Geopoint[];
 }
 
 interface Services extends Base {
@@ -49,6 +49,7 @@ export interface Testimonials extends Base {
     _type: "testimonials";
     feedback: string;
     imgUrl: Image;
+    date: string;
     name: string;
 }
 
@@ -58,7 +59,7 @@ export interface Social extends Base {
     url: string;
 }
 
-export interface FAQs extends Base {  
+export interface FAQs extends Base {
     _type: "faqs";
     question: string;
     answer: string;
