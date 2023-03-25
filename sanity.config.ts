@@ -4,8 +4,12 @@ import { visionTool } from '@sanity/vision'
 import { schemaTypes } from './schemas'
 import { myTheme } from './theme'
 
-const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!;
-const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
+// const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!;
+// const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
+
+const projectId = '8m2psc99'
+const dataset = 'production'
+const apiVersion = '2021-11-15'
 
 export default defineConfig({
     basePath: "/studio",
