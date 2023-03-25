@@ -35,7 +35,7 @@ const Hero = () => {
 
                             <motion.h1
                                 variants={textVariant(1.1)}
-                                className="md:text-5xl text-3xl text-bold py-12 max-[425px]:py-2"
+                                className="md:text-5xl text-3xl font-bold py-12 max-[425px]:py-2"
                             >
                                 Need a{" "}
                                 <span className="underline decoration-[#F7AB0A] text-extrabold">
@@ -74,7 +74,7 @@ const Hero = () => {
                         className="relative w-full"
                     >
                         <Image
-                            src="/bestPlace.svg"
+                            src="/SteelBuilding.png"
                             alt="heroImage"
                             width={1000}
                             height={1000}
