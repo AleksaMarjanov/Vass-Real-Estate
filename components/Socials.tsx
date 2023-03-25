@@ -46,15 +46,25 @@ const Socials = () => {
         }
     }, [])
 
-    const sendEmail = () => {
+    const sendEmail = ((event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault()
+
         emailjs.sendForm(
             //@ts-ignore
             process.env.emailJs_service,
             process.env.emailJs_template,
             form.current,
             process.env.emailJs_API
-        )
+        ).then((result) => {
+            console.log(result.text)
+            setTimeout(() => {
+                setIsFormSubmitted(true)
+            }, 1500)
+        }, (error) => {
+            console.log(error.text)
+        })
     }
+    )
 
     return (
         <motion.footer
@@ -91,11 +101,14 @@ const Socials = () => {
                         </div>
                     </div>
                     {!isFormSubmitted ? (
-                        <div className="text-primary-black">
-                            <form ref={form} onSubmit={sendEmail} className="flex flex-col items-center justify-center gap-2">
-                                <input type="email" placeholder="johndoe@gmail.com" required />
-                                <button className="px-6 py-4 text-white bg-[#F7AB0A]">Subscribe</button>
-                            </form>
+                        <div className="flex flex-col items-center justify-center">
+                            <span className="text-white text-lg md:text-2xl py-4">Stay in Loop</span>
+                            <div className="text-primary-black">
+                                <form ref={form} onSubmit={sendEmail} className="flex flex-col items-center justify-center gap-2">
+                                    <input name="email" type="email" placeholder="johndoe@gmail.com" required />
+                                    <button className="px-6 py-4 text-white bg-[#F7AB0A] rounded-[10px] hover:opacity-80 transition-all ease-out duration-200 cursor-pointer">Subscribe</button>
+                                </form>
+                            </div>
                         </div>
                     ) : (
                         <div>
