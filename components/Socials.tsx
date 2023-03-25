@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { footerVariants } from "../utils/motion";
 import styles from "@/styles";
@@ -10,6 +10,7 @@ import { client } from "@/lib/sanity.client";
 import { Social } from "@/typings";
 import { SocialIcon } from "react-social-icons";
 import Link from "next/link";
+import emailjs from "@emailjs/browser";
 
 type Props = {
     socials: Social[];
@@ -20,6 +21,7 @@ export const revalidate = 60;
 const Socials = () => {
     const [socials, setSocials] = useState([])
     const [isFormSubmitted, setIsFormSubmitted] = useState(false)
+    const form = useRef<HTMLFormElement>(null)
 
     const query = groq`
 *[_type == 'social']
@@ -44,6 +46,15 @@ const Socials = () => {
         }
     }, [])
 
+    const sendEmail = () => {
+        emailjs.sendForm(
+            //@ts-ignore
+            process.env.emailJs_service,
+            process.env.emailJs_template,
+            form.current,
+            process.env.emailJs_API
+        )
+    }
 
     return (
         <motion.footer
@@ -81,8 +92,9 @@ const Socials = () => {
                     </div>
                     {!isFormSubmitted ? (
                         <div className="flex items-center justify-center text-primary-black">
-                            <form>
-                                <input type="text" placeholder="johndoe@gmail.com" />
+                            <form ref={form} onSubmit={sendEmail}>
+                                <input type="email" placeholder="johndoe@gmail.com" required />
+                                <button className="px-6 py-4 text-white bg-[#F7AB0A]">Subscribe</button>
                             </form>
                         </div>
                     ) : (
