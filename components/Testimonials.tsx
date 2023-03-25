@@ -101,21 +101,14 @@ const Testimonials = () => {
                                                     </div>
                                                 </div>
                                                 <div className="relative bottom-0 flex flex-row">
-                                                    {/* <Image src={testimonial.imgUrl} alt={testimonial.title} width={50} height={50} priority className="object-contain rounded-full" /> */}
-                                                    <Image
-                                                        src={`${urlFor(testimonial?.imgUrl).url()}`}
-                                                        alt={testimonial.name}
-                                                        width={50}
-                                                        height={50}
-                                                        priority
-                                                        className="rounded-full object-contain"
-                                                    />
-                                                    <div className="flex-row flex px-2">
-                                                        <h1 className="text-extrabold mx-6 flex items-center justify-center text-xl">
+                                                    <Image src={`${urlFor(testimonial?.imgUrl).url()}`} alt={testimonial.name} width={50} height={50} priority className="rounded-full object-contain" />
+                                                    <div className="flex-col flex ">
+                                                        <h2 className="text-extrabold mx-6 flex items-center justify-center text-xl">
                                                             {testimonial?.name}
-                                                        </h1>
-                                                        <p>{testimonial?.date}</p>
+                                                        </h2>
+                                                        <p>Home Comforts</p>
                                                     </div>
+                                                    <p>{testimonial?.date}</p>
                                                 </div>
                                             </motion.div>
                                         </div>
