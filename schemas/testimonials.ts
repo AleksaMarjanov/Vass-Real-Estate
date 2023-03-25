@@ -16,6 +16,11 @@ export default defineType({
             type: 'string',
         }),
         defineField({
+            name: 'company',
+            title: 'Company',
+            type: 'string',
+        }),
+        defineField({
             name: 'feedback',
             title: 'Feedback',
             type: 'string',

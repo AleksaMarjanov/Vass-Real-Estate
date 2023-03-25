@@ -54,6 +54,7 @@ export interface Testimonials extends Base {
     feedback: string;
     imgUrl: Image;
     date: string;
+    company: string;
     name: string;
 }
 

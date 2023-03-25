@@ -46,7 +46,7 @@ const Testimonials = () => {
                 variants={fadeIn("up", "tween", 0.35, 0.85)}
                 className="relative flex w-full flex-col items-center justify-center md:min-h-[70vh] "
             >
-                <h2 className="py-6 px-12 text-2xl text-white md:py-12 md:px-6">
+                <h2 className="py-6 px-12 text-2xl font-bold md:text-4xl text-white md:py-12 md:px-6">
                     What people say about us
                 </h2>
                 <div className="flex w-full flex-row items-center justify-center md:items-start md:justify-center lg:mx-12">
@@ -102,11 +102,11 @@ const Testimonials = () => {
                                                 </div>
                                                 <div className="relative bottom-0 flex flex-row">
                                                     <Image src={`${urlFor(testimonial?.imgUrl).url()}`} alt={testimonial.name} width={50} height={50} priority className="rounded-full object-contain" />
-                                                    <div className="flex-col flex ">
+                                                    <div className="flex-col flex">
                                                         <h2 className="text-extrabold mx-6 flex items-center justify-center text-xl">
                                                             {testimonial?.name}
                                                         </h2>
-                                                        <p className="px-3">Home Comforts</p>
+                                                        <p className="flex items-center justify-center px-6 text-[#F7AB0A]">{testimonial?.company}</p>
                                                     </div>
                                                     <p>{testimonial?.date}</p>
                                                 </div>

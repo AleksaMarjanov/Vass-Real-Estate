@@ -99,7 +99,7 @@ const ServiceCard = () => {
                                         key={index}
                                         onClick={() => handleServiceFilter(item)}
                                         className={`relative max-[425px]:w-full whitespace-nowrap text-elipsis overflow-hidden flex items-center justify-center pt-2 bg-[#F7AB0A] rounded-[5px] md:text-lg 
-                    text-[14px] text-white font-semibold cursor-pointer transition-all animate ease-in duration-300 hover:bg-nice-blue hover:text-white ${activeFilter === item
+                    max-[375px]:text-[12px] text-[14px] text-white font-semibold cursor-pointer transition-all animate ease-in duration-300 hover:bg-nice-blue hover:text-white ${activeFilter === item
                                                 ? `${itemActive}`
                                                 : `${notActiveItem}`
                                             }`}
