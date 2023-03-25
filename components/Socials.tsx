@@ -91,8 +91,8 @@ const Socials = () => {
                         </div>
                     </div>
                     {!isFormSubmitted ? (
-                        <div className="flex items-center justify-center text-primary-black">
-                            <form ref={form} onSubmit={sendEmail}>
+                        <div className="text-primary-black">
+                            <form ref={form} onSubmit={sendEmail} className="flex flex-col items-center justify-center gap-2">
                                 <input type="email" placeholder="johndoe@gmail.com" required />
                                 <button className="px-6 py-4 text-white bg-[#F7AB0A]">Subscribe</button>
                             </form>
