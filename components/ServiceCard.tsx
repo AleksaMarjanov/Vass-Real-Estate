@@ -83,7 +83,7 @@ const ServiceCard = () => {
                     className="text-center max-[425px]:py-12"
                 >
                     <h1 className="font-bold text-2xl md:text-4xl">Services</h1>
-                    <h3 className="text-2xl mt-12 max-[425px]:mt-4 max-[425px]:px-12">
+                    <h3 className="text-2xl mt-2 md:mt-6  max-[425px]:px-12">
                         What we do
                     </h3>
 
@@ -92,14 +92,14 @@ const ServiceCard = () => {
                     {/* </p> */}
                     <div className="flex-1 flex-col md:flex-row ">
                         {/* grid grid-cols-2 md:flex md:flex-row md:flex-wrap max-[425px]:px-12 py-4 justify-center items-center max-[768px]:mt-16 md:mt-2 px-3 mr-0 max-[768px]:mb-8 */}
-                        <div className="grid grid-cols-2 max-[375px]:flex-col max-[375px]:flex md:flex md:flex-row md:flex-wrap justify-center items-center max-[768px]:mt-16  py-4 gap-1 px-3 md:mt-2 md:px-3 mr-0 max-[768px]:mb-8">
+                        <div className="grid grid-cols-2 md:flex md:flex-row md:flex-wrap justify-center items-center max-[768px]:mt-8  py-4 gap-1 px-3 md:mt-2 md:px-3 mr-0 max-[768px]:mb-8">
                             {["Property Managment", "Site Selection", "Apartment Locator", "Consulting", "Brokerage Sales/Leasing"].map(
                                 (item, index) => (
                                     <div
                                         key={index}
                                         onClick={() => handleServiceFilter(item)}
                                         className={`relative max-[425px]:w-full whitespace-nowrap text-elipsis overflow-hidden flex items-center justify-center pt-2 bg-[#F7AB0A] rounded-[5px] md:text-lg 
-                    text-[16px] text-white font-semibold cursor-pointer transition-all animate ease-in duration-300 hover:bg-nice-blue hover:text-white ${activeFilter === item
+                    text-[14px] text-white font-semibold cursor-pointer transition-all animate ease-in duration-300 hover:bg-nice-blue hover:text-white ${activeFilter === item
                                                 ? `${itemActive}`
                                                 : `${notActiveItem}`
                                             }`}

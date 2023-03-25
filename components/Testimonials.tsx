@@ -106,7 +106,7 @@ const Testimonials = () => {
                                                         <h2 className="text-extrabold mx-6 flex items-center justify-center text-xl">
                                                             {testimonial?.name}
                                                         </h2>
-                                                        <p>Home Comforts</p>
+                                                        <p className="px-3">Home Comforts</p>
                                                     </div>
                                                     <p>{testimonial?.date}</p>
                                                 </div>
