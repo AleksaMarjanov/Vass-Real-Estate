@@ -18,91 +18,91 @@ import { TrustedBy } from "@/typings";
 
 
 const TrustedBy = () => {
-const [trusted, setTrusted] = useState([])
+    const [trusted, setTrusted] = useState([])
 
-const query = groq`
+    const query = groq`
 *[_type == 'trustedBy']
 `
-useEffect(() => {
+    useEffect(() => {
 
-    const fetchTrusted = async () => {
-        const trusted = await client.fetch(query)
-        setTrusted(trusted);
-    }
-    fetchTrusted()
-}, [])
+        const fetchTrusted = async () => {
+            const trusted = await client.fetch(query)
+            setTrusted(trusted);
+        }
+        fetchTrusted()
+    }, [])
 
 
-  return (
-    <motion.div
-    variants={staggerContainer}
-    initial="hidden"
-    whileInView="show"
-    viewport={{ once: true }} 
-    className="h-[30vh] max-[425px]:h-[30%] max-[425px]:mt-24 mt-12 relative">
-    <motion.div 
-     variants={slideIn('up', 'tween', 0.6, 0.85)}
-    className="relative items-center justify-center flex w-full h-[120px] max-[425px]:h-[100px] bg-nice-blue/60">
-      <Swiper
-      className="swiper-wrapper"
-        observer={true}
-        slidesPerView={2}
-        modules={[Navigation, Pagination, Autoplay]}
-        onSwiper={swiper => {
-          setTimeout(() => {
-             swiper.update(); // ------> this solution
-           }, 3000);
-           }}
-        navigation={{
-          nextEl: ".image-swiper-button-next",
-          prevEl: ".image-swiper-button-prev",
-          disabledClass: "swiper-button-disabled",
-        }}
-        breakpoints = {{
-            499: {
-                slidesPerView: 2,
-                spaceBetween: 50
-            },
-            999: {
-                slidesPerView: 3,
-                spaceBetween: 100
-            },
-            1440: {
-                slidesPerView: 3,
-                spaceBetween: 150
-            }
-        }}
-        loop={true}
-        speed={2500}
-        autoplay={{
-            delay: 1000,
-            disableOnInteraction: false,
-          }}
-        // pagination={{ clickable: true }}
-      >
-        {trusted.map((slide : TrustedBy, index : number) => (
-          <div className="swiper-slide m-0 flex items-center justify-center" key={slide._id} >
-            <SwiperSlide key={slide._id + index} >
-              <div className="relative flex items-center justify-center object-center px-2 w-[130px] h-[130px] md:w-[150px] md:h-[150px] lg:w-[160px]">
-                <Image
-                  className="object-contain lg:object-center"
-                  src={urlFor(slide.mainImage).url()}
-                  alt="trusted by"
-                  width={500}
-                  height={500}
-                  sizes="(max-width: 768px) 100vw,
+    return (
+        <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="h-[30vh] max-[425px]:h-[30%] max-[425px]:mt-24 mt-12 relative">
+            <motion.div
+                variants={slideIn('up', 'tween', 0.6, 0.85)}
+                className="relative items-center justify-center flex w-full h-[120px] max-[425px]:h-[100px] bg-nice-blue/60">
+                <Swiper
+                    className="swiper-wrapper"
+                    observer={true}
+                    slidesPerView={2}
+                    modules={[Navigation, Pagination, Autoplay]}
+                    onSwiper={swiper => {
+                        setTimeout(() => {
+                            swiper.update(); // ------> this solution
+                        }, 3000);
+                    }}
+                    navigation={{
+                        nextEl: ".image-swiper-button-next",
+                        prevEl: ".image-swiper-button-prev",
+                        disabledClass: "swiper-button-disabled",
+                    }}
+                    breakpoints={{
+                        499: {
+                            slidesPerView: 2,
+                            spaceBetween: 50
+                        },
+                        999: {
+                            slidesPerView: 3,
+                            spaceBetween: 100
+                        },
+                        1440: {
+                            slidesPerView: 6,
+                            spaceBetween: 150
+                        }
+                    }}
+                    loop={true}
+                    speed={2500}
+                    autoplay={{
+                        delay: 1000,
+                        disableOnInteraction: false,
+                    }}
+                // pagination={{ clickable: true }}
+                >
+                    {trusted.map((slide: TrustedBy, index: number) => (
+                        <div className="swiper-slide m-0 flex items-center justify-center" key={slide._id} >
+                            <SwiperSlide key={slide._id + index} >
+                                <div className="relative flex items-center justify-center object-center px-2 w-[130px] h-[130px] md:w-[150px] md:h-[150px] lg:w-[160px]">
+                                    <Image
+                                        className="object-contain lg:object-center"
+                                        src={urlFor(slide.mainImage).url()}
+                                        alt="trusted by"
+                                        width={500}
+                                        height={500}
+                                        sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw"
-                  priority
-                />
-              </div>
-            </SwiperSlide>
-          </div>
-        ))}
-      </Swiper>
-    </motion.div>
-    </motion.div>
-  );
+                                        priority
+                                    />
+                                </div>
+                            </SwiperSlide>
+                        </div>
+                    ))}
+                </Swiper>
+            </motion.div>
+        </motion.div>
+    );
 };
 
 export default TrustedBy;
