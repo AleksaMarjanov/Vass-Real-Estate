@@ -77,7 +77,7 @@ const Socials = () => {
             <div className="mb-[50px] h-[2px] bg-white opacity-10" />
 
             <div className="flex flex-col">
-                <div className="flex items-center justify-center sm:justify-between flex-wrap gap-6 md:gap-8">
+                <div className="flex items-center justify-center md:justify-between flex-wrap gap-6 md:gap-8">
                     <div className="flex flex-col gap-4 items-center justify-center md:items-start md:justify-start md:flex-[0.25]">
                         <a href="#nav" className="cursor-pointer">
                             <Image
@@ -106,7 +106,7 @@ const Socials = () => {
                             <div className="text-primary-black">
                                 <form ref={form} onSubmit={sendEmail} className="flex flex-col items-center justify-center gap-2">
                                     <input name="email" type="email" placeholder="johndoe@gmail.com" required />
-                                    <button className="px-6 py-4 fon-bold  text-white bg-[#F7AB0A] rounded-[10px] hover:opacity-80 transition-all ease-out duration-200 cursor-pointer">Subscribe</button>
+                                    <button className="px-6 py-4 font-bold  text-white bg-[#F7AB0A] rounded-[10px] hover:opacity-80 transition-all ease-out duration-200 cursor-pointer">Subscribe</button>
                                 </form>
                             </div>
                         </div>

@@ -50,8 +50,8 @@ const Testimonials = () => {
                     What people say about us
                 </h2>
                 <div className="flex w-full flex-row items-center justify-center md:items-start md:justify-center lg:mx-12">
-                    <div className="hidden items-end justify-end md:flex">
-                        <div className="relative flex h-[350px] w-[350px] items-center justify-center object-center lg:h-[400px] lg:w-[400px]">
+                    <div className="hidden items-end justify-end lg:flex">
+                        <div className="relative flex w-[350px] h-[350px] items-center justify-center object-center lg:h-[400px] lg:w-[400px]">
                             <Image
                                 src="./testimonials1.svg"
                                 alt="testimonial picture"
@@ -63,7 +63,7 @@ const Testimonials = () => {
                     </div>
                     {/* with w-full content shows up but messes up the bigger screen sizes
            */}
-                    <div className="w-full object-contain sm:w-[340px] lg:w-[540px]">
+                    <div className="w-full object-contain sm:w-full lg:w-[540px]">
                         <Swiper
                             modules={[Navigation, Pagination, Autoplay]}
                             slidesPerView={1}
@@ -81,13 +81,11 @@ const Testimonials = () => {
                             {testimonials?.map((testimonial: Testimonials, index: number) => (
                                 <SwiperSlide key={testimonial._id + index}>
                                     <div className="swiper-slide" key={testimonial._id + index}>
-                                        <div className="relative flex h-[540px] w-full items-start justify-start max-[425px]:h-[520px] max-[320px]:h-[580px] lg:h-[480px]">
+                                        <div className="relative flex lg:h-[540px] w-full items-start justify-start max-[425px]:h-[520px] max-[320px]:h-[580px] lg:h-[480px]">
                                             <motion.div
                                                 variants={fadeIn("left", "tween", 0.2, 1)}
                                                 initial="hidden"
-                                                whileInView="show"
-                                                className="object-contain p-4"
-                                            >
+                                                whileInView="show" className="object-contain p-4" >
                                                 <div className="top-0 items-start justify-center py-8 lg:flex lg:flex-col lg:py-4">
                                                     <div className="white-space relative overflow-hidden text-lg text-gray-200">
                                                         <Image
@@ -101,7 +99,12 @@ const Testimonials = () => {
                                                     </div>
                                                 </div>
                                                 <div className="relative bottom-0 flex flex-row">
-                                                    <Image src={`${urlFor(testimonial?.imgUrl).url()}`} alt={testimonial.name} width={50} height={50} priority className="rounded-full object-contain" />
+                                                    <Image src={`${urlFor(testimonial?.imgUrl).url()}`}
+                                                        alt={testimonial.name}
+                                                        width={50}
+                                                        height={50}
+                                                        priority
+                                                        className="rounded-full object-contain" />
                                                     <div className="flex-col flex">
                                                         <h2 className="text-extrabold mx-6 flex items-center justify-center text-xl">
                                                             {testimonial?.name}
