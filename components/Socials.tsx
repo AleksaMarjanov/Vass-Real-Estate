@@ -77,8 +77,8 @@ const Socials = () => {
             <div className="mb-[50px] h-[2px] bg-white opacity-10" />
 
             <div className="flex flex-col">
-                <div className="flex items-center justify-between flex-wrap gap-6 md:gap-8">
-                    <div className="flex flex-col gap-4 items-start justify-start">
+                <div className="flex items-center justify-center sm:justify-between flex-wrap gap-6 md:gap-8">
+                    <div className="flex flex-col gap-4 items-center justify-center md:items-start md:justify-start md:flex-[0.25]">
                         <a href="#nav" className="cursor-pointer">
                             <Image
                                 src="/logoSvg.svg"
@@ -101,12 +101,12 @@ const Socials = () => {
                         </div>
                     </div>
                     {!isFormSubmitted ? (
-                        <div className="flex flex-col items-center justify-center">
+                        <div className="flex flex-col items-center justify-center md:flex-[0.5]">
                             <span className="text-white text-lg md:text-2xl py-4">Stay in Loop</span>
                             <div className="text-primary-black">
                                 <form ref={form} onSubmit={sendEmail} className="flex flex-col items-center justify-center gap-2">
                                     <input name="email" type="email" placeholder="johndoe@gmail.com" required />
-                                    <button className="px-6 py-4 text-white bg-[#F7AB0A] rounded-[10px] hover:opacity-80 transition-all ease-out duration-200 cursor-pointer">Subscribe</button>
+                                    <button className="px-6 py-4 fon-bold  text-white bg-[#F7AB0A] rounded-[10px] hover:opacity-80 transition-all ease-out duration-200 cursor-pointer">Subscribe</button>
                                 </form>
                             </div>
                         </div>
@@ -115,7 +115,7 @@ const Socials = () => {
                             Thank you!
                         </div>
                     )}
-                    <div className="flex gap-4">
+                    <div className="flex gap-4 md:flex-[0.25] md:items-end md:justify-end">
                         {socials.map((social: Social) => (
                             <div
                                 className="group"
