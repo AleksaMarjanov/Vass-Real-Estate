@@ -60,6 +60,10 @@ const TrustedBy = () => {
                         disabledClass: "swiper-button-disabled",
                     }}
                     breakpoints={{
+                        299: {
+                            slidesPerView: 3,
+                            spaceBetween: 10,
+                        },
                         499: {
                             slidesPerView: 4,
                             spaceBetween: 10
