@@ -39,10 +39,11 @@ const TrustedBy = () => {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="h-[30vh] max-[425px]:h-[30%] max-[425px]:mt-24 mt-12 relative">
+            className="max-[475px]:h-[40vh] max-[425px]:mt-24 mt-12 relative items-center justify-center flex flex-col gap-4 md:gap-8">
+            <h2 className="text-2xl md:text-3xl font-bold">Trusted By</h2>
             <motion.div
                 variants={slideIn('up', 'tween', 0.6, 0.85)}
-                className="relative items-center justify-center flex w-full h-[120px] max-[425px]:h-[100px] bg-nice-blue/60">
+                className="relative items-center justify-center flex w-full h-[120px] max-[425px]:h-[100px] bg-darker-white">
                 <Swiper
                     className="swiper-wrapper"
                     observer={true}
@@ -60,16 +61,16 @@ const TrustedBy = () => {
                     }}
                     breakpoints={{
                         499: {
-                            slidesPerView: 2,
-                            spaceBetween: 50
+                            slidesPerView: 4,
+                            spaceBetween: 10
                         },
                         999: {
-                            slidesPerView: 3,
-                            spaceBetween: 100
+                            slidesPerView: 5,
+                            spaceBetween: 10
                         },
                         1440: {
-                            slidesPerView: 6,
-                            spaceBetween: 150
+                            slidesPerView: 8,
+                            spaceBetween: 10
                         }
                     }}
                     loop={true}
