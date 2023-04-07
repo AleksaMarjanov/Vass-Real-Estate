@@ -83,7 +83,6 @@ const TrustedBy = () => {
                         delay: 1000,
                         disableOnInteraction: false,
                     }}
-                // pagination={{ clickable: true }}
                 >
                     {trusted.map((slide: TrustedBy, index: number) => (
                         <div className="swiper-slide m-0 flex items-center justify-center" key={slide._id} >
