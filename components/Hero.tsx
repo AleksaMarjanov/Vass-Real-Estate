@@ -21,7 +21,7 @@ const Hero = () => {
                     className="w-full relative"
                 >
                     <div className="w-full absolute z-0 -top-[50px] max-[768px]:top-[30px] max-[1440px]:top-[10px] 
-          min-[1440px]:top-[10px] bg-[#0086bb]/20 h-[600px] max-[768px]:h-[600px] md:h-[650px] lg:h-[500px] xl:h-[700px] max-[768px]:rounded-br-[160px] rounded-br-[360px]" />
+          min-[1440px]:top-[10px] bg-[#0086bb]/20 h-[460px] md:h-[550px] max-[768px]:rounded-br-[160px] rounded-br-[360px]" />
 
                 </motion.div>
                 <motion.div
@@ -71,13 +71,13 @@ const Hero = () => {
                     </motion.div>
                     <motion.div
                         variants={fadeIn("left", "tween", 0.6, 0.95)}
-                        className="relative w-full"
+                        className="relative w-[320px] h-[220px] sm:w-[480px] sm:h-[360px] md:w-[600px] md:h-[400px] lg:w-[700px] lg:h-[500px]"
                     >
                         <Image
                             src="/SteelBuilding.png"
                             alt="heroImage"
-                            width={1000}
-                            height={1000}
+                            fill
+                            sizes="100vw"
                             priority
                             className="object-contain"
                         />
