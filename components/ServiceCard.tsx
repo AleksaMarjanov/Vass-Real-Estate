@@ -83,9 +83,9 @@ const ServiceCard = () => {
                     className="text-center max-[425px]:py-12"
                 >
                     <h1 className="font-bold text-2xl md:text-4xl">Services</h1>
-                    <h3 className="text-2xl mt-2 md:mt-6  max-[425px]:px-12">
+                    <h2 className="text-2xl mt-2 md:mt-6  max-[425px]:px-12">
                         What we do
-                    </h3>
+                    </h2>
 
                     {/*     offers buying/selling, management, market analysis, investment */}
                     {/*     consulting, and client service{" "} */}
