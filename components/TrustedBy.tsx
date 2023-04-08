@@ -62,11 +62,11 @@ const TrustedBy = () => {
                     breakpoints={{
                         299: {
                             slidesPerView: 3,
-                            spaceBetween: 10,
+                            spaceBetween: 50,
                         },
                         499: {
-                            slidesPerView: 4,
-                            spaceBetween: 10
+                            slidesPerView: 3,
+                            spaceBetween: 50
                         },
                         999: {
                             slidesPerView: 5,
@@ -87,16 +87,15 @@ const TrustedBy = () => {
                     {trusted.map((slide: TrustedBy, index: number) => (
                         <div className="swiper-slide m-0 flex items-center justify-center" key={slide._id} >
                             <SwiperSlide key={slide._id + index} >
-                                <div className="relative flex items-center justify-center object-center px-2 w-[130px] h-[130px] md:w-[150px] md:h-[150px] lg:w-[160px]">
+                                <div className="relative gap-1 w-[130px] h-[130px] md:w-[150px] md:h-[150px] lg:w-[160px]">
                                     <Image
                                         className="object-contain lg:object-center"
                                         src={urlFor(slide.mainImage).url()}
                                         alt="trusted by"
-                                        width={500}
+                                        fill
                                         //                           sizes="(max-width: 768px) 100vw,
                                         // (max-width: 1200px) 50vw,
                                         // 33vw"
-                                        height={500}
                                         priority
                                     />
                                 </div>

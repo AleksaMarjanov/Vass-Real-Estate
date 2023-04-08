@@ -70,7 +70,7 @@ const ServiceCard = () => {
 
     return (
         <section
-            className={`${styles.innerWidth} mt-12 md:mt-24 flex flex-col items-center justify-center `}
+            className={`${styles.innerWidth} mt-6 md:mt-12 flex flex-col items-center justify-center `}
         >
             <motion.div
                 variants={staggerContainer}
@@ -80,18 +80,14 @@ const ServiceCard = () => {
             >
                 <motion.div
                     variants={fadeIn("up", "tween", 0.8, 0.85)}
-                    className="text-center max-[425px]:py-12"
+                    className="text-center md:py-12"
                 >
                     <h1 className="font-bold text-2xl md:text-4xl">Services</h1>
                     <h2 className="text-2xl mt-2 md:mt-6  max-[425px]:px-12">
                         What we do
                     </h2>
 
-                    {/*     offers buying/selling, management, market analysis, investment */}
-                    {/*     consulting, and client service{" "} */}
-                    {/* </p> */}
                     <div className="flex-1 flex-col md:flex-row ">
-                        {/* grid grid-cols-2 md:flex md:flex-row md:flex-wrap max-[425px]:px-12 py-4 justify-center items-center max-[768px]:mt-16 md:mt-2 px-3 mr-0 max-[768px]:mb-8 */}
                         <div className="grid grid-cols-2 md:flex md:flex-row md:flex-wrap justify-center items-center max-[768px]:mt-8  py-4 gap-1 px-3 md:mt-2 md:px-3 mr-0 max-[768px]:mb-8">
                             {["Property Managment", "Site Selection", "Apartment Locator", "Consulting", "Brokerage Sales/Leasing"].map(
                                 (item, index) => (
