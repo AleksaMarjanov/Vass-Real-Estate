@@ -24,7 +24,7 @@ Home Page:
 </ul>
 Listings Page:
 <ul>
-    <li>All Available Listings/Properties<li>
-    <li>Brief description of each Property<li>
-    <li>Button with dynamic navigation/[slug] to each Property<li>
+    <li>All Available Listings/Properties</li>
+    <li>Brief description of each Property</li>
+    <li>Button with dynamic navigation/[slug] to each Property</li>
 </ul>
