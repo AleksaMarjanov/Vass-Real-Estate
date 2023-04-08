@@ -23,8 +23,7 @@ const ListingsList = ({ listings }: Props) => {
             variants={staggerContainer}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: false, amount: 0.25 }}
-        // className={`${styles.paddings}`}
+            viewport={{ once: true, amount: 0.25 }}
         >
             <motion.div
                 variants={textVariant(1.1)}

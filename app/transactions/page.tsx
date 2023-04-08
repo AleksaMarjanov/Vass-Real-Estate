@@ -3,17 +3,18 @@ import { groq } from "next-sanity";
 import { client } from "@/lib/sanity.client";
 
 const Transactions = async () => {
-    
-const query = groq`
+
+    // Fetch data from Sanity 
+    const query = groq`
 *[_type == 'transactions']
-`    
+`
 
-const transactions = await client.fetch(query)
+    const transactions = await client.fetch(query)
 
-return(
+    return (
         <div>
-            <TransactionList transactions={transactions} /> 
-       </div>
+            <TransactionList transactions={transactions} />
+        </div>
     )
 }
 

@@ -19,6 +19,7 @@ type Props = {
 
 export const revalidate = 60; // revalidate this page every 60 seconds
 
+// get dynamic params for each listing
 export async function generateStaticParams() {
     const query = groq`
 		*[_type == "listing"]
@@ -26,7 +27,6 @@ export async function generateStaticParams() {
 			slug
 		}
 		`;
-
     const slugs: Listing[] = await client.fetch(query);
     const slugRoutes = slugs.map((slug) => slug.slug.current);
 
@@ -36,6 +36,7 @@ export async function generateStaticParams() {
 }
 
 async function Listing({ params: { slug } }: Props) {
+    // fetch data for only listing that is active/clicked
     const query = groq`
 		*[_type == "listing" && slug.current == $slug][0] {
 			...,

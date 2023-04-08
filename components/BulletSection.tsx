@@ -10,27 +10,27 @@ import BulletList from "./bulletList";
 const query = groq`
 *[_type == 'bulletSection']
 `
-
+// revalidate page data every 60 seconds
 export const revalidate = 60;
 
 const BulletSection = () => {
-  const [bullets, setBullets] = useState([])
+    const [bullets, setBullets] = useState([])
 
-  useEffect(() => {
-    try  {
-      const fetchBullets = async () => {
-        const data = await client.fetch(query)
-        setBullets(data)
-      }
-      fetchBullets()
-    } catch(err) {
-      (console.error)
-    }
-  }, [])
+    useEffect(() => {
+        try {
+            const fetchBullets = async () => {
+                const data = await client.fetch(query)
+                setBullets(data)
+            }
+            fetchBullets()
+        } catch (err) {
+            (console.error)
+        }
+    }, [])
 
-  return (
-    <BulletList bullets={bullets}/>
-  );
+    return (
+        <BulletList bullets={bullets} />
+    );
 };
 
 export default BulletSection;

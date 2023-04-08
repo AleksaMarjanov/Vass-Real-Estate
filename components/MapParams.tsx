@@ -19,6 +19,7 @@ const MapParams = ({ listing }: Props) => {
 
     const [loading, setLoading] = useState<boolean>(true);
 
+    // handle case when there is no listing
     useEffect(() => {
         if (listing != null) {
             setLoading(false);
@@ -27,6 +28,7 @@ const MapParams = ({ listing }: Props) => {
     }, [listing, loading])
 
     return (
+        // If there is no listings map won't load
         !loading ?
             <>
                 <MapContainer
@@ -40,9 +42,10 @@ const MapParams = ({ listing }: Props) => {
                     <TileLayer
                         url={`https://api.mapbox.com/styles/v1/mapbox/streets-v12/tiles/256/{z}/{x}/{y}@2x?access_token=${apiKey}`}
                     />
+                    {/*Dynamic params for latitude and langitude extracted from LatLng Definition */}
                     <Marker
                         position={new LatLng(listing.path[0].lat, listing.path[0].lng)}
-                        // @ts-ignore
+                        //@ts-ignore
                         dragabble={true} >
                         <Popup>{listing.title}</Popup>
                     </Marker>

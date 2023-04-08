@@ -7,6 +7,7 @@ import { fadeIn, slideIn, staggerContainer, textVariant } from "@/utils/motion";
 
 
 const Hero = () => {
+
     return (
         <>
             <motion.div

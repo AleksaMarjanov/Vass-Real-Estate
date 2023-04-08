@@ -4,15 +4,16 @@ import Link from 'next/link';
 
 const ClientSideRoute = ({
     children,
-     route,
-  }: {
+    route,
+}: {
     children: React.ReactNode;
     route: string
-  }) => {
-  return (
-    
-    <Link href={route}>{children}</Link>
-  )
+}) => {
+    return (
+
+        // Dynamic route for each Listing
+        <Link href={route}>{children}</Link>
+    )
 }
 
 export default ClientSideRoute

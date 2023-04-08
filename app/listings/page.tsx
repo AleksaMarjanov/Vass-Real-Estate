@@ -4,6 +4,7 @@ import { client } from "@/lib/sanity.client";
 import PreviewSuspense from '../../components/PreviewSuspense'
 import { previewData } from "next/headers";
 
+// Get All Listings Data
 const query = groq`
 *[_type=='listing'] {
     ...,
@@ -13,25 +14,13 @@ const query = groq`
 `;
 
 const Listings = async () => {
-    
-    if(previewData()) {
-      return (
-        <PreviewSuspense fallback={(
-          <div role="status">
-            <p className="text-center text-lg animate-pulse text-white">
-              Loading Preview Data...
-            </p>
-          </div>
-        )}>
-  
-        </PreviewSuspense>
-        )
-    }
+
     const listings = await client.fetch(query)
-    return(
-            <ListingsList listings={listings} />
-    ) 
-  }
+
+    return (
+        <ListingsList listings={listings} />
+    )
+}
 
 
 export default Listings;

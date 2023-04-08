@@ -1,9 +1,7 @@
 import Form from "@/components/form";
-import { Heading } from "@chakra-ui/react";
-
-
 import dynamic from "next/dynamic";
 
+// import react leaflet map dynamically
 const MapWithNOSSR = dynamic(() => import("../../components/MapForContact"), {
     ssr: false,
 });

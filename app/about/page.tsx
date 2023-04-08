@@ -6,19 +6,22 @@ import { groq } from 'next-sanity';
 import { client } from '@/lib/sanity.client';
 import AboutList from '@/components/AboutList';
 
-  const query = groq`
+// fetch about information and socials from sanity
+const query = groq`
   *[_type=='pageInfo'][0]
   `;
-  const socialQuery = groq`
+const socialQuery = groq`
   *[_type=='social']
   `;
 
 export const revalidate = 60;
 
-const About =  async () => {
- const pageInfo = await client.fetch(query)
- const socials = await client.fetch(socialQuery)
-    return(
+const About = async () => {
+
+    const pageInfo = await client.fetch(query)
+    const socials = await client.fetch(socialQuery)
+
+    return (
         <div className="relative z-0">
             <AboutList pageInfo={pageInfo} socials={socials} />
         </div>
