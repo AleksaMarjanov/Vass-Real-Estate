@@ -43,7 +43,7 @@ const Hero = () => {
                                 </span>
                             </motion.h1>
                             <motion.div variants={textVariant(1.2)}>
-                                <p className="font-normal text-lg md:text-2xl text-[#F7AB0A]">
+                                <p className="font-bold text-lg md:text-2xl text-darker-white">
                                     Over 25 years specializing in commercial/industrial properties
                                 </p>
                             </motion.div>

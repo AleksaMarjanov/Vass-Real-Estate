@@ -40,7 +40,7 @@ const TrustedBy = () => {
             whileInView="show"
             viewport={{ once: true }}
             className="max-[475px]:h-[40vh] max-[425px]:mt-24 mt-12 relative items-center justify-center flex flex-col gap-4 md:gap-8">
-            <h2 className="text-2xl md:text-3xl font-bold">Trusted By</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-center ">Trusted By</h2>
             <motion.div
                 variants={slideIn('up', 'tween', 0.6, 0.85)}
                 className="relative items-center justify-center flex w-full h-[120px] max-[425px]:h-[100px] bg-darker-white">
@@ -93,9 +93,9 @@ const TrustedBy = () => {
                                         src={urlFor(slide.mainImage).url()}
                                         alt="trusted by"
                                         fill
-                                        //                           sizes="(max-width: 768px) 100vw,
-                                        // (max-width: 1200px) 50vw,
-                                        // 33vw"
+                                        sizes="(max-width: 768px) 100vw,
+                                        (max-width: 1200px) 50vw,
+                                        33vw"
                                         priority
                                     />
                                 </div>
