@@ -13,6 +13,7 @@ The purpose of the website is to provide information about company's services, l
 # Features
 
 The Website includes following features:
+<br/>
 Home Page:
 <ul>
     <li>with hero banner, associated with button to browse properties/listings</li>
@@ -39,4 +40,28 @@ Transactions Page:
 <ul>
 <li>Grid of Images displaying all Transactions</li>
 </ul>
+About Page:
+<ul>
+<li>Image of Broker with socials and some informmation about him</li>
+</ul>
+Contact Page:
+<ul>
+<li>page with a form for clients to submit inquiries</li>
+<li>Map that shows location of the office</li>
+</ul>
 
+# Installation
+To install and run this project on your local machine, follow these steps:
+<ol>
+<li>Clone the repository `git clone https://github.com/AleksaMarjanov/Vass-Real-Estate`</li>
+<li>Navigate tot the project direcotry: `cd Vass-Real-Estate`</li>
+<li>Install node_modules packages `npm install` or `yarn add`</li>
+<li>Run `npm run dev`</li>
+<li>Needs .env file with sanity credentials ( projectId, production, apiVersion )</li>
+</ol>
+
+# Credits
+This project was created by Aleksa Marjanov for Deano Vass Real Estate
+
+#License
+This project is licensed under the <a href="https://opensource.org/license/mit/">MIT License</a>
