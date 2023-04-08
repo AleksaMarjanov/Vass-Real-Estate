@@ -45,7 +45,7 @@ const TrustedBy = () => {
                 variants={slideIn('up', 'tween', 0.6, 0.85)}
                 className="relative items-center justify-center flex w-full h-[120px] max-[425px]:h-[100px] bg-darker-white">
                 <Swiper
-                    className="swiper-wrapper"
+                    className="swiper-wrapper flex items-center justify-center"
                     observer={true}
                     slidesPerView={2}
                     modules={[Navigation, Pagination, Autoplay]}
@@ -87,9 +87,9 @@ const TrustedBy = () => {
                     {trusted.map((slide: TrustedBy, index: number) => (
                         <div className="swiper-slide m-0 flex items-center justify-center" key={slide._id} >
                             <SwiperSlide key={slide._id + index} >
-                                <div className="relative gap-1 w-[130px] h-[130px] md:w-[150px] md:h-[150px] lg:w-[160px]">
+                                <div className="relative flex items-center justify-center p-3  w-[130px] h-[130px] md:w-[150px] md:h-[150px] ">
                                     <Image
-                                        className="object-contain lg:object-center"
+                                        className="object-contain object-center items-center justify-center"
                                         src={urlFor(slide.mainImage).url()}
                                         alt="trusted by"
                                         fill
