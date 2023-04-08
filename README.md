@@ -28,3 +28,15 @@ Listings Page:
     <li>Brief description of each Property</li>
     <li>Button with dynamic navigation/[slug] to each Property</li>
 </ul>
+Listing Page:
+<ul>
+<li>Banner with Name/Date Created/Author Image with navigation to /About</li>
+<li>Overview of Property</li>
+<li>Map dynamicly updated for each property langitude and latitude</li>
+<li>Form that clients can submit to ask more question aboutn property</li>
+</ul>
+Transactions Page: 
+<ul>
+<li>Grid of Images displaying all Transactions</li>
+</ul>
+
