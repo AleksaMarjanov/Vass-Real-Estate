@@ -38,7 +38,7 @@ const TrustedBy = () => {
             variants={staggerContainer}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.25 }}
             className="max-[475px]:h-[40vh] max-[425px]:mt-24 mt-12 relative items-center justify-center flex flex-col gap-4 md:gap-8">
             <h2 className="text-2xl md:text-3xl font-bold text-center ">Trusted By</h2>
             <motion.div

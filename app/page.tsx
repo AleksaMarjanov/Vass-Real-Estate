@@ -1,7 +1,4 @@
-import styles from "@/styles";
-import { Hero, BulletSection, ServiceCard, TrustedBy, Relocate } from '@/components'
-import FAQ from "@/components/faq";
-import Testimonials from "@/components/Testimonials";
+import { Hero, Testimonials, FAQ, BulletSection, ServiceCard, TrustedBy, Relocate } from '@/components'
 
 
 const HomePage = () => {
