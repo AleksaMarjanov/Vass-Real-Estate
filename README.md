@@ -1,38 +1,30 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Deano Vass Real Estate
 
-## Getting Started
+This project is a website for Deano Vass Real Estate, a real estate brokerage based in Williston, North Dakota.
+The purpose of the website is to provide information about company's services, listings, and team, and as well as to facilitate communication between clients and the company.
 
-First, run the development server:
+## Technologies Used
+<ul>
+<li>Nextjs 13</li>
+<li>Tailwind CSS</li>
+<li>Sanity</li>
+</ul>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+# Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The Website includes following features:
+Home Page:
+<ul>
+    <li>with hero banner, associated with button to browse properties/listings</li>
+    <li>Trusted by other other companies section</li>
+    <li>Frequently Asked Questions section</li>
+    <li>Services section with brief description of the company's services</li>
+    <li>Testimonials of satisfied clients</li>
+    <li>Optional newsletter within the Footer</li>
+</ul>
+Listings Page:
+<ul>
+    <li>All Available Listings/Properties<li>
+    <li>Brief description of each Property<li>
+    <li>Button with dynamic navigation/[slug] to each Property<li>
+</ul>
