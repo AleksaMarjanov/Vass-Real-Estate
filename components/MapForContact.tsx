@@ -26,7 +26,7 @@ const MapForContact = () => {
                 position={[48.148343, -103.62088]}
                 // @ts-ignore
                 dragabble={true} >
-                <Popup>Our Office</Popup>
+                <Popup><417 1st Ave E</Popup>
 
             </Marker>
         </MapContainer>
