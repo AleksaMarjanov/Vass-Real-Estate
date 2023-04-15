@@ -18,22 +18,6 @@ const FAQ = () => {
     const query = groq`
   *[_type == 'faqs']
   `
-    // @ts-ignore
-    if (document.startViewTransition) {
-        document.addEventListener('click', function(event) {
-
-            // @ts-ignore
-            if (event.target.matches('summary')) {
-                event.preventDefault()
-
-                // @ts-ignore
-                const details = event.target.closest('details')
-
-                // @ts-ignore
-                document.startViewTransition(() => details.toggleAttribute('open'))
-            }
-        })
-    }
 
     useEffect(() => {
         const fetchFaqs = async () => {
