@@ -18,7 +18,6 @@ const FAQ = () => {
     const query = groq`
   *[_type == 'faqs']
   `
-
     useEffect(() => {
         const fetchFaqs = async () => {
             const faqs = await client.fetch(query)
@@ -53,13 +52,13 @@ const FAQ = () => {
                                 <details className="group open:shadow-xl rounded-lg open:focus:ring-nice-blue cursor-pointer">
                                     <summary className="font-extrabold flex items-center px-3 py-2 justify-between cursor-pointer">
                                         {faq.question}
-                                        <span className="transition ease-out duration-400 group-open:rotate-180 ">
+                                        <span className="transition group-open:rotate-180">
                                             <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path>
                                             </svg>
                                         </span>
                                     </summary>
 
-                                    <p className="mt-3 group-open:animate-fadeIn transition  px-4 py-2">
+                                    <p className="mt-3 group-open:animate-fadeIn transition px-4 py-2">
                                         {faq.answer}
                                     </p>
                                 </details>

@@ -14,12 +14,15 @@ module.exports = {
                 montserrat: ["var(--font-montserrat)"],
             },
             keyframes: {
-                "0%": { opacity: 0 },
-                "100%": { opacity: 100 },
+                fadeIn: {
+                    "0%": { opacity: 0 },
+                    "100%": { opacity: 100 },
+                }
             },
             animation: {
-                fadeIn: 'fadeIn 1s ease-out forwards',
-            }, colors: {
+                fadeIn: "fadeIn 0.7s ease-in-out forwards",
+            },
+            colors: {
                 "primary-black": "#000407",
                 "secondary-black": "#16161640",
                 "secondary-white": "#c7c7c7",
