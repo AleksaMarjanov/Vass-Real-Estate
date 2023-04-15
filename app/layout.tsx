@@ -3,7 +3,7 @@
 
 import "../styles/globals.css";
 import { Montserrat } from "@next/font/google";
-import { Navbar, Socials } from "@/components";
+import { Navbar, Socials, ViewTransition } from "@/components";
 import { useEffect } from 'react'
 import { usePathname } from "next/navigation";
 

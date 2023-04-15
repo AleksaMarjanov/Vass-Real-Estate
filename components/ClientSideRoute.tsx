@@ -9,6 +9,7 @@ const ClientSideRoute = ({
     children: React.ReactNode;
     route: string
 }) => {
+
     return (
 
         // Dynamic route for each Listing

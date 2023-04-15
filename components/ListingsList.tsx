@@ -33,8 +33,8 @@ const ListingsList = ({ listings }: Props) => {
                 <h2>Available listings</h2>
             </motion.div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-10 gap-10 gap-y-16 pb-24 mt-6">
-                {listings.map(listing => (
-                    <ClientSideRoute route={`/listing/${listing.slug.current}`} key={listing._id}>
+                {listings.map((listing) => (
+                    <ClientSideRoute route={`/listing/${listing.slug.current}`} key={listing._id} >
                         <motion.div
                             variants={fadeIn("up", "tween", 0.5, 1)}
                             initial="hidden"
