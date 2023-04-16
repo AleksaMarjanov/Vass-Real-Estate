@@ -10,6 +10,7 @@ import styles from "@/styles";
 import { SocialIcon } from "react-social-icons";
 import { groq } from "next-sanity";
 
+
 type Props = {
     pageInfo: PageInfo;
     socials: Social[];
@@ -64,7 +65,8 @@ const AboutList = ({ pageInfo, socials }: Props) => {
                         className={`feedback-gradient`}
                     />
                     <h4 className="font-bold sm:text-[32px] text-[26px] sm:leading-[40px] leading-[36px] text-white">
-                        Deano Vass
+                        {pageInfo.name}
+                        {/* Deano Vass */}
                     </h4>
                     <p className="mt-[8px] font-normal sm:text-[18px] text-[12px] sm:leading-[22px] leading-[16px] text-white">
                         Founder
