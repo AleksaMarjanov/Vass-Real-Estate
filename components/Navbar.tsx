@@ -28,7 +28,7 @@ const Navbar = () => {
             viewport={{ once: true }}
             className={`sm:px-16 px-3 py-2 overflow-x-hidden`}
         >
-            <div className='w-full mx-auto flex items-center justify-between gap-8 py-5 left-0 top-0 '>
+            <div className='w-full mx-auto flex items-center justify-center md:justify-between gap-8 py-5 left-0 top-0 '>
                 <Link href='/' className='cursor-pointer'>
                     <Image
                         src="/logoSvg.svg"
@@ -77,7 +77,7 @@ const Navbar = () => {
 
 
                 <div
-                    className="lg:hidden block relative"
+                    className="lg:hidden block fixed right-3 z-[50]"
                     onClick={() => setRotate(prevState => !prevState)}
                 >
                     <div className="w-[30px] h-[30px] relative cursor-pointer" onClick={() => setToggle(true)}>
@@ -85,6 +85,7 @@ const Navbar = () => {
                             src="/menu.svg"
                             alt="menu"
                             fill
+                            priority
                             className="object-contain"
                         />
                     </div>
@@ -105,18 +106,18 @@ const Navbar = () => {
                                 className="w-[35px] h-[35px] text-white cursor-pointer ease-out transition-all duration-200"
                             />
                         </div>
-                        <ul className="list-none p-0 m-0 h-full w-full flex items-center justify-start flex-col relative">
+                        <ul className="list-none p-0 m-0 h-full w-full flex items-center justify-center flex-col relative">
                             <div>
-                                <a href="/" className="flex items-center justify-center">
+                                <a href="/" className="mt-3 flex items-center justify-center">
                                     <Image
                                         src="/logoSvg.svg"
                                         alt="logo"
-                                        width={150}
-                                        height={150}
+                                        width={300}
+                                        height={300}
                                         priority
                                     />
                                 </a>
-                                <div className="mt-32">
+                                <div className="flex items-center justify-center flex-col " >
                                     {["home", "listings", "transactions", "about"].map(
                                         (item, index) => (
                                             <div key={item + index} >

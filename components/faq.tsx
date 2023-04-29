@@ -38,6 +38,7 @@ const FAQ = () => {
                 id="faq">
                 <motion.div
                     variants={slideIn('up', 'tween', 0.3, 0.9)}
+                    viewport={{ once: true }}
                     className="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2 relative z-10">
                     <div className="w-full px-4 py-2 ">
                         <motion.div

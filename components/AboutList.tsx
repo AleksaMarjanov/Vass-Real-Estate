@@ -35,7 +35,7 @@ const AboutList = ({ pageInfo, socials }: Props) => {
                 >
                     <Image
                         className="object-cover object-center rounded-[10px] w-full h-auto min-h-[210px] max-h-[540px]"
-                        src={urlFor(pageInfo.profilePic).url()}
+                        src={urlFor(pageInfo.mainImage).url()}
                         alt={pageInfo.name}
                         width={300}
                         height={300}
@@ -73,7 +73,13 @@ const AboutList = ({ pageInfo, socials }: Props) => {
                     </p>
 
                     <p className="mt-[24px] font-normal sm:text-[18px] text-[18px] sm:leading-[45px] leading-[20px] text-white">
-                        {pageInfo.backgroundInformation}
+                        {pageInfo.description_one}
+                    </p>
+                    <p className="mt-[24px] font-normal sm:text-[18px] text-[18px] sm:leading-[45px] leading-[20px] text-white">
+                        {pageInfo.description_two}
+                    </p>
+                    <p className="mt-[24px] font-normal sm:text-[18px] text-[18px] sm:leading-[45px] leading-[20px] text-white">
+                        {pageInfo.description_three}
                     </p>
                 </motion.div>
             </motion.div>

@@ -6,24 +6,35 @@ export default defineType({
     type: 'document',
     fields: [
         defineField({
-        name: 'title',
-        title: 'Title',
-        type: 'string',
-      }),
-    
-      defineField({
-        name: 'description',
-        title: 'Description',
-        type: 'string',
-      }),
-      defineField({
-        name: 'imgUrl',
-        title: 'ImageUrl',
-        type: 'image',
-        options: {
-          hotspot: true,
-        },
-      }),
-     
+            name: 'title',
+            title: 'Title',
+            type: 'string',
+        }),
+
+        defineField({
+            name: 'description-one',
+            title: 'Description One',
+            type: 'string',
+        }),
+        defineField({
+            name: 'description-two',
+            title: 'Description Two',
+            type: 'string',
+        }),
+
+        defineField({
+            name: 'description-three',
+            title: 'Description Three',
+            type: 'string',
+        }),
+        defineField({
+            name: 'imgUrl',
+            title: 'ImageUrl',
+            type: 'image',
+            options: {
+                hotspot: true,
+            },
+        }),
+
     ],
-  });
+});

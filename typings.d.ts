@@ -40,10 +40,12 @@ interface TrustedBy extends Base {
 export interface PageInfo extends Base {
     _type: "pageInfo";
     address: string,
-    backgroundInformation: string;
+    description_one: string;
+    description_two: string;
+    description_three: string;
     email: string;
     role: string;
-    heroImage: Image;
+    mainImage: Image;
     name: string;
     phoneNumber: string;
     profilePic: Image;
