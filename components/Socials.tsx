@@ -97,7 +97,8 @@ const Socials = () => {
                                 <a href="https://marjanovdesignsolutions.com/">
                                     <span className="text-[#F7AB0A]"> Developed by Marjanov Design Solutions</span></a>
                             </p>
-
+                            <p>deano@vassres.com</p>
+                            <a href="tel:701572111">701572111</a>
                         </div>
                     </div>
                     {!isFormSubmitted ? (
