@@ -18,7 +18,12 @@ interface Listing extends Base {
 }
 
 interface Transactions extends Base {
+    body: Block[];
+    categories: Category[];
+    mainImage: Image;
     imgurl: Image;
+    title: string;
+
 }
 
 interface Services extends Base {

@@ -64,7 +64,7 @@ const ListingsList = ({ listings }: Props) => {
                                     <div className="flex flex-col md:flex-row gap-y-2 md:gap-x-2 items-center">
                                         {listing.categories.map(category => (
                                             <div key={category._id}>
-                                                <p className="text-bold max-[425px]:text-[12px]">{category.title}</p>
+                                                <p className="font-bold max-[425px]:text-[12px]">{category.title}</p>
                                             </div>
                                         ))}
                                     </div>

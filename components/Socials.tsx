@@ -88,7 +88,9 @@ const Socials = () => {
                                 priority
                             />
                         </a>
-                        <div className="font-normal text-[14px] text-white ">
+                        <div className="font-normal text-[14px] text-white flex flex-col">
+                            <a href="emailto:deano@vassres.com" className="font-bold text-sm md:text-lg"> deano@vassres.com</a>
+                            <a href="tel:701572111" className="font-semibold text-sm md:text-lg hover:text-white/60 transition-colors ease-in-out duration-400">(701)572-111</a>
                             <p className="opacity-50">
                                 Copyright © {new Date().getFullYear()} Vass Real Estate Solutions.
                                 All Rights Reserved
@@ -97,8 +99,6 @@ const Socials = () => {
                                 <a href="https://marjanovdesignsolutions.com/">
                                     <span className="text-[#F7AB0A]"> Developed by Marjanov Design Solutions</span></a>
                             </p>
-                            <p>deano@vassres.com</p>
-                            <a href="tel:701572111">701572111</a>
                         </div>
                     </div>
                     {!isFormSubmitted ? (

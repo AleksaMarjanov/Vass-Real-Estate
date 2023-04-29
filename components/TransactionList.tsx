@@ -3,9 +3,12 @@
 
 import { urlFor } from '../lib/urlFor'
 import Image from "next/image";
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { staggerContainer, fadeIn, slideIn } from '@/utils/motion';
 import { Transactions } from '@/typings'
+import { PortableText } from '@portabletext/react';
+import { RichTextComponents } from './RichTextComponents';
 
 type Props = {
     transactions: Transactions[]
@@ -13,6 +16,14 @@ type Props = {
 
 
 const TransactionList = ({ transactions }: Props) => {
+    const [isSSR, setIsSSR] = useState(true)
+
+    useEffect(() => {
+        setIsSSR(false)
+    }, [])
+
+
+    console.log('transactions', { transactions })
 
     return (
         <motion.div
@@ -33,23 +44,43 @@ const TransactionList = ({ transactions }: Props) => {
                         initial="hidden"
                         whileInView="show"
                         viewport={{ once: true }}
-                        className="group flex flex-col cursor-pointer"
+                        className="flex flex-col cursor-pointer"
                         key={transaction._id}
                     >
 
                         <div className="relative w-full h-80 drop-shadow-xl group-hover:scale-105 transition-transform duration-200 ease-out">
                             <Image
                                 className="object-cover object-left lg:object-center rounded-lg"
-                                src={urlFor(transaction.imgurl).url()}
-                                alt="Transaction"
+                                src={urlFor(transaction.mainImage).url()}
+                                alt={transaction.title}
                                 fill
                                 priority
                             />
+                            <div className='absolute bottom-0 w-full bg-opacity-20 bg-black backdrop-blur-lg rounded drop-shadow-lg text-white p-5 flex justify-between'>
+                                <div>
+                                    <p className='font-bold max-[768px]:text-[14px]'>{transaction.title}</p>
+                                </div>
+
+                                <div className="flex flex-col md:flex-row gap-y-2 md:gap-x-2 items-center">
+                                    {transaction.categories.map(category => (
+                                        <div key={category._id}>
+                                            <p className="font-bold text-sm md:text-xl" >{category.title}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='mt-5 flex-1'>
+                            <p className='text-white line-clamp-6'>
+                                <PortableText value={transaction.body} components={RichTextComponents} />
+                            </p>
                         </div>
                     </motion.div>
-                ))}
-            </div>
-        </motion.div>
+                ))
+                }
+            </div >
+        </motion.div >
     )
 }
 

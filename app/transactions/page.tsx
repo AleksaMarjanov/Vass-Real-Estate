@@ -6,8 +6,12 @@ const Transactions = async () => {
 
     // Fetch data from Sanity 
     const query = groq`
-*[_type == 'transactions']
-`
+*[_type=='transaction'] {
+    ...,
+    author->,
+    categories[]->,
+} | order(_createdAt desc)
+`;
 
     const transactions = await client.fetch(query)
 
