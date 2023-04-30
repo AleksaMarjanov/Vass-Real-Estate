@@ -74,7 +74,7 @@ const Socials = () => {
             viewport={{ once: false, amount: 0.25 }}
             className={`${styles.xPaddings} py-8`}
         >
-            <div className="mb-[50px] h-[2px] bg-white opacity-10" />
+            <div className="mb-[30px] h-[2px] bg-white opacity-10" />
 
             <div className="flex flex-col">
                 <div className="flex items-center justify-center md:justify-between flex-wrap gap-6 md:gap-8">
@@ -88,9 +88,9 @@ const Socials = () => {
                                 priority
                             />
                         </a>
-                        <div className="font-normal text-[14px] text-white flex flex-col ">
-                            <a href="emailto:deano@vassres.com" className="font-bold text-sm md:text-lg"> deano@vassres.com</a>
-                            <a href="tel:701572111" className="font-semibold text-sm md:text-lg hover:text-white/60 transition-colors ease-in-out duration-400">(701)572-111</a>
+                        <div className="font-normal text-white flex flex-col ">
+                            <a href="emailto:deano@vassres.com" className="font-bold text-lg"> deano@vassres.com</a>
+                            <a href="tel:701572111" className="font-semibold text-lg hover:text-white/60 transition-colors ease-in-out duration-400">(701)572-111</a>
                             <p className="opacity-50">
                                 Copyright © {new Date().getFullYear()} Vass Real Estate Solutions.
                                 All Rights Reserved
@@ -103,10 +103,10 @@ const Socials = () => {
                     </div>
                     {!isFormSubmitted ? (
                         <div className="flex flex-col items-center justify-center md:flex-[0.5] order-1 md:order-2">
-                            <span className="text-white text-lg md:text-2xl py-4">Stay in Loop</span>
+                            <span className="text-white font-semibold text-2xl md:text-3xl py-4">Stay in Loop</span>
                             <div className="text-primary-black">
-                                <form ref={form} onSubmit={sendEmail} className="flex flex-col items-center justify-center gap-2">
-                                    <input name="email" type="email" placeholder="johndoe@gmail.com" required />
+                                <form ref={form} onSubmit={sendEmail} className="w-full flex flex-col items-center justify-center gap-2">
+                                    <input name="email" className="w-full" type="email" placeholder="johndoe@gmail.com" required />
                                     <button className="px-6 py-4 font-bold  text-white bg-[#F7AB0A] rounded-[10px] hover:opacity-80 transition-all ease-out duration-200 cursor-pointer">Subscribe</button>
                                 </form>
                             </div>

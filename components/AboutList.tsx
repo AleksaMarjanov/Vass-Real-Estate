@@ -26,7 +26,7 @@ const AboutList = ({ pageInfo, socials }: Props) => {
                 variants={staggerContainer}
                 initial="hidden"
                 whileInView="show"
-                viewport={{ once: false, amount: 0.25 }}
+                viewport={{ once: true, amount: 0.25 }}
                 className={`${styles.innerWidth} items-center justify-center mx-auto flex flex-col  gap-6 mt-6`}
             >
                 <motion.div
@@ -68,7 +68,7 @@ const AboutList = ({ pageInfo, socials }: Props) => {
                         {pageInfo.name}
                         {/* Deano Vass */}
                     </h4>
-                    <p className="mt-[8px] font-normal sm:text-[18px] text-[12px] sm:leading-[22px] leading-[16px] text-white">
+                    <p className="mt-[8px] font-normal text-lg md:text-xl sm:leading-[22px] leading-[16px] text-white">
                         Founder
                     </p>
 

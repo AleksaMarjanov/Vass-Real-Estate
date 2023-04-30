@@ -112,12 +112,12 @@ const Navbar = () => {
                                     <Image
                                         src="/logoSvg.svg"
                                         alt="logo"
-                                        width={300}
-                                        height={300}
+                                        width={400}
+                                        height={400}
                                         priority
                                     />
                                 </a>
-                                <div className="flex items-center justify-center flex-col " >
+                                <div className="flex items-center justify-center flex-col mt-16" >
                                     {["home", "listings", "transactions", "about"].map(
                                         (item, index) => (
                                             <div key={item + index} >
@@ -126,7 +126,7 @@ const Navbar = () => {
                                                 >
                                                     <a
                                                         href={`/${item}`}
-                                                        className="text-white xl:text-2xl sm:text-xl
+                                                        className="text-white text-2xl 
                           uppercase bg-left-bottom bg-gradient-to-r hover:text-[#F7AB0A] from-[#F7AB0A] to-[#F7AB0A] bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out no-underline font-bold relative z-[50]"
                                                         onClick={() => setToggle(false)}
                                                     >
@@ -138,7 +138,7 @@ const Navbar = () => {
                                     )}
                                 </div>
                             </div>
-                            <a href="/contact" className="relative inline-block text-lg group mr-8 mt-72">
+                            <a href="/contact" className="relative inline-block text-lg group mt-2">
                                 <span className="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-lg group-hover:text-white ">
                                     <span className="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-gray-50"></span>
                                     <span className="absolute right-0 w-48 h-48 -ml-2 transition-all duration-300 origin-top-left rotate-90 translate-x-full translate-y-12 bg-[#F7AB0A]  group-hover:rotate-180 ease"></span>

@@ -22,6 +22,7 @@ const TransactionList = ({ transactions }: Props) => {
         setIsSSR(false)
     }, [])
 
+    if (isSSR) return null;
 
     console.log('transactions', { transactions })
 
@@ -61,7 +62,7 @@ const TransactionList = ({ transactions }: Props) => {
                                     <p className='font-bold max-[768px]:text-[14px]'>{transaction.title}</p>
                                 </div>
 
-                                <div className="flex flex-col md:flex-row gap-y-2 md:gap-x-2 items-center">
+                                <div className="flex flex-col md:flex-row gap-x-2 md:gap-x-4 items-center">
                                     {transaction.categories.map(category => (
                                         <div key={category._id}>
                                             <p className="font-bold text-sm md:text-xl" >{category.title}</p>
