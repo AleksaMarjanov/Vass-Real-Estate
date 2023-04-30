@@ -43,7 +43,7 @@ const Navbar = () => {
             viewport={{ once: true }}
             className={`sm:px-16 px-3 py-2`}
         >
-            <div className={`w-full fixed z-[50] mx-auto flex items-center justify-center md:justify-between gap-8 py-5 left-0 top-0 ${navbar ? 'bg-[#121a34] shadow-2xl' : 'bg-transparent'}`} >
+            <div className={`w-full fixed z-[50] mx-auto flex items-center justify-center md:justify-between gap-8 py-5 left-0 top-0 ${navbar ? 'bg-white shadow-2xl' : 'bg-transparent'}`} >
                 <Link href='/' className='ml-4 cursor-pointer lg:flex items-center justify-center '>
                     <div className=''>
                         <Image
@@ -67,7 +67,7 @@ const Navbar = () => {
                                 <a
                                     href={`/${item}`}
                                     className={`${navbar
-                                        ? "text-white group-hover:text-coffee-yellow"
+                                        ? "text-black group-hover:text-coffee-yellow"
                                         : "text-white  bg-left-bottom bg-gradient-to-r hover:text-[#F7AB0A] from-[#F7AB0A] to-[#F7AB0A] bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out"
                                         } uppercase no-underline font-bold`}
                                 >
