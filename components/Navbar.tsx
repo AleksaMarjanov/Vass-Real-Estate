@@ -43,7 +43,7 @@ const Navbar = () => {
             viewport={{ once: true }}
             className={`sm:px-16 px-3 py-2`}
         >
-            <div className={`w-full fixed z-[50] mx-auto flex items-center justify-center md:justify-between gap-8 py-5 left-0 top-0 ${navbar ? 'bg-white shadow-2xl' : 'bg-transparent'}`} >
+            <div className={`w-full fixed z-[50] mx-auto flex items-center justify-center md:justify-between gap-8 py-5 left-0 top-0 ${navbar ? 'bg-darker-white shadow-2xl' : 'bg-transparent'}`} >
                 <Link href='/' className='ml-4 cursor-pointer lg:flex items-center justify-center '>
                     <div className=''>
                         <Image
