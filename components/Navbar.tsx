@@ -43,8 +43,8 @@ const Navbar = () => {
             viewport={{ once: true }}
             className={`sm:px-16 px-3 py-2`}
         >
-            <div className='w-full mx-auto flex items-center justify-center md:justify-between gap-8 py-5 left-0 top-0 '>
-                <Link href='/' className='cursor-pointer'>
+            <div className={`${navbar ? 'bg-[#121a34]' : "bg-transparent"} z-[50] w-full mx-auto flex items-center justify-center md:justify-between gap-8 py-5 left-0 top-0 `}>
+                <Link href='/' className='hidden lg:flex cursor-pointer'>
                     <Image
                         src="/logoSvg.svg"
                         alt="logo"
@@ -72,7 +72,7 @@ const Navbar = () => {
                                     {item}
                                 </a>
                             </li>
-                        </div>
+                        </div >
                     ))}
                     <a href="/contact" className="relative inline-block text-lg group mb-10 mt-10">
                         <span className="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-lg group-hover:text-white ">
@@ -87,36 +87,35 @@ const Navbar = () => {
                             data-rounded="rounded-lg"
                         ></span>
                     </a>
-                </ul>
+                </ul >
 
                 {/*Mobile Menu*/}
-                <div className="lg:hidden flex items-center justify-center fixed z-[50]">
-                    {/* <div className="flex items-center justify-center"> */}
-                    {/*     <div className="max-[375px]:w-[250px] max-[375px]:h-[250px] w-[320px] h-[320px]"> */}
-                    {/*         <Image */}
-                    {/*             src="/logoSvg.svg" */}
-                    {/*             alt="logo" */}
-                    {/*             className='object-center object-contain' */}
-                    {/*             fill */}
-                    {/*             priority */}
-                    {/*         /> */}
-                    {/*     </div> */}
-                    <div
-                        className="fixed right-3"
-                        onClick={() => setRotate(prevState => !prevState)}
-                    >
-                        <div className="w-[30px] h-[30px] relative cursor-pointer " onClick={() => setToggle(true)}>
-                            <Image
-                                src="/menu.svg"
-                                alt="menu"
-                                fill
-                                priority
-                                className="object-contain"
-                            />
+                < div className={` top-0 py-5 lg:hidden flex items-center justify-center bg-[#121a34] w-full fixed z-[50]`}>
+                    <div className="flex items-center justify-center">
+                        <Image
+                            src="/logoSvg.svg"
+                            alt="logo"
+                            className='object-center object-contain'
+                            width={300}
+                            height={300}
+                            priority
+                        />
+                        <div
+                            className="fixed right-3"
+                            onClick={() => setRotate(prevState => !prevState)}
+                        >
+                            <div className="w-[30px] h-[30px] relative cursor-pointer " onClick={() => setToggle(true)}>
+                                <Image
+                                    src="/menu.svg"
+                                    alt="menu"
+                                    fill
+                                    priority
+                                    className="object-contain"
+                                />
+                            </div>
                         </div>
-                        {/* </div> */}
                     </div>
-                </div>
+                </div >
 
                 {
                     toggle && (
@@ -165,8 +164,8 @@ const Navbar = () => {
 
                                             )
                                         )}
-                                    </div>
-                                </div>
+                                    </div >
+                                </div >
                                 <a href="/contact" className="relative inline-block text-lg group mt-2">
                                     <span className="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-lg group-hover:text-white ">
                                         <span className="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-gray-50"></span>
@@ -180,8 +179,8 @@ const Navbar = () => {
                                         data-rounded="rounded-lg"
                                     ></span>
                                 </a>
-                            </ul>
-                        </motion.div>
+                            </ul >
+                        </motion.div >
                     )
                 }
             </div >
