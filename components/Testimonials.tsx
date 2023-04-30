@@ -40,7 +40,7 @@ const Testimonials = () => {
             variants={staggerContainer}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: false, amount: 0.25 }}
+            viewport={{ once: true, amount: 0.25 }}
         >
             <motion.div
                 variants={fadeIn("up", "tween", 0.35, 0.85)}

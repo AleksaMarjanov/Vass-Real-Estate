@@ -15,7 +15,7 @@ const Hero = () => {
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true }}
-                className={` min-h-[60vh] w-full relative`}
+                className={` min-h-[60vh] w-full relative mt-12 md:mt-24 lg:mt-32`}
             >
                 <motion.div
                     variants={slideIn('left', 'tween', 0.3, 0.85)}

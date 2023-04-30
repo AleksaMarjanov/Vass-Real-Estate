@@ -71,7 +71,7 @@ const Socials = () => {
             variants={footerVariants}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: false, amount: 0.25 }}
+            viewport={{ once: true, amount: 0.25 }}
             className={`${styles.xPaddings} py-8`}
         >
             <div className="mb-[30px] h-[2px] bg-white opacity-10" />
