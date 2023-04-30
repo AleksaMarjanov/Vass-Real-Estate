@@ -90,7 +90,7 @@ const Navbar = () => {
                 </ul >
 
                 {/*Mobile Menu*/}
-                < div className={` top-0 py-5 lg:hidden flex items-center justify-center bg-[#121a34] w-full fixed z-[50]`}>
+                < div className={`max-[375px]:px-8 left-0 top-0 py-5 lg:hidden flex items-center justify-center bg-[#121a34] w-full fixed z-[50]`}>
                     <div className="flex items-center justify-center">
                         <Image
                             src="/logoSvg.svg"

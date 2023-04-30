@@ -36,7 +36,7 @@ const TransactionList = ({ transactions }: Props) => {
             <motion.div className="flex items-center justify-center"
                 variants={fadeIn('up', 'tween', 0.2, 0.6)}
             >
-                <h2 className="font-bold text-2xl md:text-4xl">Transactions</h2>
+                <h2 className="font-bold text-2xl md:text-4xl mt-16 md:mt-4">Transactions</h2>
             </motion.div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-10 gap-10 gap-y-16 pb-24 mt-6">
                 {transactions.map(transaction => (
