@@ -8,7 +8,7 @@ const MapWithNOSSR = dynamic(() => import("../../components/MapForContact"), {
 
 const Contact = () => {
     return (
-        <section className="flex flex-col items-center justify-center w-full">
+        <section className="flex flex-col items-center justify-center w-full max-[768px]:mt-16">
             <div className="w-full">
                 <Form />
             </div>
