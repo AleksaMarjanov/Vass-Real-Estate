@@ -43,17 +43,15 @@ const Navbar = () => {
             viewport={{ once: true }}
             className={`sm:px-16 px-3 py-2`}
         >
-            <div className={`w-full fixed z-[50] mx-auto flex items-center justify-center md:justify-between gap-8 py-5 left-0 top-0 ${navbar ? 'bg-darker-white shadow-2xl' : 'bg-transparent'}`} >
-                <Link href='/' className='ml-4 cursor-pointer lg:flex items-center justify-center '>
-                    <div className=''>
-                        <Image
-                            src="/logoSvg.svg"
-                            alt="logo"
-                            width={250}
-                            height={250}
-                            priority
-                        />
-                    </div>
+            <div className='w-full mx-auto flex items-center justify-center md:justify-between gap-8 py-5 left-0 top-0 '>
+                <Link href='/' className='cursor-pointer'>
+                    <Image
+                        src="/logoSvg.svg"
+                        alt="logo"
+                        width={250}
+                        height={250}
+                        priority
+                    />
                 </Link>
                 <ul className='hidden lg:flex flex-1 relative items-center justify-center list-none space-x-6'>
                     {['home', 'listings', 'transactions', 'about'].map((item, index) => (
@@ -67,7 +65,7 @@ const Navbar = () => {
                                 <a
                                     href={`/${item}`}
                                     className={`${navbar
-                                        ? "text-black group-hover:text-coffee-yellow"
+                                        ? "text-white group-hover:text-coffee-yellow"
                                         : "text-white  bg-left-bottom bg-gradient-to-r hover:text-[#F7AB0A] from-[#F7AB0A] to-[#F7AB0A] bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out"
                                         } uppercase no-underline font-bold`}
                                 >
@@ -164,6 +162,7 @@ const Navbar = () => {
                                                         </a>
                                                     </li>
                                                 </div>
+
                                             )
                                         )}
                                     </div>
