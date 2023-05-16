@@ -17,22 +17,22 @@ const Relocate = () => {
             className={`${styles.xPaddings} mt-6 md:mt-12 flex items-center justify-center flex-col`}
         >
             <motion.div
-                variants={slideIn('up', 'tween', 0.35, 0.85)}
+                variants={slideIn('up', 'tween', 0.35, 0.65)}
                 className="flex items-center justify-center flex-col"
             >
                 <motion.div
-                    variants={textVariant(1.3)}
+                    variants={textVariant(0.3)}
                 >
                     <h2 className="text-2xl md:text-4xl font-bold py-6 md:py-12">Looking to Relocate ?</h2>
                 </motion.div>
                 <motion.div
-                    variants={textVariant(1.5)}
+                    variants={textVariant(0.5)}
                     className="space-y-6 md:space-y-12 flex flex-col"
                 >
                     <span className="text-lg">Fill out our Apartment Locator Form and we will get to work on locating the perfect apartment for you! </span>
                 </motion.div>
                 <motion.div
-                    variants={textVariant(1.7)}
+                    variants={textVariant(0.7)}
                 >
                     <a href="https://img1.wsimg.com/blobby/go/4f02ad60-082a-40ed-9f03-92ca348f8a2f/downloads/APARTMENT%20LOCATOR%20QUESTIONNAIRE.pdf?ver=1676067867763"
                         target="_blank"
@@ -53,7 +53,7 @@ const Relocate = () => {
 
                 </motion.div>
                 <motion.div
-                    variants={fadeIn('up', 'spring', 2, 1)}
+                    variants={fadeIn('up', 'spring', 0.9, 0.85)}
                 >
                     <span className="text-md mt-2 md:mt-8">Apartment Locator Questionnaire form(pdf)</span>
                 </motion.div>
