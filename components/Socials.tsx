@@ -90,7 +90,7 @@ const Socials = () => {
                         </a>
                         <div className="font-normal text-white flex flex-col ">
                             <a href="emailto:deano@vassres.com" className="font-bold text-lg"> deano@vassres.com</a>
-                            <a href="tel:701572111" className="font-semibold text-lg hover:text-white/60 transition-colors ease-in-out duration-400">(701)572-111</a>
+                            <a href="tel:701572111" className="font-semibold text-lg hover:text-white/60 transition-colors ease-in-out duration-400">(701)572-1111</a>
                             <p className="opacity-50">
                                 Copyright © {new Date().getFullYear()} Vass Real Estate Solutions.
                                 All Rights Reserved
