@@ -35,7 +35,7 @@ const Hero = () => {
                         >
 
                             <motion.h1
-                                variants={textVariant(1.1)}
+                                variants={textVariant(0.3)}
                                 className="md:text-5xl text-3xl font-bold py-12 max-[425px]:py-2"
                             >
                                 Need a{" "}
@@ -43,7 +43,7 @@ const Hero = () => {
                                     Shop?
                                 </span>
                             </motion.h1>
-                            <motion.div variants={textVariant(1.2)}>
+                            <motion.div variants={textVariant(0.5)}>
                                 <p className="font-bold text-lg md:text-2xl text-darker-white">
                                     Over 25 years specializing in commercial/industrial properties
                                 </p>
@@ -51,7 +51,7 @@ const Hero = () => {
                         </motion.div>
 
                         <motion.div
-                            variants={textVariant(1.3)}
+                            variants={textVariant(0.6)}
                             className="max-[768px]:flex items-center justify-center relative z-20"
                         >
                             <a
@@ -71,7 +71,7 @@ const Hero = () => {
                         </motion.div>
                     </motion.div>
                     <motion.div
-                        variants={fadeIn("left", "tween", 0.6, 0.95)}
+                        variants={fadeIn("left", "tween", 0.3, 0.55)}
                         className="relative w-[320px] h-[220px] sm:w-[480px] sm:h-[360px] md:w-[600px] md:h-[400px] lg:w-[700px] lg:h-[500px]"
                     >
                         <Image
@@ -94,7 +94,7 @@ const Hero = () => {
 
                 <a href="#bulletsection" rel="norefferer" className="animate-pulse flex items-center justify-center mt-[64px] lg:mt-[86px] max-[425px]:mt-[82px] cursor-pointer">
                     <motion.img
-                        variants={fadeIn('up', 'tween', 0.3, 1)}
+                        variants={fadeIn('up', 'tween', 0.3, 0.55)}
                         src="/arrow-down.svg"
                         alt="arrow down"
                         className="w-[38px] h-[38px] drop-shadow-xl hover:scale-105 transition-transform duration-200 ease-out object-contain  flex items-center justify-center rounded-full bg-[#F7AB0A] px-1 py-1"
