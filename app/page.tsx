@@ -4,8 +4,8 @@ import { Hero, Testimonials, FAQ, BulletSection, ServiceCard, TrustedBy, Relocat
 const HomePage = () => {
 
     return (
-        <main classname="h-full justify-center items-center">
-            <h1 classname="text-bold text-3xl">Website is under maintenance</h1>
+        <main className="h-full justify-center items-center">
+            <h1 className="text-bold text-3xl">Website is under maintenance</h1>
             </main>
 )
         }
