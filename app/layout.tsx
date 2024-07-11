@@ -44,9 +44,7 @@ export default function RootLayout({
 
         <html lang="en">
             <body className={`${montserrat.className} bg-[#121a34] text-white overflow-hidden`}>
-                <Navbar />
                 {children}
-                <Socials />
             </body>
         </html>
     );
