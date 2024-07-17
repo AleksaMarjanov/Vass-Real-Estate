@@ -4,16 +4,10 @@ import { Hero, Testimonials, FAQ, BulletSection, ServiceCard, TrustedBy, Relocat
 const HomePage = () => {
 
     return (
-        <main className="h-full justify-center items-center">
-            <h1 className="text-bold text-3xl">Website is under maintenance</h1>
-            </main>
-)
-        }
-export default HomePage;
-       /* <main className="">
+        
+        <main className="">
             <section id="hero">
                 <Hero />
-
             </section>
             <section id="bulletsection">
                 <BulletSection />
@@ -38,7 +32,7 @@ export default HomePage;
 }
 
 export default HomePage;
-*/
+
 
 
 
